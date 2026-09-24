@@ -3,31 +3,25 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/logo-mark-reverse.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/brand/logo-mark.svg">
-  <img alt="video-shotcraft logo" src="./assets/brand/logo-mark.svg" width="112" height="112">
+  <img alt="hyperFrames-video-shotcraft logo" src="./assets/brand/logo-mark.svg" width="112" height="112">
 </picture>
 
-<h1>video-shotcraft</h1>
+<h1>hyperFrames-video-shotcraft</h1>
 
-[![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
-[![AtomGit Star](https://atomgit.com/VincentWei/video-shotcraft/star/badge.svg)](https://atomgit.com/VincentWei/video-shotcraft)
-[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
+[![GitHub stars](https://img.shields.io/github/stars/louiseliu/hyperFrames-video-shotcraft)](https://github.com/louiseliu/hyperFrames-video-shotcraft/stargazers)
 
-<a href="https://trendshift.io/repositories/88911?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-88911" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/88911/daily?language=TypeScript" alt="Vincentwei1021%2Fvideo-shotcraft | Trendshift" width="250" height="55"/></a>
-<a href="https://trendshift.io/repositories/88911?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-88911" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/88911/weekly?language=TypeScript" alt="Vincentwei1021%2Fvideo-shotcraft | Trendshift" width="250" height="55"/></a>
-
-**映画のような製品動画を制作するためのエージェントスキル：157 種類のショットレシピカード · 214 種類のスタイル · 214 本のモーションプレビュー · 実制作に対応したテンプレート**
+**HyperFrames で映画のような製品動画を制作するためのエージェントスキル：157 種類のショットレシピカード · 214 種類のスタイル · 218 HTML コンポジション · 実制作に対応したテンプレート**
 
 [English](README.md) | [中文](README_CN.md) | [日本語](README_JA.md)
 
 </div>
 
-**video-shotcraft** は、Claude Code や Codex をモーションデザインスタジオに
+**hyperFrames-video-shotcraft** は、Claude Code や Codex をモーションデザインスタジオに
 変える AI エージェントスキルです。製品を指定するだけで、ストーリーボード、アニメーション、
 サウンドデザインを行い、[HyperFrames](https://hyperframes.heygen.com/) を使って映画のようなプロモーション、
 マーケティング、ローンチ、デモ動画を制作します。実際のページキャプチャ、2.5D カメラワーク、
 ビートに同期したカット、映画品質の SFX も含まれます。
 
-🖼️ [**ライブ Gallery で 214 本のモーションプレビューをすべて見る »**](https://vincentwei1021.github.io/video-shotcraft/)
 
 ## ✨ 最新情報
 
@@ -83,7 +77,6 @@ https://github.com/user-attachments/assets/cba2df8a-4b2e-4247-bace-d0b1dea9c2bd
 
 ▶️ [YouTube で HD 版を見る](https://youtu.be/gcVvRM_P3SM)
 
-> すべてのショットカードとモーションプレビューをオンラインで閲覧：**[Gallery](https://vincentwei1021.github.io/video-shotcraft/)**
 > — 検索、絞り込み、バリエーションの切り替え、選択したショットカード名のコピーが可能です。
 
 ## 🚀 クイックスタート
@@ -92,35 +85,34 @@ https://github.com/user-attachments/assets/cba2df8a-4b2e-4247-bace-d0b1dea9c2bd
 Claude Code、Codex、または同様のエージェントで、次のように伝えます。
 
 ```text
-Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft
+Install this skill for me: https://github.com/louiseliu/hyperFrames-video-shotcraft
 ```
 
 エージェントがリポジトリをクローンし、スキルディレクトリにリンクします。または、
 [skills](https://skills.sh/) CLI を使うか、手動でインストールします。
 
 ```bash
-npx skills add Vincentwei1021/video-shotcraft
+npx skills add louiseliu/hyperFrames-video-shotcraft
 ```
 
 ```bash
-git clone https://github.com/Vincentwei1021/video-shotcraft.git
-cd video-shotcraft
-ln -s "$(pwd)" ~/.claude/skills/video-shotcraft   # Claude Code
+git clone https://github.com/louiseliu/hyperFrames-video-shotcraft.git
+cd hyperFrames-video-shotcraft
+ln -s "$(pwd)" ~/.claude/skills/hyperFrames-video-shotcraft   # Claude Code
 # or
-ln -s "$(pwd)" ~/.codex/skills/video-shotcraft    # Codex
+ln -s "$(pwd)" ~/.codex/skills/hyperFrames-video-shotcraft    # Codex
 ```
 
 インストール後は、次のように依頼できます。
 
 ```text
-Use video-shotcraft to create a promo for my desktop product.
+Use hyperFrames-video-shotcraft to create a promo for my desktop product.
 Use the deck-deal-flyin and row-embed shot cards to present this feature.
 Design a product close-up inspired by spotlight-hero-card.
 ```
 
 ショットカードを指定しない場合、スキルは最初に内蔵の動画テンプレートを
 紹介し、それを使うか確認します。作業を始める前に
-[Gallery](https://vincentwei1021.github.io/video-shotcraft/) でショットを選ぶこともできます。
 
 ## 📼 動画テンプレート：Ink Press
 
@@ -136,7 +128,7 @@ https://github.com/user-attachments/assets/4cf5af51-98f3-4af2-8ab2-7267f470513d
 使用するには、エージェントに次のように伝えるだけです。
 
 ```text
-Use video-shotcraft to make a promo for my product with the Ink Press template.
+Use hyperFrames-video-shotcraft to make a promo for my product with the Ink Press template.
 ```
 
 エージェントが製品のスクリーンショット、コピー、ブランド要素に差し替えて
@@ -181,7 +173,7 @@ Use video-shotcraft to make a promo for my product with the Ink Press template.
 ## 🗂 リポジトリ構成
 
 ```text
-video-shotcraft/
+hyperFrames-video-shotcraft/
 ├── SKILL.md                 # Agent entry point and core production rules
 ├── references/
 │   ├── pipeline.md          # End-to-end production workflow
@@ -249,20 +241,6 @@ Figma、Framer、Bear、Raycast、Pitch、Miro、Superhuman、Loom** のプロ�
 - **Claude Code** — このライブラリ自体も、スキルが教えるものと同じワークフローを使い、
   AI コーディングエージェントによって構築、反復改善、QA されました。
 
-## フォロー
-
-<p>
-  <a href="https://x.com/VincentWei93"><img alt="X で Vincent をフォロー" src="https://img.shields.io/badge/X-Follow_Me-000000?style=for-the-badge&logo=x&logoColor=white"></a>
-  <a href="https://www.douyin.com/user/MS4wLjABAAAAK1pkjBxilk2Oi_9h_vFyD-lTAu9CTlvhmOtkosDvvxg"><img alt="抖音で Vincent をフォロー" src="https://img.shields.io/badge/Douyin-Follow_Me-000000?style=for-the-badge&logo=tiktok&logoColor=white"></a>
-  <a href="https://xhslink.cn/m/At9iP2d5C1V"><img alt="Red Note で Vincent をフォロー" src="https://img.shields.io/badge/Red_Note-Follow_Me-FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white"></a>
-</p>
-
 ## ⭐ Star 履歴
 
-<a href="https://www.star-history.com/?repos=Vincentwei1021%2Fvideo-shotcraft&type=date&legend=top-left">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&theme=dark&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
-    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
-  </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=louiseliu/hyperFrames-video-shotcraft&type=Date)](https://star-history.com/#louiseliu/hyperFrames-video-shotcraft&Date)
