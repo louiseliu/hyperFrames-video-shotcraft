@@ -9,7 +9,7 @@
 // 荡开 → 95–170 深色真静止 75f。深色版为手工反转 G 色板的本地 DarkDashboard。
 // 帧确定，无随机源。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const DIM_START = 15;

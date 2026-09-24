@@ -6,7 +6,7 @@
 // 波 20–52f；52f 起摘罩（整页 B 直出、条结构与亮线全部卸载），
 // 52–150f 真静止 98f ≥ 40f。帧确定，无随机源。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 const STRIPS = 12;

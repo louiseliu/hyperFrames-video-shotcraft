@@ -1,4 +1,4 @@
-// gradient-transition — Gradient Transition 渐变过渡（motion-lab 定稿转原生 Remotion）
+// gradient-transition — Gradient Transition 渐变过渡（motion-lab 定稿转原生 HyperFrames）
 // 背景在三类 CSS 渐变之间平滑过渡：linear 段插值角度+色标，radial 段插值中心+半径，
 // conic 段旋转彩虹；等价"解析 gradient 字符串逐参数插值"的配方，中央 pill 标注当前段。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

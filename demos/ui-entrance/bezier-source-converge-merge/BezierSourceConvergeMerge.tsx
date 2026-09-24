@@ -1,4 +1,4 @@
-// bezier-source-converge-merge — Bezier Converge 多源曲线汇流吞并（motion-lab 定稿转原生 Remotion）
+// bezier-source-converge-merge — Bezier Converge 多源曲线汇流吞并（motion-lab 定稿转原生 HyperFrames）
 // 左侧四个来源节点各由一条细黑贝塞尔曲线连向右侧同一汇聚点：曲线先由左向右 draw-on，
 // 节点沿自己的曲线滑向汇聚点并三段式加速缩小（像被吸进去），强调色数据包小圆持续沿
 // 路径滑行，吞并完成后曲线从左端反向擦除，只留圆形徽标 + 逐词加深字幕。

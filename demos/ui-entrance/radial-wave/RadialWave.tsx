@@ -1,4 +1,4 @@
-// radial-wave — Grid Radial Wave 点阵涟漪（motion-lab 定稿转原生 Remotion）
+// radial-wave — Grid Radial Wave 点阵涟漪（motion-lab 定稿转原生 HyperFrames）
 // 17×9 圆点阵列，波从中心向外按欧氏距离 stagger 扩散：每点 scale 0→1.5→1 +
 // 亮度脉冲，波前过后留下常亮点阵；第二道波反向收拢。offset = k·dist(cell, origin)。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

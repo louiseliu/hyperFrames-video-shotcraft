@@ -7,7 +7,7 @@
 //    顶部偏奶桃色、出现后减速外扩且全程缓慢长大、衰减极慢（片尾仍在，
 //    弥散变淡而非熄灭）、中心无水面光。用 feTurbulence+位移贴图模拟。
 import React, { useId } from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

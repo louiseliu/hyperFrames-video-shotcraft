@@ -5,7 +5,7 @@
 // 帧 120 无任何过渡硬切景 B：满屏亮色 FakeDashboard(A) 真静止 30f——
 // 暗→亮的大反差让"切"这一拍才响。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CUT = 120; // 硬切帧

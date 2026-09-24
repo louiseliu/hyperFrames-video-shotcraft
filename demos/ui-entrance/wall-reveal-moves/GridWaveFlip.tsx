@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { Card, G } from '../../_fixtures/Fixtures';
 
 // grid-wave-flip〔入场退场〕：3×3 灰背卡片墙沿对角线波前依次 rotateX 翻转 180°，

@@ -4,7 +4,7 @@
 // 末刻度 4f 急停 + 推近 1.28×。世界层只动 translateX/scale。
 // f0–12 初始静置；f118 起真静止 ≥42f（160f 总长）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing, spring } from 'remotion';
+import { useCurrentFrame, interpolate, Easing, spring } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const W = 1920;

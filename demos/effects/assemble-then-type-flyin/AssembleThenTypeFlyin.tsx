@@ -1,4 +1,4 @@
-// assemble-then-type-flyin — Assemble + Type Fly-in 装配后文字 3D 落位（motion-lab 定稿转原生 Remotion）
+// assemble-then-type-flyin — Assemble + Type Fly-in 装配后文字 3D 落位（motion-lab 定稿转原生 HyperFrames）
 // 空的暗底网格页面上，无文字的组件骨架（框、卡片、分隔线、色块）先从四面八方飞入贴合；
 // 随后各处文字从 3D 空间逐字飞来——每个字符带独立的大角度 rotateX/Y/Z 旋转与纵深位移，
 // 旋转着落到自己应在的位置，先大标题后小标注，全部落位后页面成形。

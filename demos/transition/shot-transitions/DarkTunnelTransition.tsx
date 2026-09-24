@@ -7,7 +7,7 @@
 // 屏幕空间同样向左），速度曲线连续。
 // 节拍：0–26 A hold → 26–36 推出（前景左移出画，暗场 32f 起淡入压住尾巴，
 // 不留纯黑死帧）→ 40–42 暗场满 → 42–52 B 放大入场 → 52–120 B hold（真静止）。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 
 export const DARKTUNNEL_DUR = 120;
 

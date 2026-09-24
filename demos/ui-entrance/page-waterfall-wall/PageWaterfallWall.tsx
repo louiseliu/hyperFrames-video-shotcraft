@@ -6,7 +6,7 @@ import {
   staticFile,
   useCurrentFrame,
   useVideoConfig,
-} from 'remotion';
+} from 'hyperframes';
 import { VerticalTicker, TickerColumn } from './VerticalTicker';
 
 const BG = '#101014';

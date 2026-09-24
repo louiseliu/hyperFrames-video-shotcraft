@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // split-flap-flip：机场翻牌字。每字符一个深底翻牌格（上下两半），

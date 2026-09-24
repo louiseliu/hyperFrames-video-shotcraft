@@ -1,4 +1,4 @@
-// doc-park-left-pill-deal — Doc Park 文档靠左 + 结论慢发牌（motion-lab 定稿转原生 Remotion）
+// doc-park-left-pill-deal — Doc Park 文档靠左 + 结论慢发牌（motion-lab 定稿转原生 HyperFrames）
 // 扫描结束文档不淡出，而是向左滑出只露约 35% 宽并微缩到 0.92；右侧按旁白节奏
 // 慢速发牌三张白底描边药丸（outBack 弹入），每张落定后其下方走逐词加深字幕、
 // 下一张到来前整句淡出；左侧文档全程做极缓慢自动滚动保持"正在被读"。

@@ -1,4 +1,4 @@
-// product-card-progressive-assemble — Progressive Assemble 字段逐个落位（motion-lab 定稿转原生 Remotion）
+// product-card-progressive-assemble — Progressive Assemble 字段逐个落位（motion-lab 定稿转原生 HyperFrames）
 // 详情卡像被逐字段抓取般自建：图→标题→breadcrumb pill 依次 pop→价格出现后被划线降级、
 // 强调色新价 spring 跳出→正文逐行揭示+强调色高亮块由左向右刷过→色卡点亮。
 // 整卡极慢 scale 前推保持呼吸。设计坐标 480×270（DesignStage 等比放大）。

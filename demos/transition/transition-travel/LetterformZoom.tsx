@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // letterform-zoom〔转场〕：巨型标题 "DASH" 字腔透出新页面，镜头急速推进

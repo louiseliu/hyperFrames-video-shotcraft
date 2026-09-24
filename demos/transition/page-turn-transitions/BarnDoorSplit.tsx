@@ -7,7 +7,7 @@
 // 30–50 两半各 translateX ∓980（Easing.in cubic 加速滑出）→
 // 30–55 底层 B scale 1.06→1.0（out cubic）→ 55–130 全静止（75f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 export const BarnDoorSplit: React.FC = () => {

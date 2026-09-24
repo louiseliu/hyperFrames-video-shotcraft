@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // 生成静态索引与本机清单（全部不进库，npm install 的 prepare 钩子与 dev/build/studio 前置钩子都会跑）：
-//   src/cards/demo-index.ts   demos/ 镜头卡 demo 组件静态索引（webpack/Vite 双兼容——Remotion CLI 不认 import.meta.glob）
+//   src/cards/demo-index.ts   demos/ 镜头卡 demo 组件静态索引（webpack/Vite 双兼容——HyperFrames CLI 不认 import.meta.glob）
 //   src/cards/demoMeta.ts     demo → 中文名 / 画廊分类 / 预览视频（由 gallery/api/library.json + translations.js 生成）
 //   src/mediaManifest.ts      public/ 素材清单（成片工程 public/ 经符号链接接入）+ 仓库音效库 / BGM 库
 //   src/projMeta.ts           已链接成片工程的元数据

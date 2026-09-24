@@ -6,7 +6,7 @@
 // （stiffness 110→150、DUR 26→20）。收尾 f126 后真静止 44f。
 // 帧确定性：伪随机全用 sin 散列，无 Math.random / Date.now。
 import React from 'react';
-import { useCurrentFrame, spring, interpolate } from 'remotion';
+import { useCurrentFrame, spring, interpolate } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

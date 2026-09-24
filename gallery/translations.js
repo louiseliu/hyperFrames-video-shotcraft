@@ -78,8 +78,8 @@ window.GALLERY_I18N = {
     },
     en: {
       title: 'Shot Recipes & Motion Samples',
-      documentTitle: 'video-shotcraft — AI Video Skill for Claude Code & Codex | Remotion Shot Library',
-      intro: 'video-shotcraft is an AI agent skill for Claude Code and Codex that makes cinematic product promo videos with Remotion. Browse production shot recipes and switch between their motion samples.',
+      documentTitle: 'video-shotcraft — AI Video Skill for Claude Code & Codex | HyperFrames Shot Library',
+      intro: 'video-shotcraft is an AI agent skill for Claude Code and Codex that makes cinematic product promo videos with HyperFrames. Browse production shot recipes and switch between their motion samples.',
       skip: 'Skip to shot library',
       cards: 'Cards',
       styles: 'Styles',

@@ -9,7 +9,7 @@
 // 锁定帧 i*3+45 起 8f 加深脉冲（最后一字 69–77）→ 80–104 整词呼吸 →
 // 104–150 全静止（46f，无逐帧滤镜）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const h = (n: number) => {

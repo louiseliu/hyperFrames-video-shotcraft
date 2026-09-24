@@ -1,5 +1,5 @@
 // origin: template/src/aifl/FlashCut.tsx（模板片同源组件）
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'hyperframes';
 
 /** Bright-field cut: a warm-white bloom that flashes over the hard cut. */
 export const FlashCut: React.FC<{ duration?: number }> = ({ duration = 10 }) => {

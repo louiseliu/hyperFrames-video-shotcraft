@@ -1,4 +1,4 @@
-// flying-words — Flying Words 词语纵深隧道（motion-lab 定稿转原生 Remotion）
+// flying-words — Flying Words 词语纵深隧道（motion-lab 定稿转原生 HyperFrames）
 // 占位词语在远处纵深生成，沿 z 轴向相机飞来擦身而过，透明度按 [0,1,0.5,0.2,0]
 // 生命周期曲线变化，形成 3D 词语隧道；相机不动、元素动，spawn 完全确定性、首尾无缝。
 // 词表可整体替换为项目关键词。设计坐标 480×270（DesignStage 等比放大）。

@@ -5,7 +5,7 @@
 // ③保留项不动：错峰 3 帧起点、界面位置顺序（行优先左→右）、重力加速
 // （距离∝t²）、贴落完成后页面立起转正收尾。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 const FONT = 'Helvetica, Arial, sans-serif';
 const INK = '#3c3c42';

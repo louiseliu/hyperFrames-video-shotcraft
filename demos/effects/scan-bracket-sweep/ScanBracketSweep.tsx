@@ -1,4 +1,4 @@
-// scan-bracket-sweep — Scan Bracket 取景括号扫描光带（motion-lab 定稿转原生 Remotion）
+// scan-bracket-sweep — Scan Bracket 取景括号扫描光带（motion-lab 定稿转原生 HyperFrames）
 // 骨架文档弹到画面中央，四角落下黑色 L 形取景括号（向内位移 8px），随后一条 2.5px
 // 黑实线带着 80px 深灰→透明拖尾在文档上往复扫 5 趟，两端慢中间快，尾迹方向始终朝
 // 运动来向，文档本身完全静止。设计坐标 480×270（DesignStage 等比放大）。

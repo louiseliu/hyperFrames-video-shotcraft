@@ -1,4 +1,4 @@
-// dashboard-glow-highlight-pill — Glow Highlight Pill 金色胶囊指引（motion-lab 定稿转原生 Remotion）
+// dashboard-glow-highlight-pill — Glow Highlight Pill 金色胶囊指引（motion-lab 定稿转原生 HyperFrames）
 // 金字 "Ready." 悬于黑场，数据仪表盘（订单簿+K线+买卖面板，内容为占位数据）自底带透视升入后
 // 保持缓慢 rotateX/rotateY 3D 漂移；金色光斑从右侧面板巡游至底部中央拉成胶囊，背景虚化压暗
 // （仪表盘继续漂），辉光描边从底边逆时针描出 Focus Mode 弹窗轮廓，内容淡入后描边收敛为金色细框。

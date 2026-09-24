@@ -2,7 +2,7 @@
 // 开场俯视 dashboard 顶部（rotateX 平躺、只露顶栏），~43f 机位抬头回正，
 // 内容一排排涌入视野。out-cubic + 末端轻微过冲回正，落定真静止 ≥35f。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 const HOLD = 25; // 俯角定格

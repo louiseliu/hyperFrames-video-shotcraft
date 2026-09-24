@@ -6,7 +6,7 @@
 // 动↔静对比即手法本体。所有切换零过渡（条件挂载，无 crossfade）。
 // 收尾 62–105f 轻推收完，105–150f 真静止 45f ≥ 40f。帧确定，无随机。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CLAMP = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;

@@ -7,7 +7,7 @@
 // 190px 延长线射出；crane 运镜 perspective rotateX(4°→0) + scale 落下后缓推；
 // 发布会三件套：开场光带扫过、字标背后舞台光、20 颗确定性金尘上飘；背景页 blur 化
 // 景深；落定后 sign-off hold 30f。outro 不加解说 caption 保持干净。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

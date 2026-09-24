@@ -1,5 +1,5 @@
 import { useVisualTheme, themePaint, themeAsset } from '../themes/visual-theme';
-import { AbsoluteFill, Audio, Sequence } from 'remotion';
+import { AbsoluteFill, Audio, Sequence } from 'hyperframes';
 import { SceneOpen } from './live/SceneOpen';
 import { SceneFlyIn } from './live/SceneFlyIn';
 import { SceneDetail } from './live/SceneDetail';

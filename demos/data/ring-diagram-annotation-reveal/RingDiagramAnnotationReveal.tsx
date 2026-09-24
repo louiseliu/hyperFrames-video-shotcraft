@@ -1,7 +1,7 @@
 // ring-diagram-annotation-reveal — 全屏主体收束成同心环图解，再左移让出注释栏。
 // 保留原 motion-blocking 的圆窗收缩、分段外环、向心箭头、旋转、错峰标签与收尾 hold。
 import React from 'react';
-import { Easing, interpolate, useCurrentFrame } from 'remotion';
+import { Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { DesignStage } from '../../_fixtures/Motion';
 
 export const RING_DIAGRAM_ANNOTATION_REVEAL_DURATION = 190;

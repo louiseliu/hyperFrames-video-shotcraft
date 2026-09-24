@@ -1,7 +1,7 @@
 // crash-impact 急推撞停——同 crash-zoom 的急推，到位瞬间不回弹而是
 // 撞停震屏：高频抖 + 指数衰减 6f，然后真静止。对比点：重量感 vs 弹性感。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import layout from '../../_textures/live-layout.json';
 
 export const CRASHIMPACT_DUR = 120;

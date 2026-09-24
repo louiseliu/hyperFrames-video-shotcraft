@@ -3,7 +3,7 @@
 // 多正弦叠加做有机漂移；中央深色描边卡的边缘辉光随最近光斑距离呼吸。
 // 0–20f 光斑淡入，中段正常速度漂移，90–120f 缓动收敛到静止，末 30f 真静止。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 // 库内标准伪随机（帧确定）
 const h = (n: number) => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // drone-dive-landing：上帝视角俯视整页平躺的 dashboard（近垂直俯角、缩小居中），

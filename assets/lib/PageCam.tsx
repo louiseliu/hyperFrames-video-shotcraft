@@ -1,5 +1,5 @@
 // origin: template/src/aifl/live/PageCam.tsx（模板片同源组件）
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 
 export type CamKey = {
   frame: number;

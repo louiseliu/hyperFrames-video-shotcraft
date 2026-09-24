@@ -4,7 +4,7 @@
 // 第二条拍下同帧卡片停晃、投影瞬间变薄、整卡 2px 下沉——"按死"的一瞬是主角。
 // 帧确定性：全部由 frame 派生，无随机。收尾 f86 后真静止 54f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const CARD_W = 560;

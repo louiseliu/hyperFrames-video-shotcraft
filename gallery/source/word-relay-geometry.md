@@ -54,7 +54,7 @@ name: word-relay-geometry
   时段是等分的，词长差大时几何（圆半径、间距）都是写死的坐标，
   长词会顶出虚线圆或压到相扣圆上——换词表要同步调 `CIRC_R` 与 x 偏移
 - `-webkit-text-stroke` 是前缀属性：Chromium/WebKit 才有，Firefox 下描边层
-  直接是透明（词消失）。Remotion 渲染走 Chromium 无碍，但预览环境要注意
+  直接是透明（词消失）。HyperFrames 渲染走 Chromium 无碍，但预览环境要注意
 - SVG trim 用的 `pathLength=1` 归一化在部分老版本浏览器上对 `<circle>`
   支持不全，退化表现是圆一次性全画出（丢生长感）——移植时先在目标
   渲染器上验一帧

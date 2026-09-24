@@ -13,7 +13,7 @@
 // 运动结构对照截图：S1 近景正视可读 → S2 翻转中+拉远+泛光起 →
 // S3/S4 侧棱白热爆发+图标浮现 → S5/S6 新页转正、光管连入 → S7/S8 稳定输送。
 import React, { useId } from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

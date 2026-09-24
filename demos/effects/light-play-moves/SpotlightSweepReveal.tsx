@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 // spotlight-sweep-reveal: 聚光灯摆动扫字
 // 暗场 #2a2a28，标题两行常驻 opacity 0.07；亮版同文本用 radial-gradient mask，

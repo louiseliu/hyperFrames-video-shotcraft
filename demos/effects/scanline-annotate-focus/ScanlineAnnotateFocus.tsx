@@ -1,4 +1,4 @@
-// scanline-annotate-focus — Scanline Annotate 扫描分析取景标注（motion-lab 定稿转原生 Remotion）
+// scanline-annotate-focus — Scanline Annotate 扫描分析取景标注（motion-lab 定稿转原生 HyperFrames）
 // 一条亮扫描线自上而下掠过页面，扫过之处按先后顺序弹出相机取景框：四角括号从约 1.75 倍
 // 大小快速收拢对准目标区块（对准瞬间轻微过冲再回稳），随后旁侧打出等宽小字标注。
 // 顶部状态行同步计数 00/06→06/06，扫完切换 ANALYSIS · COMPLETE。
@@ -36,7 +36,7 @@ const TARGETS: Target[] = (() => {
 
 // 取景框四角括号：每角朝外的两条边框
 // 注意 boxSizing content-box：原采集页 9×9 内容 + 1.5px 外扩边框（外框 10.5），
-// Remotion 模板全局 border-box 会把边框内收导致括号臂变短、右/下角内移。
+// HyperFrames 模板全局 border-box 会把边框内收导致括号臂变短、右/下角内移。
 const C_BORDER = '1.5px solid #f2f3f5';
 const CORNERS: React.CSSProperties[] = [
   { left: 0, top: 0, borderTop: C_BORDER, borderLeft: C_BORDER },

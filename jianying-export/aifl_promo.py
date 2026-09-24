@@ -2,7 +2,7 @@
 
 时间线三张表逐条抄自 template/src/aifl/Main.tsx（AIFL_SHOTS / CAPTIONS /
 SFX）。底片是 plate 渲染（无字幕无 SFX）：
-  npx remotion render src/index.ts AiflPromo out/aifl-plate.mp4 --props='{"plate":true}'
+  npx hyperframes render src/index.ts AiflPromo out/aifl-plate.mp4 --props='{"plate":true}'
 
 用法：
   .venv/bin/python aifl_promo.py           # 只建到 staging/
@@ -24,7 +24,7 @@ TOTAL_F = 1085
 # click 2032 / impact 2066 samples，elst 未声明裁剪垫头；见
 # references/sound-design.md §4.6），不是 <Audio>/Sequence.from 的行为。
 # Main.tsx 的 SFX 表未做补偿、成片按此验收，剪映摆位 = from + 1 帧最接近
-# 已验收成片的音画关系。换 Remotion 版本/codec/采样率/容器须重测。
+# 已验收成片的音画关系。换 HyperFrames 版本/codec/采样率/容器须重测。
 AUDIO_LAG_F = 1
 
 NAME = "InkPress-Demo"

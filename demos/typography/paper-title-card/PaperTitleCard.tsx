@@ -5,7 +5,7 @@
 // 参数化：words/sub/subDigits 可换成目标产品文案；subDigits 走 DigitRoll
 // 数字滚动（必须在本卡淡出前落定）。渲染本 demo 前把 text 复制进项目即可。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 export const PAPER_TITLE_CARD_DURATION = 55; // ≈1.8s @30fps
 

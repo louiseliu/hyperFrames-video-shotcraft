@@ -1,4 +1,4 @@
-// outline-word-fill — Outline→Solid Fill 空心字辉光填充（motion-lab 定稿转原生 Remotion）
+// outline-word-fill — Outline→Solid Fill 空心字辉光填充（motion-lab 定稿转原生 HyperFrames）
 // 空心 "Faster"（细灰描边、中等字重）从约 3.2 倍巨大尺寸急缓收缩落位居中；
 // 背后巨大虚线圆随后从画外持续收缩到字周围并缓慢自转，两侧水平虚线从画框边缘向内伸向圆；
 // 描边先微微增亮，随即实心白色一帧内瞬间点亮（无慢扫），带一闪即逝的微辉光后定格纯白。

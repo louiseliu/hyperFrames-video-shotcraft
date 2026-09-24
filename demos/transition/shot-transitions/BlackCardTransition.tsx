@@ -7,7 +7,7 @@
 // 后镜 = wbr-full 周报页从黑场淡入 8f 交棒。
 // 节拍：0–8 A 淡出 → 8–20 黑场静 → 20–47 字卡逐词压印 → 47–62 完整标题 hold →
 // 62–70 字卡退场 → 70–78 淡入 B 景 → 78–120 B hold。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 
 export const BLACKCARD_DUR = 120;
 

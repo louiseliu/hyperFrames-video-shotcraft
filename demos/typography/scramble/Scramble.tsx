@@ -1,4 +1,4 @@
-// scramble — Scramble Decode 乱码锁定（motion-lab 定稿转原生 Remotion）
+// scramble — Scramble Decode 乱码锁定（motion-lab 定稿转原生 HyperFrames）
 // 每个字符先高速随机跳字（种子驱动、可复现），再从左到右逐个"锁定"为真字符，
 // 锁定瞬间闪一下高亮辉光。与 typewriter 的顺序打字完全不同的质感——黑客/解密感。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

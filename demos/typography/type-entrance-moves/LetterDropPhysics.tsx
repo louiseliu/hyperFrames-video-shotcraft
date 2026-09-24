@@ -6,7 +6,7 @@
 // ③ 帧 110 一拍：6f ease-out 全体齐整回正（rotate→0、偏移→0、scale 1.06→1），
 //    帧 116–150 真静止（≥25f）收尾。
 import React from 'react';
-import { useCurrentFrame, Easing } from 'remotion';
+import { useCurrentFrame, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 // 确定性伪随机

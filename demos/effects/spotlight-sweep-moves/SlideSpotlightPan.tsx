@@ -3,7 +3,7 @@
 // 聚光头匀速右移，照到处显影、离开处沉暗；面板匀速左滑（相机右摇感）。
 // 用户裁决："紫色的光线是贴着ui界面泛光的，聚光的移动是匀速的"。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'hyperframes';
 
 const ink = '#3c3c3a';
 const mid = '#98989a';

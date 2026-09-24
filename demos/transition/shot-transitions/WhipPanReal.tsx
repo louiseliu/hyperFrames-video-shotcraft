@@ -2,8 +2,8 @@
 // 世界：projects-full 顶部 section（A 景）与同页底部 section（B 景）横向并排
 // ——模拟"功能段之间的区块交棒"，相机 8f 甩 2880px（峰值 ~540px/f），
 // blur 只包甩动段。节拍：0–35 A hold → 35–43 甩（糊）→ 43–120 B hold（真静止）。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 
 export const WHIPPAN_DUR = 120;
 

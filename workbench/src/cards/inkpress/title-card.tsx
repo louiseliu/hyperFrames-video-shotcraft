@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "hyperframes";
 import type { CardDef } from "../types";
 import { DigitRoll } from "./digit-roll";
 

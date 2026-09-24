@@ -7,7 +7,7 @@
 // FakeDashboard variant="A" 整齐静止全景，键帽已缩成小元素稳稳嵌在
 // 顶栏角落（引信呼应），死寂 82f（>50f）。总 140f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const T = {

@@ -7,7 +7,7 @@
 // 逐个落入侧栏轨道（轻弹跳 + 空中影）；相机从标题特写拉到全页后只做微呼吸。
 // 相机：标题特写 zoom 1.25 → 64f 全页 zoom 0.997 → 微呼吸。全部块 8f wipe，
 // 第 g 对 cue = 6 + g·3.5，最后一对 ~49f 完成（赶在 64f 全页 settle 前）。
-import { interpolate, useCurrentFrame, Easing } from 'remotion';
+import { interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D, CamKey2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

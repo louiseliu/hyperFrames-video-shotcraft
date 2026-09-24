@@ -1,4 +1,4 @@
-// terminal-3d — Terminal 3D 命令执行叙事流（motion-lab 定稿转原生 Remotion）
+// terminal-3d — Terminal 3D 命令执行叙事流（motion-lab 定稿转原生 HyperFrames）
 // 多个通用桌面风格终端窗散布 3D 空间不同位置与角度，相机在窗间飞行（途中略微
 // 拉远）；每到一窗，窗内打字机敲出命令并逐行吐出结果，形成命令执行叙事流。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

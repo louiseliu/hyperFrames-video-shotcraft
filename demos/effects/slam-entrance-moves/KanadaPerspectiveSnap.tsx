@@ -7,7 +7,7 @@
 // 关键帧：0–18 透视甩入（out cubic）→ 14–18 rotateY 过冲至 +5° →
 // 18–22 回弹归 0 + 震屏衰减 + 阴影收正 → 22–130 全静止（≥45f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 // 确定性伪随机（震屏抖动用）

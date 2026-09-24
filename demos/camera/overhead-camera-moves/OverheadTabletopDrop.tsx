@@ -6,7 +6,7 @@
 // 卡片 996×560（spec 900→996，使 FakeDashboard 0.5185 缩放严丝合缝、
 // 落版 16:9 精确对位），间距 140px。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { FakeDashboard, Card, G } from '../../_fixtures/Fixtures';
 
 const CARD_W = 996;

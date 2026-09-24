@@ -33,7 +33,7 @@ B 是运动中的捕获：四个 L 形角标从画外冲入、超调回弹、"�
 ## 已知坑
 - demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，
   首次实战须以真实素材回验
-- Remotion 无 `Easing.quart`——用 `Easing.poly(4)`（demo 实测报
+- HyperFrames 无 `Easing.quart`——用 `Easing.poly(4)`（demo 实测报
   "easing is not a function" 判例）
 - B 一支片 ≤2 次：连用读作军事模板；两次锁定目标必须不同
 - A 与 glow-flyline 同属暗场词汇，相邻段落别背靠背堆光效（Q4 同源）

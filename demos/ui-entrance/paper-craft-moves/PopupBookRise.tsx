@@ -5,7 +5,7 @@
 // 卡片用独立网格复刻 dashboard A 区布局（Fixtures 内嵌卡无法单独驱动）。
 // 收尾 f108 后真静止 ≥52f。帧确定性：全由 frame 派生。
 import React from 'react';
-import { useCurrentFrame, interpolate, spring, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, spring, Easing } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 const FPS = 30;

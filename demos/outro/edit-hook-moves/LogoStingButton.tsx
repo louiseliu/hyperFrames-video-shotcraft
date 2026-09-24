@@ -2,7 +2,7 @@
 // 上一镜收黑 → 黑场 → LOGO 入场定住（观众以为结束）→ 12f UI 特写彩蛋硬切 →
 // 硬切回黑底 LOGO 定格。节奏是全部：彩蛋段短促像眨眼。收尾真静止 ≥40f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 // 时间轴（30fps，共 142f）

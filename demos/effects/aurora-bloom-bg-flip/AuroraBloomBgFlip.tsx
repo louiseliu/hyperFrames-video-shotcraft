@@ -1,4 +1,4 @@
-// aurora-bloom-bg-flip — Aurora Bloom 极光升腾底色反转（motion-lab 定稿转原生 Remotion）
+// aurora-bloom-bg-flip — Aurora Bloom 极光升腾底色反转（motion-lab 定稿转原生 HyperFrames）
 // 浅灰底从底部升起紫橙柔焦 blob，随后整个底色 0.35s 内压暗到近黑、blob 压成余晖；
 // 文案同步 blur-out → 换句 blur-in（强调色→白收色），换句间留空档不 cross-fade。
 // 文案为中性占位；blob/文字的紫橙是这个效果本体的光色（DEEPP 常量），落地时可整组换成项目色。

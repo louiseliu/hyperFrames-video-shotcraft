@@ -1,0 +1,42 @@
+<!-- flying-words -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="FlyingWords"] { background: radial-gradient(60% 60% at 50% 50%,#131a2c,#05060b 75%); overflow: hidden; }
+    .design-stage { position:absolute;left:0;top:0;width:480px;height:270px;overflow:hidden;transform:scale(4);transform-origin:top left; }
+    #scene { position:absolute;inset:0;perspective:1100px;overflow:hidden; }
+    #origin { position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d; }
+    #glow { position:absolute;left:50%;top:50%;width:220px;height:220px;margin:-110px;border-radius:50%;background:radial-gradient(circle,rgba(120,150,255,.22),transparent 68%);filter:blur(6px); }
+  </style>
+</head>
+<body>
+  <div data-composition-id="FlyingWords" data-start="0" data-duration="6" data-fps="30" data-width="1920" data-height="1080">
+    <div class="design-stage">
+      <div id="scene"><div id="origin"></div><div id="glow"></div></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const rand=s=>{const x=Math.sin(s*127.1+311.7)*43758.5453;return x-Math.floor(x);};
+    const lerp=(t,a,b)=>a+(b-a)*t;
+    const WORDS=['Motion','Layout','Camera','Stagger','Easing','Beat','Keyframe','Blur','Scale','Transform','Rotate','Parallax','Opacity','Depth','Tween','Loop','Spring','Delay','Fade','Composite','Grid','Pivot'];
+    const N=WORDS.length; const OP=[0,1,0.5,0.2,0], OT=[0,0.25,0.6,0.85,1];
+    const curve=u=>{for(let k=0;k<4;k++)if(u<=OT[k+1]){const p=(u-OT[k])/(OT[k+1]-OT[k]);return OP[k]+(OP[k+1]-OP[k])*p;}return 0;};
+    const ITEMS=WORDS.map((w,i)=>{const hue=200+rand(i*11)*130,a=i*2.39996+rand(i*7+1)*0.8,r=82+rand(i*13+2)*165;
+      return{text:w,fontSize:20+rand(i+3)*16,color:`hsl(${hue},${58+rand(i+5)*30}%,${70+rand(i+9)*18}%)`,textShadow:`0 0 16px hsla(${hue},90%,66%,.45)`,x:Math.cos(a)*r,y:Math.sin(a)*r*0.6,rz:(rand(i+21)-0.5)*14,ph:i/N};});
+    const origin=document.getElementById('origin'), glow=document.getElementById('glow');
+    const tl=gsap.timeline({paused:true}); const state={t:0}; const CYCLES=2;
+    tl.to(state,{t:1,duration:6,ease:'none',onUpdate:()=>{
+      const t=state.t;
+      origin.innerHTML=ITEMS.map((it,i)=>{const u=(t*CYCLES+it.ph)%1,z=lerp(u,-1750,800),drift=0.5+u*1.35;
+        return `<div style="position:absolute;left:0;top:0;transform-origin:50% 50%;white-space:nowrap;font-weight:800;font-size:${it.fontSize}px;line-height:1;font-family:-apple-system,'Segoe UI',sans-serif;letter-spacing:0.5px;color:${it.color};text-shadow:${it.textShadow};margin:-14px 0 0 -60px;transform:translate3d(${it.x*drift}px,${it.y*drift}px,${z}px) rotateZ(${it.rz}deg);opacity:${curve(u)};filter:${u>0.86?`blur(${(u-0.86)*26}px)`:'none'}">${it.text}</div>`;}).join('');
+      glow.style.opacity=0.75+Math.sin(t*Math.PI*4)*0.12;
+    }},0);
+    window.__timelines['FlyingWords']=tl;
+  </script>
+</body>
+</html>

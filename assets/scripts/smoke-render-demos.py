@@ -10,8 +10,8 @@
     python3 assets/scripts/smoke-render-demos.py [--subset a,b,c] [--list]
 
 前置条件：
-    - template/ 已 `npm install`（remotion 4.0.484）
-    - demos/ 用到的 @remotion/motion-blur 已装到 template（CI 里临时装）
+    - template/ 已 `npm install`（hyperframes 4.0.484）
+    - demos/ 用到的 @hyperframes/motion-blur 已装到 template（CI 里临时装）
     - 需要纹理的 demo：demos/_textures/ 的文件已复制到
       template/public/textures/live/（脚本会自动复制缺失的）
     - 需要素材 mp4 的 demo（如 clipcard-looping）：跳过并报告，不失败
@@ -59,7 +59,7 @@ def find_demos():
 
 def write_smoke_root(demos):
     """生成 template/src/smoke-root.tsx 注册所有 demo。"""
-    lines = ["import { Composition, registerRoot } from 'remotion';"]
+    lines = ["import { Composition, registerRoot } from 'hyperframes';"]
     regs = []
     for f, durname, stem in demos:
         rel = os.path.relpath(f, TEMPLATE_SRC).replace('.tsx', '')
@@ -96,7 +96,7 @@ def render_one(stem, out_dir):
     """渲染单个 demo 首帧, 返回 (ok, 输出路径或错误信息)。"""
     out = out_dir / f'{stem}.png'
     r = subprocess.run(
-        ['npx', 'remotion', 'still', 'src/smoke-root.tsx', stem,
+        ['npx', 'hyperframes', 'still', 'src/smoke-root.tsx', stem,
          '--frame=0', str(out), '--log=error'],
         cwd=TEMPLATE,
         capture_output=True,

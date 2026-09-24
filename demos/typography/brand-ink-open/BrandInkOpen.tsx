@@ -5,7 +5,7 @@
 // blur→0（入场三件套定式），字底强调色 glint 短划闪过；kicker mono 打字机
 // 逐字符 + 强调色块光标周期闪；46–76f 整整 1s 静止 hold；退场 7f 上浮+缩+淡。
 // 品牌名/副标/强调色可换成目标品牌。
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 export const BRAND_INK_OPEN_DURATION = 104;
 

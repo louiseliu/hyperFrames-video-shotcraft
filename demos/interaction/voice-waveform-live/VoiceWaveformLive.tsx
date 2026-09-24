@@ -3,7 +3,7 @@
 // 说话时中部高耸、停顿缩成点线，波形从右往左滚动；右端提交钮。
 // 演：说(0.5–1.9s) → 停(1.9–2.7s) → 说(2.7–4.1s) → 提交(4.1–5s)。
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

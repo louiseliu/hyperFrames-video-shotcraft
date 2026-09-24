@@ -4,7 +4,7 @@
 // 3px+ ink 描边脉冲 + 加深脉冲(白底禁提亮)。随后第二条线接力打到上中卡。
 // 收尾真静止：全部动画在 f86 前结束，之后所有元素冻结。
 import React, { useId } from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 type Pt = { x: number; y: number };

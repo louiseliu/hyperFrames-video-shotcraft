@@ -2,7 +2,7 @@
 // 源：notion-ai 4.5–8.5s。旧 pill 上飞淡出、新 pill 从下带运动模糊滑入，
 // 连换 6 次后 pill 消失、句子落成 "One AI tool to do it all." 收束。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const FONT = 'Helvetica, Arial, sans-serif';

@@ -2,7 +2,7 @@
 // 满屏灰阶"编辑器"里光标点击高亮 Publish 按钮 → UI 层层错峰蒸发退场
 // （每层 fade + 轻微位移，从外围到中心）→ 黑场只剩按钮 → 按钮淡出交棒字标。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 const CLICK = 34; // 点击时刻

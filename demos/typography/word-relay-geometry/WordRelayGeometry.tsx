@@ -1,4 +1,4 @@
-// word-relay-geometry — Word Relay Geometry 利益词几何接力（motion-lab 定稿转原生 Remotion）
+// word-relay-geometry — Word Relay Geometry 利益词几何接力（motion-lab 定稿转原生 HyperFrames）
 // 三个利益词接力：Faster（虚线大圆）→ Better（三实线圆相扣）→ Stronger（金属 sheen
 // 从左扫到右变纯白）。旧词与几何淡出缩小，新词描边→填充进场，圆路径带 trim 生长感；
 // 背景漂浮微尘粒子。设计坐标 480×270（DesignStage 等比放大），参数以此坐标系标定。

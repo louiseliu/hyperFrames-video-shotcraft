@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame } from "hyperframes";
 import type { CardDef } from "../types";
 
 // 暖白闪转场 —— 参数化版（源出 template/src/aifl/FlashCut.tsx）

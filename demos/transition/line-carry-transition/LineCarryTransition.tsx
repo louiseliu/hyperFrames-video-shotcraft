@@ -6,7 +6,7 @@
 // 112–124f 框闭合后 B 卡内容淡入 12f。124–160f 真静止 36f ≥ 35f。
 // 帧确定，无随机；笔头墨点 118f 起条件卸载（摘罩判例）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 // ---- 世界几何（一条折线：进度条 + 横线 + 直角 + 矩形框）----

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, Card, G } from '../../_fixtures/Fixtures';
 
 // shared-element-morph〔转场〕：全屏特写面板收缩、位移、长出圆角，

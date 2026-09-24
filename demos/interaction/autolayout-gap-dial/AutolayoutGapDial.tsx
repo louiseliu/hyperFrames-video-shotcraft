@@ -3,7 +3,7 @@
 // 链接块被参数实时推开（flex gap 插值），标注线跟随。
 // demo 放大做：间距从紧(16)拉到松(64)，再弹簧回弹归位。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const BLOCK_WIDTHS = [230, 190, 265, 210, 245];

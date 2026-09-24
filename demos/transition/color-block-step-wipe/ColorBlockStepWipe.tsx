@@ -2,7 +2,7 @@
 // 源：notion-ai 1.5–3.5s（蓝块中央阶跃生长）+ 26–27s（红块右下角斜向吃屏，携带页面卡）
 // 核心语法：无缓动、逐帧硬跳的块状生长，像素游戏手感。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 const BLUE = '#2383e2';

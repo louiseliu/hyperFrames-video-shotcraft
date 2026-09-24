@@ -5,7 +5,7 @@
 // 帧 20–120 scale 3.2→1 + 对准点 (520,958)→(960,540)，Easing.out(quad) 减速升起；
 // 视野上缘每越过一行顶边，该行深色脉冲一拍（4f 起 18f 落）读作"涌入"；帧 120–150 满幅真静止。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const HOLD = 20; // 开场特写 hold

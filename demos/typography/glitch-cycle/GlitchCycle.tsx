@@ -1,4 +1,4 @@
-// glitch-cycle — Glitch Cycle 乱码轮播（motion-lab 定稿转原生 Remotion）
+// glitch-cycle — Glitch Cycle 乱码轮播（motion-lab 定稿转原生 HyperFrames）
 // 同一位置循环轮播状态短语，每条短语头尾乱码、中段偶发轻微抖动
 // （glitch 概率关键帧 [1,0,0,0.1,0,0,1]，最后一条结尾收为 0 保证 t=1 画面干净），
 // 切换瞬间伴随 RGB 分离与位移抖动；底部细进度条随 t 匀速填满。

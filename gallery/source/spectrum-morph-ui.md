@@ -22,7 +22,7 @@ name: spectrum-morph-ui
   条组"，不是条高归零
 - demo 为伪 FFT：|sin(i·0.7+f·0.31)| × 每 4 帧换挡 seed hash 抖动 ×
   低频高/高频矮包络 × ramp 幅度包络，帧确定无随机
-- **实战换真 FFT**：@remotion/media-utils 的 visualizeAudio() 取
+- **实战换真 FFT**：hyperframes media-utils 的 visualizeAudio() 取
   频谱映射条高，伪 FFT 只是灰阶占位的节拍替身
 
 ## 参数表

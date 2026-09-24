@@ -6,7 +6,7 @@
 //    末卡落地帧 78 = 第二次撞击（再震一拍 + 末卡向左歪 3° 给出横向动量）；
 // ③ 帧 78–100 左侧深色侧边栏被横向撞滑进场，Easing.out(cubic) 带过冲回弹；帧 100–150 全体真静止。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const easeInCubic = Easing.in(Easing.cubic);

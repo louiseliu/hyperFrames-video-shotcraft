@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, TitleBlock, G } from '../../_fixtures/Fixtures';
 
 // paparazzi flash 连闪定格：高光时刻三连白闪，每闪硬切同一素材的不同裁切

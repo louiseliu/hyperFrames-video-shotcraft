@@ -10,7 +10,7 @@ import {
   interpolate,
   spring,
   Easing,
-} from 'remotion';
+} from 'hyperframes';
 
 const BG = '#3d1f47'; // 深梅紫
 const CX = 960;

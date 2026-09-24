@@ -1,7 +1,7 @@
 // dolly-zoom 滑动变焦（轮 F）——主体卡（card4-hires）大小锁定屏中，
 // 背景真实卡群 + 整页反向膨胀逼近（scale + blur 渐深），
 // "世界压过来"而主角纹丝不动。伪 dolly-zoom：无需 3D，分层反向补偿。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import layout from '../../_textures/live-layout.json';
 
 export const DOLLYZOOM_DUR = 135;

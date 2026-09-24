@@ -4,7 +4,7 @@
 // （G.ink 色块白字 2f）随即恢复。跳动期字符 G.mid，锁定后 G.ink。
 // 关键帧：0–20f 全员乱跳 → 20–86f 从左到右逐个锁定 → 87–130f 完全静止收尾。
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const TEXT = 'DECODE SPEED';

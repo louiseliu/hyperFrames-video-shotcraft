@@ -4,7 +4,7 @@
 // ② 所有字母同时开始同时完成：去掉 v2 的逐字错峰（PER/jitter），全字符同一帧起笔、
 //    pathLength 归一保证不同笔画长度的字母在同一帧齐收（截图 2/3 的全行并行半截态）。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'hyperframes';
 
 // 78x64 视框内的方正略宽细骨架字形（子笔画顺序=描画顺序）
 const GLYPHS: Record<string, string> = {

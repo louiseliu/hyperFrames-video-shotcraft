@@ -1,5 +1,5 @@
 import { useVisualTheme, themePaint, sceneDefaults } from '../themes/visual-theme';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { DigitRoll } from './DigitRoll';
 
 

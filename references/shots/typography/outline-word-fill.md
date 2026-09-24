@@ -53,7 +53,7 @@ name: outline-word-fill
   一组坐标，字一长就顶穿圆、水平虚线内伸终点也会压到字上——换成
   两个词或中文四字须同步调 `font-size` / `r` / 内伸距离三处
 - `-webkit-text-stroke` 是前缀属性，Chromium/WebKit 才生效；Firefox 下
-  outline 层是全透明（词直到 0.742 才突然出现）。Remotion 走 Chromium 无碍
+  outline 层是全透明（词直到 0.742 才突然出现）。HyperFrames 走 Chromium 无碍
 - 瞬时填充窗 `0.02` 在 75f 片长下不足一帧：这是**故意的**（要的就是硬切），
   但如果把本卡拉长到 150f+，这 0.02 会变成 3 帧的可见渐变——拉长时长
   必须把窗按比例压回去

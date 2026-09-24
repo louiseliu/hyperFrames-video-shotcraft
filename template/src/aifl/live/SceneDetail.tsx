@@ -1,6 +1,6 @@
 import { useVisualTheme, themePaint, themeAsset, sceneDefaults } from '../../themes/visual-theme';
 import React from 'react';
-import { interpolate, useCurrentFrame, Easing } from 'remotion';
+import { interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam, CamKey } from './PageCam';
 import layout from '../live-layout.json';
 

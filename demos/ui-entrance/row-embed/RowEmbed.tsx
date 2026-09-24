@@ -6,7 +6,7 @@
 // 节拍：第 i 行 cue = 12 + i·9，飞行 12f，最后一行 60f 落地、强调色缝 68f 收尾。
 // 飞行体 = 整页截图 backgroundImage 负偏移裁片（Q1：裁片不重绘内容）。
 import React from 'react';
-import { interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D, CamKey2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

@@ -2,8 +2,8 @@
 // 节拍：0–40 全景 hold → 40–46 急推 6f（ease-in，峰值放大 2.6x）→
 // 46–51 过冲回弹（2.6→2.45）→ 51–120 特写 hold 真静止。
 // blur 只包 40–46 急推段（轮 A 规律：极速段 samples 20）。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import layout from '../../_textures/live-layout.json';
 
 export const CRASHZOOM_DUR = 120;

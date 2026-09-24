@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Freeze, Sequence, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Freeze, Sequence, useCurrentFrame } from "hyperframes";
 import type { ProjectData } from "../types";
 import { CARDS } from "../cards/registry";
 import { MANIFEST } from '../cards/projectCards';

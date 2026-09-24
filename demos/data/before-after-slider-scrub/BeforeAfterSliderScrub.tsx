@@ -4,7 +4,7 @@
 // 再慢速回扫到 40% 停住。杆经过处 after 揭出（clip-path inset 跟随杆 x）。
 // 先快甩后慢扫速度对比是节奏关键。f=110 后全静止（40f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CL = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;

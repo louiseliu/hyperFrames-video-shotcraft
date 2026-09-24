@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // wireframe-draw-on〔入场退场〕：界面先以蓝图细线描画成形（stroke-dashoffset

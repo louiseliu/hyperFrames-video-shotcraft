@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, Card, TitleBlock, G } from '../../_fixtures/Fixtures';
 
 // hit-counter 连招计数：三张功能卡接连砸入槽位，每次命中 = 全局顿帧 2f

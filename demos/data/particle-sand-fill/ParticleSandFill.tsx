@@ -5,7 +5,7 @@
 // 结尾全部粒子条件卸载、只剩实体柱 + 标签，真静止 ≥35f。
 // 帧确定性：sin 散列派生每颗出发帧抖动/起点错高，落地帧由高度差闭式反解。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

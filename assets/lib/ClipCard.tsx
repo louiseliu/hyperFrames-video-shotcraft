@@ -6,7 +6,7 @@ import {
   staticFile,
   useCurrentFrame,
   useVideoConfig,
-} from 'remotion';
+} from 'hyperframes';
 
 // ClipCard — wraps an external video clip (mp4) into a "card hero" that shot
 // recipes designed for DOM/SVG subjects (spotlight-hero-card,

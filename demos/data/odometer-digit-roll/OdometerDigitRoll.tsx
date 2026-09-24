@@ -8,7 +8,7 @@
 // 减速 + 6f 回弹，锁定于 42/49/56/63）→ 63–71 整体加深脉冲（ink→#000→ink，
 // 附 1.035 微缩放加码）→ 66–84 下方标签条淡入 → 84–150 全静止（66f ≥45f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, interpolateColors, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, interpolateColors, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const ROW = 210; // 数位行高（overflow 盒高）

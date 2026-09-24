@@ -3,7 +3,7 @@
 // （绿→紫→红），整场底色同步换（深棕→深紫→深藏青）。
 // 一拍之内"行、色、场"三通道同步跳变，~0.6s 一拍。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'hyperframes';
 
 const FONT = 'Helvetica, Arial, sans-serif';
 const ROW_H = 150;

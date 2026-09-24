@@ -23,7 +23,7 @@
 </div>
 
 **video-shotcraft** 是一个把 Claude Code / Codex 变成动效工作室的 AI agent skill：
-把你的产品交给它，它会用 [Remotion](https://www.remotion.dev/) 完成分镜、动画
+把你的产品交给它，它会用 [HyperFrames](https://hyperframes.heygen.com/) 完成分镜、动画
 和声音设计，产出一支电影感的宣传片 / 营销视频 / 发布视频 / 功能演示——
 真实页面截图、2.5D 运镜、节奏卡点和电影级 SFX 全部包含。
 
@@ -39,7 +39,7 @@
 > 是本系列的口播视频版：给它一份口播稿 + 一条成品配音，所有动效节拍都钉在
 > 人声上——本地对齐字级时间戳（逐字中位误差 20–40 ms）、**78 张动效配方卡**、
 > 七层反 PPT 镜头系统（连续相机曲线、视差层、idle/yield 生命周期、呼吸环境层）、
-> 硬切字幕、三道 QA 闸门。同一套配方卡 + Remotion 工作流，按口播内容重新调校。
+> 硬切字幕、三道 QA 闸门。同一套配方卡 + HyperFrames 工作流，按口播内容重新调校。
 >
 > 🎙️ [**项目主页 »**](https://github.com/Vincentwei1021/video-talkcraft) ·
 > 🖼️ [**在线浏览 78 条口播动效样片 »**](https://vincentwei1021.github.io/video-talkcraft/)
@@ -49,7 +49,7 @@
 > 交付后 skill 会主动打开一个剪映式的浏览器工作台（`node workbench/scripts/open.mjs <工程>`）：
 > 片子按原始镜头拆成镜头 / 转场 / 字幕 / 音效多轨；选中任意镜头，字标、文案、字号、颜色
 > 在属性面板里逐项改，预览即时跟随；镜头可挪、可裁、可变速；**216 张 demo 动效**从素材库
-> 直接拖上轨；改完用 Remotion 一键导出。预览与渲染逐帧一致（像素级校验）。
+> 直接拖上轨；改完用 HyperFrames 一键导出。预览与渲染逐帧一致（像素级校验）。
 >
 > ![动效工作台](workbench/docs/overview.png)
 >
@@ -58,7 +58,7 @@
 
 - 🌟 **2026-08 · 新增 48 张镜头配方卡**——卡库从 104 张扩充到
   **152 卡 / 209 条样片**。由 209 个候选动效经八轮与参考片逐帧比对评审收敛
-  而来，按既有类别并入 Gallery：完整配方卡 + 原生 Remotion 组件
+  而来，按既有类别并入 Gallery：完整配方卡 + 原生 HyperFrames 组件
   （`demos/<类别>/<卡名>/<组件>.tsx`，归一化进度 t 驱动、逐帧确定性）+
   动态样片。全部模板化：中性占位文案 + 单一可替换 `ACCENT` 强调色变量。
 - 🎞️ **2026-08 · 剪映工程导出**——成片交付后可导出为剪映工程草稿：底片按
@@ -139,12 +139,12 @@ agent 会替换成目标产品的截图、文案和品牌信息，复现同等�
 在无显示器的 Linux 服务器上渲染（实测环境：2 核、Node 22）会遇到三个坑，
 都可以一个参数解决：
 
-1. **并发上限** —— 低核机器上 `remotion still/render` 会报
+1. **并发上限** —— 低核机器上 `hyperframes inspect --at/render` 会报
    "Maximum for --concurrency is 2"。解决：加 `--concurrency=1`。
 2. **旧版 Headless 被移除** —— 新版 Chrome/Chromium 已删除旧 headless 模式，
-   让 Remotion 指向系统 chromium 会启动失败。解决：改用
+   让 HyperFrames 指向系统 chromium 会启动失败。解决：改用
    chrome-headless-shell 二进制，而不是完整版 Chrome。
-3. **CDN 被墙** —— 如果 remotion.media 无法访问，headless-shell 的自动下载
+3. **CDN 被墙** —— 如果 hyperframes.heygen.com 无法访问，headless-shell 的自动下载
    会失败。解决：用 `--browser-executable=<本地 chrome-headless-shell 路径>`
    指定本地二进制。
 
@@ -156,12 +156,12 @@ agent 会替换成目标产品的截图、文案和品牌信息，复现同等�
 | --- | --- |
 | 157 张镜头配方卡 | 记录用途、能量、建议时长、参数、实现要点与已知坑 |
 | 214 条动态样片 | 覆盖 214 个样式，可在在线 Gallery 中直接预览、搜索和筛选 |
-| Remotion 参考实现 | 每张卡对应经过调校的 TSX demo，包含实际缓动和时序参数 |
+| HyperFrames 参考实现 | 每张卡对应经过调校的 TSX demo，包含实际缓动和时序参数 |
 | 完整成片模板 | 36.2 秒、1920×1080、30fps、10 镜头的纸墨琥珀风产品宣传片 |
 | 组件与素材 | 2.5D 页面相机、字幕、闪切、数字滚动、音效和素材采集脚本 |
 | 制作方法论 | 从素材采集、风格定调和分镜，到声音设计、节奏卡点与最终验收 |
 | 剪映工程导出 | 成片可装进剪映继续编辑：镜头变速/字幕/音轨全开放（Mac 11.2 实测） |
-| 动效工作台 | 交付后自动打开的浏览器时间线编辑器：成片拆多轨、改镜头开放属性、变速重排、拖入 216 个 demo 动效、Remotion 导出 |
+| 动效工作台 | 交付后自动打开的浏览器时间线编辑器：成片拆多轨、改镜头开放属性、变速重排、拖入 216 个 demo 动效、HyperFrames 导出 |
 
 当前主要面向 Web 与桌面产品宣传片，但镜头卡也可以单独用于功能演示、
 品牌短片、发布视频或其他动态设计项目。
@@ -180,13 +180,13 @@ video-shotcraft/
 │   ├── sound-design.md      # 声音设计方法与判例
 │   ├── jianying-export.md   # 剪映工程导出方法
 │   └── workbench.md         # 动效工作台：成片接入契约 + 可编辑性规则
-├── demos/                   # 镜头卡的 Remotion 参考实现（同类别目录）
+├── demos/                   # 镜头卡的 HyperFrames 参考实现（同类别目录）
 ├── gallery/                 # 在线样片画廊的静态站点
 ├── template/                # 可直接运行的完整成片模板
 ├── jianying-export/         # 剪映草稿安装模块（Mac 实测 / Windows 未验证）
-├── workbench/               # 交付后的动效工作台（Vite + Remotion Player）
+├── workbench/               # 交付后的动效工作台（Vite + HyperFrames Player）
 └── assets/
-    ├── lib/                 # 可复制使用的 Remotion 组件
+    ├── lib/                 # 可复制使用的 HyperFrames 组件
     ├── scripts/             # 页面素材采集脚本
     └── audio/               # 音频资产
         ├── bgm/             # 5 首 BGM 备选
@@ -222,9 +222,9 @@ Pitch、Miro、Superhuman、Loom** 等产品的宣传片。镜头卡记录的是
 
 特别感谢：
 
-- **[Remotion](https://www.remotion.dev/)** —— 驱动本库全部 demo 与模板的
-  React 视频框架。请注意 Remotion 有自己的
-  [许可协议](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)
+- **[HyperFrames](https://hyperframes.heygen.com/)** —— 驱动本库全部 demo 与模板的
+  React 视频框架。请注意 HyperFrames 有自己的
+  [许可协议](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
   （个人与小团队免费，公司可能需要付费许可）。
 - **[Mixkit](https://mixkit.co/)** —— 库内 SFX 与音乐素材的来源
   （免费商用授权）。

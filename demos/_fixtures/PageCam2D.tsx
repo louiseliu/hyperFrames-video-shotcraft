@@ -1,7 +1,7 @@
 // PageCam2D —— 供"真实纹理"类 demo 复用的 2.5D 页面相机。
 // 把整页截图当 3D 平面相机巡游：(cx, cy) 是页面空间对准视口中心 (960,540)
 // 的点，zoom 是放大倍率，可选 rotX/rotY/rotZ/persp 做斜侧机位。
-// 与 template 的 PageCam 同款坐标数学，但自包含（仅依赖 remotion），
+// 与 template 的 PageCam 同款坐标数学，但自包含（仅依赖 hyperframes），
 // demo 复制进项目即可跑，不 import 本库。
 // 用法：
 //   <PageCam2D src="textures/live/projects-full.png" pageH={PAGE_H} keys={[
@@ -11,7 +11,7 @@
 //     {/* 页面空间子元素：CSS px 定位 */}
 //   </PageCam2D>
 import React from 'react';
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 
 export type CamKey2D = {
   frame: number;

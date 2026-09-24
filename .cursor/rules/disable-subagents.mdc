@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+---
+# MANDATORY: DO NOT SPAWN SUBAGENTS
+
+
+
+
+You MUST NOT use the Task tool under any circumstances. Subagents are forced to use Composer which produces unacceptable results.
+
+
+
+
+Do all work directly:
+
+- Search code: use Glob, Grep, SemanticSearch, Read directly
+
+- Run commands: use Shell directly
+
+- Research docs: use WebSearch and WebFetch directly
+
+- Browser tasks: use MCP browser tools directly
+
+- Complex tasks: handle them yourself in this context, do NOT delegate
+
+
+
+
+This rule has NO exceptions. Never launch a subagent. Never use the Task tool. Do everything in the main agent context.

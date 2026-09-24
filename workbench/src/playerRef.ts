@@ -1,5 +1,5 @@
 import { createRef } from "react";
-import type { PlayerRef } from "@remotion/player";
+import type { PlayerRef } from "hyperframes/player";
 
 /** 全局共享的 Player 句柄：时间轴 seek / 快捷键播放控制都走这里 */
 export const playerRef = createRef<PlayerRef>();

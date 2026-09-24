@@ -3,7 +3,7 @@
 // 沿 Y 轴翻转压扁成竖线（拖影/模糊）→ 翻过最薄处绽放花形 mark（花瓣张开）→
 // wordmark 从 mark 右侧带方向模糊逐段扫出（字符从糊到锐利）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing, spring, useVideoConfig } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing, spring, useVideoConfig } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const FONT = 'Helvetica, Arial, sans-serif';

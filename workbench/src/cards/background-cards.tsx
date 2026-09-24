@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "hyperframes";
 import type { CardDef } from "./types";
 
 // —— 预设背景：静态幕底，铺在最底轨。组件不依赖 useCurrentFrame，素材库缩略图可原样渲染 ——

@@ -3,7 +3,7 @@
 // v2（用户意见）：页面文字初始悬浮在界面上空（3D 抬高），空中时在 UI 面上
 // 投模糊同形软影；随镜头推进先后落贴回界面，影子随高度收敛消失。
 import React from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 const FONT = 'Helvetica, Arial, sans-serif';
 const INK = '#3a3a40';

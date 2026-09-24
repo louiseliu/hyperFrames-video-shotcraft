@@ -8,7 +8,7 @@
 // 48–56 闪黑加粗（48–50 上 50–56 回）+ 内容 8f 淡入 →
 // 54–64 描边淡出 / 自身 border 淡入 → 68–86 下划线短版生长 → 90–140 真静止 50f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const CW = 560;

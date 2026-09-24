@@ -7,7 +7,7 @@
 //   0–18 hold → 卡0: 18–36 翻至 192° → 36–44 回弹落 180° →
 //   卡1: 28–46–54，卡2: 38–56–64 → 64–145 三卡全静止（81f ≥ 40f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const CW = 440;

@@ -46,7 +46,7 @@ name: bezier-source-converge-merge
 
 ## 已知坑
 - `getTotalLength` / `getPointAtLength` 必须在 SVG 已挂到文档且完成布局之后才有效，
-  代码用 `ready` 标志在首帧 `prime()` 里做——移植到 Remotion 时首帧渲染可能拿不到
+  代码用 `ready` 标志在首帧 `prime()` 里做——移植到 HyperFrames 时首帧渲染可能拿不到
   长度（fallback 写了 `|| 380`）。稳妥做法是在 `useEffect`/layout 后再算，或预先算好
   常量表，否则首帧会出现一次错位跳变
 - `f0` 是用 40 步线性扫描找出的"x 首次 ≥74"的比例，精度只有 1/40。曲线形状改动大时

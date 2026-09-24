@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, TitleBlock, G } from '../../_fixtures/Fixtures';
 
 // versus-slam 对撞开屏：左右两个半屏画面（带 78° 斜切边）从画外加速对冲，

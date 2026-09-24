@@ -1,7 +1,7 @@
 // mask-wipe 元素遮罩擦除（轮 D）——真实项目卡（card4-hires）放大成
 // 全屏窗口，projects 全景从窗内长出接管："点开一张卡进入它的世界"。
 // 节拍：0–40 全景 hold → 40–85 卡放大成窗（窗内新景反向补偿）→ 85–120 hold。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import layout from '../../_textures/live-layout.json';
 
 export const MASKWIPE_DUR = 120;

@@ -1,0 +1,37 @@
+<!-- paper-title-card -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="PaperTitleCard"] { width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center; background-color: oklch(97.5% 0.008 82); background-image: radial-gradient(1100px 750px at 50% 42%, oklch(99.3% 0.014 88 / 0.85), transparent 65%); }
+  </style>
+</head>
+<body>
+  <div data-composition-id="PaperTitleCard" data-start="0" data-duration="1.8333" data-fps="30" data-width="1920" data-height="1080" id="comp"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const WORDS=[{text:'All'},{text:'your'},{text:'team’s'},{text:'research,'},{text:'one',accent:true},{text:'place'},{text:'to'},{text:'go.'}];
+    const SUB='of 31 fetched today', SUB_DIGITS='5', TOTAL=55, DIGITS='0123456789';
+    const bez=(t,a,b,c,d)=>{const u=1-t;return u*u*u*a+3*u*u*t*b+3*u*t*t*c+t*t*t*d;};
+    const clamp=(f,a,b,va,vb)=>{let t=(f-a)/(b-a);t=Math.max(0,Math.min(1,t));return va+(vb-va)*t;};
+    const comp=document.getElementById('comp'); const tl=gsap.timeline({paused:true}); const state={t:0}; const lineH=26*1.15;
+    tl.to(state,{t:1,duration:TOTAL/30,ease:'none',onUpdate:()=>{
+      const frame=Math.min(TOTAL-1,Math.round(state.t*(TOTAL-1)));
+      const fadeOut=clamp(frame,TOTAL-8,TOTAL,1,0), underline=clamp(frame,16,34,0,1), subT=clamp(frame,10,22,0,1);
+      const words=WORDS.map((w,i)=>{const delay=4+i*4,t=clamp(frame,delay,delay+9,0,1);
+        return `<span style="opacity:${t};transform:scale(${1.28-0.28*t});filter:blur(${(1-t)*7}px);display:inline-block;font-style:${w.accent?'italic':'normal'};color:${w.accent?'oklch(52% 0.115 65)':'oklch(18% 0.006 82)'}">${w.text}</span>`;}).join('');
+      const digitRoll=SUB_DIGITS.split('').map((c,i)=>{if(c<'0'||c>'9')return `<span style="font-size:26px;line-height:${lineH}px;color:oklch(52% 0.115 65)">${c}</span>`;
+        const target=DIGITS.indexOf(c), t=clamp(frame,12+i*4,12+i*4+22,0,1), offset=(10+target)*t*lineH;
+        return `<span style="display:inline-block;height:${lineH}px;overflow:hidden;vertical-align:bottom"><span style="display:block;transform:translateY(${-offset}px)">${(DIGITS+DIGITS).split('').map(d=>`<span style="display:block;font-size:26px;line-height:${lineH}px;color:oklch(52% 0.115 65);font-variant-numeric:tabular-nums">${d}</span>`).join('')}</span></span>`;}).join('');
+      comp.style.opacity=fadeOut;
+      comp.innerHTML=`<div style="text-align:center;max-width:1500px"><div style="font-family:ui-serif,Georgia,'Times New Roman',serif;font-size:116px;font-weight:600;line-height:1.14;color:oklch(18% 0.006 82);letter-spacing:-0.012em;display:flex;flex-wrap:wrap;justify-content:center;column-gap:0.26em">${words}</div>
+        <div style="height:6px;width:220px;margin:38px auto 0;border-radius:3px;background:oklch(52% 0.115 65);transform:scaleX(${underline})"></div>
+        <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:26px;letter-spacing:0.12em;color:oklch(50% 0.006 82);margin-top:34px;opacity:${subT};text-transform:uppercase;display:flex;justify-content:center;align-items:baseline;gap:0.5em">${digitRoll}<span>${SUB}</span></div></div>`;
+    }},0);
+    window.__timelines['PaperTitleCard']=tl;
+  </script>
+</body>
+</html>

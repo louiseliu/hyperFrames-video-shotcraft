@@ -5,7 +5,7 @@
 // 帧 55 甩回全景:6f whip translateX 滑入,高速段 3 层错帧副本模拟运动模糊,
 // 中上卡片提亮泛光+大 "1" 标记结果;帧 ~68 起全静止到 130(真静止 ≥60f)。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 const HOLD_END = 25; // 全景 hold 结束

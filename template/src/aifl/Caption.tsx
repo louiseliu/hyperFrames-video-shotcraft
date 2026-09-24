@@ -1,5 +1,5 @@
 import { useVisualTheme, sceneDefaults } from '../themes/visual-theme';
-import { interpolate, useCurrentFrame } from 'remotion';
+import { interpolate, useCurrentFrame } from 'hyperframes';
 
 
 /** Context-level defaults, editable per clip in the workbench (hex = sRGB of the oklch tokens). */

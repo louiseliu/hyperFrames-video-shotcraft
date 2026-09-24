@@ -2,7 +2,7 @@
 // 马克笔下划线从左到右描画（粗细变化/端头圆润/微歪/边缘毛糙）。
 // 对标 notion-ai.mp4 2.3–3.6s。与库内 draw-svg-trace 撞车，本版做马克笔质感。
 import React, { useId } from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

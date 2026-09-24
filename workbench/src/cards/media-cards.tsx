@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Img, OffthreadVideo, staticFile } from "remotion";
+import { AbsoluteFill, Audio, Img, OffthreadVideo, staticFile } from "hyperframes";
 import type { CardDef } from "./types";
 
 // —— 媒体卡：视频 / 图片 / 音频文件直接上轨（成片工程 public/ 与仓库音效库都走它们）——

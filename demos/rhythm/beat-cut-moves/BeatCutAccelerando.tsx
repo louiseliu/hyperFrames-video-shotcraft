@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // beat-cut-accelerando：六个不同构图按 16→12→8→6→4 帧递减间隔全屏硬切，

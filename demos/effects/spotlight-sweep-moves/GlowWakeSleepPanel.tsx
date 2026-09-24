@@ -2,7 +2,7 @@
 // 聚光灯从左向右"扫过"斜置面板；一条带辉光的紫色光线贴着 UI 顶边/边框/
 // logo 划过，光到即亮、光走即暗，尾段沉回黑暗（右缘残留蓝紫）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'hyperframes';
 
 const W = 1250;
 const H = 860;

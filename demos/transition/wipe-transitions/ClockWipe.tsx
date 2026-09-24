@@ -4,7 +4,7 @@
 // 90–96f 亮线淡出，96f 起摘罩（B 直接满屏、无 clip-path、亮线卸载），
 // 96–150f 真静止 54f ≥ 40f。帧确定，无随机。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CX = 960;

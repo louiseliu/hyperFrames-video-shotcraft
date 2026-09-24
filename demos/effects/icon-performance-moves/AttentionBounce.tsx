@@ -6,7 +6,7 @@
 // 节拍：0–12 静置 → 12 起跳（4 跳递增，各 16/18/20/24f）→ ~90 落定 →
 // 92–104 面板卡弹出 → 110 后真静止 40f。帧确定，尘点用 sin 散列。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

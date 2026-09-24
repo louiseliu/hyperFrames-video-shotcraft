@@ -6,7 +6,7 @@
 // 1.5f/重打 1.5f 且无停顿。f110 后全静止，160f 总长 → 收尾真静止 50f。
 // 等宽感：逐字符固定宽 span，无 letter-spacing 动画。全部帧确定。
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const TEXT1 = 'just a dashboard'; // 16 chars

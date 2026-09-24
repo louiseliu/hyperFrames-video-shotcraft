@@ -1,4 +1,4 @@
-// cursor-flyover — Cursor Flyover 四角巡览指点（motion-lab 定稿转原生 Remotion）
+// cursor-flyover — Cursor Flyover 四角巡览指点（motion-lab 定稿转原生 HyperFrames）
 // 产品截图平铺，相机先整体俯瞰淡入，再依次飞到四个角落 zoom-in 特写；一枚带阴影
 // 的 SVG 光标跟到对应区域指点并留下点击涟漪。每步过渡+停留等长，easeInOutCubic。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

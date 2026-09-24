@@ -5,7 +5,7 @@
 // spring 刹车回摆一次（442→415→420）落定。窗内读数同步。f96 后真静止 44f。
 // 帧确定性：value(frame) 纯分段 interpolate 全 clamp，带偏移 = value 线性映射。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

@@ -5,7 +5,7 @@
 // 结尾所有火星寿命耗尽条件卸载，真静止 ≥40f。
 // 帧确定性：tick 帧从同一 easeOut 曲线预解析（模块级求出），火星 = 纯 age 闭式弹道。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

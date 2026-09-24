@@ -1,5 +1,5 @@
 import { useVisualTheme, themePaint, themeAsset, sceneDefaults } from '../../themes/visual-theme';
-import { Img, interpolate, useCurrentFrame, Easing, getRemotionEnvironment } from 'remotion';
+import { Img, interpolate, useCurrentFrame, Easing, getHyperFramesEnvironment } from 'hyperframes';
 import { PageCam, CamKey } from './PageCam';
 import layout from '../live-layout.json';
 
@@ -128,7 +128,7 @@ export const SceneFlyIn: React.FC<SceneFlyInProps> = (props) => {
   const METAL_PREVIEW = paint('#383638');
   const { query: QUERY, accent } = { ...sceneDefaults(theme, 'table', SCENE_FLYIN_DEFAULTS), ...props };
   const frame = useCurrentFrame();
-  const { isRendering } = getRemotionEnvironment();
+  const { isRendering } = getHyperFramesEnvironment();
 
   // DOF fades out over the straightening leg of the scroll (82 → 98)
   const dofStrength = interpolate(frame, [82, 98], [5, 0], {

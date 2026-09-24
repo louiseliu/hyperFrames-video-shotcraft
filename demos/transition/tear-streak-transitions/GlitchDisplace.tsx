@@ -7,7 +7,7 @@
 // 再抖 4f 至 62f 归位。62f 起摘罩直出 B（条带/重影全部条件卸载），
 // 62–135f 真静止 73f ≥ 40f。帧确定：h() 伪随机，无 Math.random。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 const STRIPS = 16;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'hyperframes';
 
 /**
  * DatavizLandscapeOpen — 暗场支流线束地景开场

@@ -5,7 +5,7 @@
 // 10px 震屏指数衰减(τ≈2.5f,约 12f 收干),底色变 G.ink 并从中心泛出一圈
 // 快速消散的亮环;帧 ~80 起全静止到 130,收尾 ≥40f 真静止。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // 帧确定伪随机(硬规矩:禁 Math.random)

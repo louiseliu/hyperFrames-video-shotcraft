@@ -7,7 +7,7 @@
 // 14–28 圆环 60→720px 直径 op 0.7→0 → 14–30 尘点飞散 → 14–19 震屏 18px 衰减
 // → 30–135 全静止（≥45f，无逐帧噪声层）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 // 库规伪随机

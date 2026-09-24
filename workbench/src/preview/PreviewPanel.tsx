@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Player } from "@remotion/player";
+import { Player } from "hyperframes/player";
 import { MainComposition } from "./Composition";
 import { playerRef, seekTo, togglePlay } from "../playerRef";
 import { projectDuration, useStore } from "../store";
@@ -38,7 +38,7 @@ const ItemPreview: React.FC<{ item: NonNullable<PreviewItem>; onClose: () => voi
           clickToPlay
           numberOfSharedAudioTags={32}
           style={{ width: "100%", height: "100%" }}
-          acknowledgeRemotionLicense
+          acknowledgeHyperFramesLicense
         />
       );
     } else {
@@ -151,7 +151,7 @@ export const PreviewPanel: React.FC = () => {
           clickToPlay
           numberOfSharedAudioTags={32}
           style={{ width: "100%", height: "100%" }}
-          acknowledgeRemotionLicense
+          acknowledgeHyperFramesLicense
         />
       </div>
       {!previewItem && (

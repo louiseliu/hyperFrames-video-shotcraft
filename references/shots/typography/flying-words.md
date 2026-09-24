@@ -51,7 +51,7 @@ name: flying-words
   （拉满亮度）反而读作杂乱
 - 深底专用：`text-shadow` 发光 + 径向暗角是效果的一半，浅底上词会糊成
   脏点；22 个词元素全程挂在 DOM 里（不销毁重建）只改 transform/opacity，
-  移植 Remotion 时保持这个结构，别改成按帧增删节点
+  移植 HyperFrames 时保持这个结构，别改成按帧增删节点
 
 ## 参考实现
 demos/typography/flying-words/

@@ -4,7 +4,7 @@
 // 填满后停 14f(整墙微呼吸 1.008) → 中心格 14f Easing.in(cubic) 放大吞掉全屏
 // 成为满屏页面。收尾真静止 ≥40f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const h = (n: number) => {

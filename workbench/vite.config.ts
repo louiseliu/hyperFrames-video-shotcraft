@@ -8,13 +8,13 @@ import react from "@vitejs/plugin-react";
 // @proj = 外部成片工程源码（本机经 workbench/proj 符号链接接入，不进库；scripts/open.mjs 负责链接）。
 // 未链接时自动落到 proj-stub 降级实现：工程可构建可运行，素材 tab 显示接入提示。
 // @demos = 仓库 demos/（相对符号链接 demosrc，进库）——158 张镜头卡的 demo 源码直接当动效库。
-// preserveSymlinks 让两者按虚拟路径解析，其 'react'/'remotion' 裸导入
+// preserveSymlinks 让两者按虚拟路径解析，其 'react'/'hyperframes' 裸导入
 // 落到本工程 node_modules（避免双实例）；src/proj.d.ts 让 tsc 不检查外部源码。
 const root = fileURLToPath(new URL(".", import.meta.url));
 // 工程链接了但没写 src/workbench.ts 清单时也回退到 stub（工作台只 import @proj/workbench 这一个模块）
 const proj = existsSync(path.join(root, "proj", "workbench.ts")) ? "proj" : "proj-stub";
 
-/** 导出成片：dev server 内起 Remotion CLI 渲染，
+/** 导出成片：dev server 内起 HyperFrames CLI 渲染，
  *  前端 POST /api/export 提交工程 JSON，轮询 GET /api/export/:id 取进度。 */
 type ExportJob = {
   status: "running" | "done" | "error";
@@ -88,13 +88,13 @@ const renderExportPlugin = (): Plugin => {
               for (const line of lines) {
                 job.lastLine = line.trim();
                 job.logTail = [...job.logTail, line.trim()].slice(-40);
-                // Remotion CLI 进度形如 "Rendered 123/5544"，取最后一处 a/b
+                // HyperFrames CLI 进度形如 "Rendered 123/5544"，取最后一处 a/b
                 const m = [...line.matchAll(/(\d+)\/(\d+)/g)].pop();
                 if (m && Number(m[2]) > 0) job.progress = Number(m[1]) / Number(m[2]);
               }
             };
 
-            // Remotion 静态服务器默认拒绝服务符号链接（lstat 到 symlink 一律 404），
+            // HyperFrames 静态服务器默认拒绝服务符号链接（lstat 到 symlink 一律 404），
             // 而 public/ 下全是指向成片工程 / 仓库素材库的符号链接——渲染前先解引用同步成
             // 真实文件目录，再用 --public-dir 指过去。cardpreviews 仅 UI 用，排除。
             const renderPublic = path.join(root, ".render-public");
@@ -111,12 +111,12 @@ const renderExportPlugin = (): Plugin => {
                 job.lastLine = `素材同步失败（rsync 退出码 ${rc}）：${job.lastLine}`;
                 return;
               }
-              const bin = path.join(root, "node_modules", ".bin", "remotion");
+              const bin = path.join(root, "node_modules", ".bin", "hyperframes");
               const child = spawn(
                 bin,
                 [
                   "render",
-                  "src/remotion/index.ts",
+                  "src/hyperframes/index.ts",
                   "Main",
                   output,
                   `--props=${propsFile}`,
@@ -127,7 +127,7 @@ const renderExportPlugin = (): Plugin => {
               child.stdout.on("data", onChunk);
               child.stderr.on("data", onChunk);
               child.on("close", (code) => {
-                dropProps(); // Remotion CLI 启动时已读完 props，成功失败都不再需要
+                dropProps(); // HyperFrames CLI 启动时已读完 props，成功失败都不再需要
                 job.status = code === 0 ? "done" : "error";
                 if (code === 0) job.progress = 1;
                 else {
@@ -170,5 +170,5 @@ export default defineConfig({
     alias: { "@proj": path.join(root, proj), "@demos": path.join(root, "demosrc") },
   },
   // 外部工程 / demo 源码经符号链接进来，依赖预构建要认得它们的裸导入
-  optimizeDeps: { include: ["react", "react-dom", "remotion", "@remotion/motion-blur"] },
+  optimizeDeps: { include: ["react", "react-dom", "hyperframes", "hyperframes/motion-blur"] },
 });

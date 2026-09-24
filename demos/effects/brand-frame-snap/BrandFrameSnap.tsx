@@ -3,7 +3,7 @@
 // 停一拍 → 画框整圈蓝→绿同帧硬翻色，窗口内容同帧换布局。
 // 一个 borderColor 完成章节导航/状态提示/品牌露出。
 import React from 'react';
-import { useCurrentFrame, spring, interpolate } from 'remotion';
+import { useCurrentFrame, spring, interpolate } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const FPS = 30;

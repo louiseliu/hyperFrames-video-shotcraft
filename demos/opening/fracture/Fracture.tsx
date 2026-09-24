@@ -1,4 +1,4 @@
-// fracture — Fracture Reassemble 碎片聚合（motion-lab 定稿转原生 Remotion）
+// fracture — Fracture Reassemble 碎片聚合（motion-lab 定稿转原生 HyperFrames）
 // 5×5 瓦片从 3D 空间随机碎片态（±大位移 + 三轴随机旋转 + 透明）聚合成整面海报，
 // 按曼哈顿距离从中心向外波纹式就位；hold 后全部碎片沿背离中心的方向加速旋转飞出画面。
 // 正放=开场、倒放=转场。设计坐标 480×270（DesignStage 等比放大），参数以此坐标系标定。

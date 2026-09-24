@@ -5,7 +5,7 @@
 // 关键帧：0–34 scale 1.0 hold → 帧 35 直跳 1.6（35–36 加深脉冲）→ hold →
 // 帧 70 直跳 2.6（70–71 加深脉冲）→ 72–134 全静止（63f ≥45f）。
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 // 目标卡片（3×2 网格第 2 行中间卡）几何：

@@ -26,7 +26,7 @@ node workbench/scripts/open.mjs <成片工程目录>     # 首次运行会自动
 |---|---|---|
 | 顶栏 | 顶部 | 工程名、撤销 / 重做、导出成片、导出 / 导入 JSON、重置示例 |
 | 素材库 | 左栏 | 成片单元、工程素材、216 张 demo 动效、音效与 BGM；点击预览、拖拽上轨 |
-| 预览 | 中央 | Remotion Player 实时预览 + 走带控制 |
+| 预览 | 中央 | HyperFrames Player 实时预览 + 走带控制 |
 | 属性面板 | 右栏 | 选中片段的文案 / 字号 / 颜色、时间与变速、图层 |
 | 时间轨 | 底部 | 多轨编辑：挪动、裁边、分割、复制、变速、层序 |
 
@@ -38,8 +38,8 @@ node workbench/scripts/open.mjs <成片工程目录>     # 首次运行会自动
 
 - **工程名**：直接点击编辑，导出的 MP4 / JSON 文件名用它。
 - **撤销 / 重做**（⌘Z / ⇧⌘Z）：每次编辑手势一步；同一控件 0.8 秒内的连续输入合并为一步。
-- **导出成片**：把当前工程交给 dev server 用 Remotion 渲染，按钮上显示进度百分比；完成后变成「✓ 已导出 · 显示文件」，点它在 Finder 里定位 MP4（输出在 `workbench/exports/`）。导出时长精确到最后一个片段结束。
-- **导出 JSON / 导入**：工程是一份 JSON，可以存档、发给别人、或贴进 Remotion Studio 的 Props 面板。
+- **导出成片**：把当前工程交给 dev server 用 HyperFrames 渲染，按钮上显示进度百分比；完成后变成「✓ 已导出 · 显示文件」，点它在 Finder 里定位 MP4（输出在 `workbench/exports/`）。导出时长精确到最后一个片段结束。
+- **导出 JSON / 导入**：工程是一份 JSON，可以存档、发给别人、或贴进 HyperFrames Studio 的 Props 面板。
 - **重置示例**：换回内置演示工程（可撤销）。
 
 ## 素材库
@@ -74,7 +74,7 @@ node workbench/scripts/open.mjs <成片工程目录>     # 首次运行会自动
 
 ![预览区](docs/preview.png)
 
-- 中央是 Remotion Player，画面与最终渲染逐帧一致（像素级校验过）；改属性面板或拖动片段，预览即时跟随。
+- 中央是 HyperFrames Player，画面与最终渲染逐帧一致（像素级校验过）；改属性面板或拖动片段，预览即时跟随。
 - 走带条：⏮ 回到开头、▶ / ⏸ 播放（空格）、时间码（秒.帧 / 总长）、循环开关、画幅与帧率。
 - 点击画面本身也能播放 / 暂停；← / → 逐帧步进，按住 Shift 一次 10 帧。
 - 点素材库任意条目会切到**素材预览**模式，单独循环播放这张卡；点「返回工程」回到时间轴预览：
@@ -126,4 +126,4 @@ node workbench/scripts/open.mjs <成片工程目录>     # 首次运行会自动
 
 - 让自己的成片能被逐属性编辑：镜头组件把语境参数做成 props + schema、写一份 `src/workbench.ts` 清单，见 [references/workbench.md](../references/workbench.md) §2–§3。
 - 验证拆解无损：`cd workbench && npm run parity`，逐帧比对导入结果与原片。
-- Remotion Studio 视角：`cd workbench && npm run studio`，每张卡都是一个合成，Props 面板与工作台 schema 同源。
+- HyperFrames Studio 视角：`cd workbench && npm run studio`，每张卡都是一个合成，Props 面板与工作台 schema 同源。

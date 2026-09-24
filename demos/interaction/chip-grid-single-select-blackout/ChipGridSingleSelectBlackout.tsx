@@ -1,4 +1,4 @@
-// chip-grid-single-select-blackout — Single Select 1 帧灰闪单选反黑（motion-lab 定稿转原生 Remotion）
+// chip-grid-single-select-blackout — Single Select 1 帧灰闪单选反黑（motion-lab 定稿转原生 HyperFrames）
 // 五个选项 chip 以 3+2 居中排布逐个淡入；选中帧先插一帧灰色按压块，紧接 3 帧内底色变纯黑、
 // 文字变白并做 1→1.04→1 的极轻回弹，同窗口其余 chip 淡到 18% 但位置锁死；1s 后余项归零，
 // 黑 chip 上移缩小，下方浮现算式行。

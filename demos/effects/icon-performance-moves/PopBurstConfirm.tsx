@@ -6,7 +6,7 @@
 // 27 释放（勾画出+粒子+圆环）→ 27–44 过冲落回 → 40–50 标签弹出 → 55 后真静止 65f。
 // 帧确定，无随机源（粒子角度抖动用 sin 散列）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

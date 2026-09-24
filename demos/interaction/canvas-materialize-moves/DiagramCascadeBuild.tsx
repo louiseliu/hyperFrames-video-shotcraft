@@ -2,7 +2,7 @@
 // prompt 行打字 → 图表节点自上而下逐层级联弹出（根→2 子→4 孙），
 // 连线跟随节点生长（SVG path 描线），成树后整体呼吸一拍。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const PROMPT = 'Generate an entity-relationship diagram';

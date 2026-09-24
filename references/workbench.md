@@ -1,6 +1,6 @@
 # 动效工作台：成片交付后的可视化微调
 
-`workbench/` 是一个剪映式的浏览器工作台（多轨时间线 + 素材库 + 属性面板 + Remotion
+`workbench/` 是一个剪映式的浏览器工作台（多轨时间线 + 素材库 + 属性面板 + HyperFrames
 实时预览 + 一键导出），从系列姊妹项目 video-talkcraft 的 `workbench/` 移植而来。
 skill 渲出成片后**主动打开它**，用户不用回到代码里改 tsx 就能：挪一个镜头、拉长一段
 停留、改一句字卡文案、换一个音效、给某段变速，改完直接导出 MP4。
@@ -9,7 +9,7 @@ skill 渲出成片后**主动打开它**，用户不用回到代码里改 tsx �
 「交付收尾」的 1-2-3（见 `SKILL.md`）。不要等用户问。
 
 ```bash
-# 在 skill 根目录执行；<成片工程目录> = 含 package.json / remotion.config.ts 的那一层
+# 在 skill 根目录执行；<成片工程目录> = 含 package.json / hyperframes.config.js 的那一层
 node workbench/scripts/open.mjs <成片工程目录>
 # → 链接工程 src/ 与 public/ → 生成索引 → 起 dev server（5198）→ 浏览器打开并自动导入成片
 ```
@@ -106,7 +106,7 @@ demo 里的场景常量（`CONFIG` / 顶部 `const`）照这个模式提成 `DEF
    （几千 px 见方）的程序渐变 / `backdrop-filter` 放在 PageCam 这类每帧改 `zoom` 的 3D 层里，
    Chrome 栅格化跟不上就整块时有时无——Ink Press 模板 S3 的金属桌面曾因此在预览里疯狂闪，
    其余镜头全片 0 次异常（用 CDP screencast 逐帧测亮度脉冲得出）。这类纯装饰的重绘内容用
-   `getRemotionEnvironment().isRendering` 分流：渲染走原效果，预览用纯色 / 更轻的替身，几何
+   `getHyperFramesEnvironment().isRendering` 分流：渲染走原效果，预览用纯色 / 更轻的替身，几何
    与时序不变（`SceneFlyIn.tsx` 的 `METAL_PREVIEW` 是范例）。parity 只比渲染结果，所以仍成立。
 
 schema 字段类型：`text` / `textarea` / `number`（min/max/step/unit）/ `slider` / `color` /
@@ -128,10 +128,10 @@ demo 全部 schema 为空（时间/图层可编辑，属性不可编辑）——
 
 ## 5. 导出、Studio 与无损校验
 
-- **导出成片**：顶栏「导出成片」→ dev server 内起 Remotion CLI 渲当前工程（`workbench/exports/`）。
-  渲染前会把 `public/` 解引用同步到 `.render-public/`（Remotion 静态服务器拒绝服务符号链接）。
-  `remotion.config.ts` 与 template 同口径：jpeg 帧、ANGLE GL、并发 4。
-- **Remotion Studio**：`cd workbench && npm run studio`——`Main`（贴工程 JSON）、`ProjImported`
+- **导出成片**：顶栏「导出成片」→ dev server 内起 HyperFrames CLI 渲当前工程（`workbench/exports/`）。
+  渲染前会把 `public/` 解引用同步到 `.render-public/`（HyperFrames 静态服务器拒绝服务符号链接）。
+  `hyperframes.config.js` 与 template 同口径：jpeg 帧、ANGLE GL、并发 4。
+- **HyperFrames Studio**：`cd workbench && npm run studio`——`Main`（贴工程 JSON）、`ProjImported`
   （刚导入的成片）、`ProjOriginal`（原合成）+ 每张卡一个合成（schema 自动转 Zod，官方 Inspector 调参）。
 - **无损校验**：`npm run parity -- --frames 150,240,470,1000` 渲 `ProjImported` 与 `ProjOriginal`
   同帧 PNG 逐像素比对（需 python3 + Pillow），差异像素 < 0.1% 视为一致。退出码 0 一致 / 1 有差异 /
@@ -150,8 +150,8 @@ demo 全部 schema 为空（时间/图层可编辑，属性不可编辑）——
 - 音频 clip 导入时截到成片总长（原片里超出合成尾部的 `<Sequence>` 本就被截）。
 - demo 卡需要的灰阶纹理（`textures/live/*.png`）：工程自己带 `public/textures` 时以工程为准，
   否则工作台兜底链接 `demos/_textures`；工程纹理与 demo 纹理同名不同图时 demo 预览会"换皮"。
-- 工程 `src/` 被以符号链接方式打包进工作台，`react`/`remotion` 落到工作台的 node_modules
-  （remotion 4.0.484 / React 19）；工程若用了 `@remotion/three`、`three`、`@remotion/motion-blur`、
-  `@remotion/google-fonts` 以外的包，先在 `workbench/` 里装同版本。
+- 工程 `src/` 被以符号链接方式打包进工作台，`hyperframes 落到工作台的 node_modules
+  （hyperframes (latest) — no React dependency）；工程若用了 `@hyperframes/three`、`three`、`@hyperframes/motion-blur`、
+  `@hyperframes/google-fonts` 以外的包，先在 `workbench/` 里装同版本。
 - 与剪映导出（`jianying-export.md`）的分工：剪映给"外部剪辑软件里继续剪"的用户；工作台给
   "在本机浏览器里改几处就出片"的用户，且能改镜头内部的参数化属性（剪映只能整段变速）。

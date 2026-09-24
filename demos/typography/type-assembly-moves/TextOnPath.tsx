@@ -4,7 +4,7 @@
 // 关键帧：字符 i 于 i*2 起跑、45f 沿线到达 t_i（out cubic）→ 到达后停 8f →
 // 12f 摆正到水平基线（y 拉平、rotate→0）→ 全部落定约 f103 → 103–150 真静止。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 // 上升贝塞尔：左下 → 右上，先缓后陡（增长线形状）

@@ -2,7 +2,7 @@ import type { ProjectData } from "./types";
 import { uid } from "./types";
 
 /** 初始演示工程（未接入成片时）：纸底 + 两张 demo 镜头卡顺排 + 字卡 + 解说条。
- *  同时是 Remotion Studio「Main」合成的 defaultProps 来源——保持纯函数，别引 store。 */
+ *  同时是 HyperFrames Studio「Main」合成的 defaultProps 来源——保持纯函数，别引 store。 */
 export const demoProject = (): ProjectData => {
   const clip = (cardId: string, start: number, duration: number, props: Record<string, unknown> = {}, label?: string) => ({
     id: uid("clip"), cardId, start, duration, inOffset: 0, speed: 1, opacity: 1, scale: 1, x: 0, y: 0, props, label,

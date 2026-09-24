@@ -1,5 +1,5 @@
 import { useVisualTheme } from '../themes/visual-theme';
-import { interpolate, useCurrentFrame, Easing } from 'remotion';
+import { interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 const DIGITS = '0123456789';
 

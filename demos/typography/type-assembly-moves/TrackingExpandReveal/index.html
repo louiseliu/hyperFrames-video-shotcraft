@@ -1,0 +1,33 @@
+<!-- TrackingExpandReveal -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="TrackingExpandReveal"] { width: 1920px; height: 1080px; background: #ececea; position: relative; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div data-composition-id="TrackingExpandReveal" data-start="0" data-duration="4.3333" data-fps="30" data-width="1920" data-height="1080" id="comp"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const G={ink:'#2f2f2f',mid:'#8f8f8d'}; const WORD='BREATHE',FS=150,GAP_DELTA=-0.56*FS,TOTAL=130;
+    const poly5=t=>1-Math.pow(1-t,5), outQuad=t=>t*(2-t);
+    const clamp=(f,a,b,va,vb,e)=>{let t=(f-a)/(b-a);t=Math.max(0,Math.min(1,t));if(e==='poly5')t=poly5(t);else if(e==='outQuad')t=outQuad(t);return va+(vb-va)*t;};
+    const comp=document.getElementById('comp'); const tl=gsap.timeline({paused:true}); const state={t:0};
+    tl.to(state,{t:1,duration:TOTAL/30,ease:'none',onUpdate:()=>{
+      const frame=Math.min(TOTAL-1,Math.round(state.t*(TOTAL-1))), p=clamp(frame,0,50,0,1,'poly5'), settled=frame>=50;
+      const blur=10*(1-p), op=0.6+0.4*p, sx=0.92+0.08*p, subOp=clamp(frame,35,58,0,1,'outQuad');
+      const N=WORD.length,center=(N-1)/2;
+      const letters=WORD.split('').map((ch,i)=>{const tx=(1-p)*(i-center)*GAP_DELTA;return `<span style="display:inline-block;transform:${settled?'none':`translateX(${tx}px)`}">${ch}</span>`;}).join('');
+      comp.innerHTML=`<div style="position:absolute;left:120px;top:96px;font-family:Helvetica,Arial,sans-serif;font-weight:800;font-size:54px;color:${G.ink}">TRACKING EXPAND REVEAL</div>
+        <div style="position:absolute;top:430px;left:0;width:1920px;display:flex;justify-content:center;transform:${settled?'none':`scaleX(${sx})`};filter:${settled?'none':`blur(${blur}px)`};opacity:${settled?1:op}">
+          <div style="font-family:Helvetica,Arial,sans-serif;font-weight:800;font-size:${FS}px;color:${G.ink};letter-spacing:0.14em;white-space:pre;margin-left:${0.14*FS*0.5}px">${letters}</div></div>
+        <div style="position:absolute;top:630px;left:0;width:1920px;text-align:center;font-family:Helvetica,Arial,sans-serif;font-weight:500;font-size:34px;color:${G.mid};letter-spacing:0.32em;opacity:${frame>=58?1:subOp}">A CINEMATIC TITLE ENTRANCE</div>`;
+    }},0);
+    window.__timelines['TrackingExpandReveal']=tl;
+  </script>
+</body>
+</html>

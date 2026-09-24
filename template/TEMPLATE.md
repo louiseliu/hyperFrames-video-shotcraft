@@ -5,9 +5,9 @@
 
 - 规格：1920×1080 @ 30fps，1085 帧（36.2s），SFX-only（无 BGM 版）
 - 风格：纸墨琥珀（纸底 `#f2eee6`，墨字，衬线大标题，琥珀强调色）
-- 跑起来：`npm install && npx remotion studio src/index.ts`（预览）
-  / `npx remotion render src/index.ts AiflPromo out/promo.mp4`（渲染）
-- 验收静帧：`npx remotion still src/index.ts AiflPromo out/qa/f150.png --frame=150`
+- 跑起来：`npm install && npx hyperframes preview src/index.ts`（预览）
+  / `npx hyperframes render src/index.ts AiflPromo out/promo.mp4`（渲染）
+- 验收静帧：`npx hyperframes inspect --at src/index.ts AiflPromo out/qa/f150.png --frame=150`
 
 ## 一、片子结构（src/aifl/Main.tsx 的 AIFL_SHOTS）
 
@@ -76,7 +76,7 @@ import，动效工作台据此把成片拆成多轨，见 ../references/workbenc
 4. **文案**：`TITLE_CARDS` 表（字卡，`*词*` 标强调）、CAPTIONS 表、outro 品牌名/tagline。
    镜头结构变了同步改 `src/workbench.ts`（新镜头加一行 `scene(...)`；字卡照 `title(...)`），
    然后 `cd ../workbench && npm run parity` 确认拆解无损。
-5. **验收**：每改完一个镜头 `npx remotion still` 出静帧自检（每镜头至少
+5. **验收**：每改完一个镜头 `npx hyperframes inspect --at` 出静帧自检（每镜头至少
    入场中/动作峰值/落定后三帧）；全改完整片渲染 + ffmpeg 抽帧回看；
    最后对照 ../references/aesthetic-rules.md 过 checklist。
 6. **时长伸缩**：加/删镜头时整体平移 AIFL_SHOTS 的 from（它是单一事实源），

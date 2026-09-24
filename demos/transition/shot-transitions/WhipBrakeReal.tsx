@@ -2,8 +2,8 @@
 // 在目标卡（card4-hires，高清纹理）前急刹长尾滑入。
 // 速率：前 70% 路程用 12f（糊），后 30% 路程 ease-out 48f 长尾。
 // 节拍：0–30 起点 hold → 30–42 全速甩 → 42–90 急刹滑入 → 90–130 真静止。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import layout from '../../_textures/live-layout.json';
 
 export const WHIPBRAKE_DUR = 130;

@@ -6,7 +6,7 @@
 // 扩张吃掉全屏成为下一镜特写。57f 起摘罩（特写直出、分格结构与缝线
 // 全部卸载），57–150f 真静止 93f ≥ 40f。帧确定，无随机源。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 const SPLIT = 20;              // 全屏 A 结束、开始分格

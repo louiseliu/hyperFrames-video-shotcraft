@@ -1,4 +1,4 @@
-// brace-expand — Brace Expand Reveal 括号拉幕（motion-lab 定稿转原生 Remotion）
+// brace-expand — Brace Expand Reveal 括号拉幕（motion-lab 定稿转原生 HyperFrames）
 // 一对紧贴的花括号先小字号出现在正中，随即带过冲（outBack ~8%）地向左右滑开并放大到
 // 标题级，文字像被括号拉开幕布般在中间揭示（clip 宽度严格绑括号间距），落定后字距再细微松弛。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

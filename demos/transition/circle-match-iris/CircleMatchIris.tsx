@@ -5,7 +5,7 @@
 // 帧 45–100:圆环描边 sweep 到 78%,中央大数字随之浮现计数;帧 100–140 全属性静止收尾(≥35f)。
 // 命门:两景的圆严格同心——CX/CY 写死为 FakeDashboard B 第 2 行头像的屏幕坐标常量。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // FakeDashboard variant B 第 2 行左侧 44px 头像的圆心(手算自 fixture 布局)

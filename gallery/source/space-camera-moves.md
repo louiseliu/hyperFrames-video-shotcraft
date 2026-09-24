@@ -36,7 +36,7 @@ C 说"从全局俯瞰砸到主角"（上帝视角一头扎进 hero 特写，全�
 - 两式都吃真实截图分层/高清纹理：A 需页面按构件切块截图（顶栏/侧栏/
   卡各自独立成图，整页一张图炸不开）；C 终点是特写，素材先按
   审美准则 Q2 的高分辨率栅格化技法处理
-- C 式易错：Remotion 无 Easing.quint，写 Easing.poly(5)（本批实渲踩坑）
+- C 式易错：HyperFrames 无 Easing.quint，写 Easing.poly(5)（本批实渲踩坑）
 - A 式构件布局要绝对定位复刻原页面网格（demo 里 8 层复刻 FakeDashboard
   A），流式布局做不了 per-构件 translateZ
 

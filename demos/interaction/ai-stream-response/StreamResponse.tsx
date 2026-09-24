@@ -5,7 +5,7 @@ import {
   Img,
   interpolate,
   useCurrentFrame,
-} from 'remotion';
+} from 'hyperframes';
 import backplate from './agent-stream.jpg';
 
 const ROW_CUES = [42, 53, 63, 72, 80, 87, 93];

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, Card, TitleBlock, G } from '../../_fixtures/Fixtures';
 
 // portal-wipe 穿窗入景·改〔批次 1 重做〕

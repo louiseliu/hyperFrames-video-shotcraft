@@ -4,7 +4,7 @@
 // 再 20f 线性回落到 0.35 驻留柔晕（扩散/消散解耦判例），随后 15f 缓收到 0.22 稳态。
 // 深底白字：白底上提亮不可见判例。收尾真静止 ≥40f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const BG = '#2a2a28';
 const WHITE = '#f7f7f5';

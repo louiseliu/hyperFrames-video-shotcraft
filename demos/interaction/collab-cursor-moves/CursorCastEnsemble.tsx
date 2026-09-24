@@ -3,7 +3,7 @@
 // 指向、聚拢；灰阶便签当环境道具；其中一枚(Rita)在便签上实时打字补全一行文本
 // （pitch collaborator-cameo 的打字戏并入）。
 import React from 'react';
-import { useCurrentFrame, spring, interpolate } from 'remotion';
+import { useCurrentFrame, spring, interpolate } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const mulberry32 = (a: number) => () => {

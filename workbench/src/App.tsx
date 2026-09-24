@@ -39,7 +39,7 @@ const startSplit = (
   window.addEventListener("pointerup", up, { once: true });
 };
 
-/** 导出成片：提交当前工程给 dev server 的 Remotion 渲染任务，轮询进度 */
+/** 导出成片：提交当前工程给 dev server 的 HyperFrames 渲染任务，轮询进度 */
 const ExportButton: React.FC = () => {
   const [job, setJob] = useState<{
     id: string;
@@ -103,7 +103,7 @@ const ExportButton: React.FC = () => {
   return (
     <button
       className="btn primary"
-      title="用 Remotion 渲染当前工程为 MP4（输出到 workbench/exports/）"
+      title="用 HyperFrames 渲染当前工程为 MP4（输出到 workbench/exports/）"
       onClick={start}
     >
       导出成片

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 // bento-light-up：暗场里 3×2 bento 墙压暗待命，随节拍逐格点亮——

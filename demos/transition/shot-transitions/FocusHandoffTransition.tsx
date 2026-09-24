@@ -6,7 +6,7 @@
 // 节拍：0–24 A hold → 24–40 A 淡出 + blur 0→8px 推出，同时 26–42 B 从 8px→0
 // 收焦 + 淡入 + 反向滑入（错开 2f 起跑——同帧起跑读作整屏糊掉）；两景在交叉
 // 窗口内互为焦点交换 → 42–120 B hold（真静止）。浅景深语言先立后用。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 
 export const FOCUSHANDOFF_DUR = 120;
 

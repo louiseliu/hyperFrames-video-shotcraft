@@ -29,7 +29,7 @@
 1. **最终设计 spec 与分镜共同构成制作放行。** 分镜表长在设计 spec 里
    （`| # | 时间 | 镜头 | 关键动效 |` 四列）；确认放行不重新打开已确认的
    业务或创意问题，只补实现必要的未决项。
-2. **验收贯穿全程，不是最后一个阶段。** 每个镜头任务以 `npx remotion still`
+2. **验收贯穿全程，不是最后一个阶段。** 每个镜头任务以 `npx hyperframes inspect --at`
    静帧肉眼验收收尾（产物按版本归档 `out/qa/`），每轮反馈修改后整片重渲。
    阶段 7 只是把这套贯穿动作升级为对照 aesthetic-rules.md 的正式自检报告。
 
@@ -58,7 +58,7 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
 ## 阶段 1：视觉方向与 styleframe
 
 **目标**：用最便宜的产物锁定全片色板、字体、光感与运镜气质，
-让所有方向性争论发生在写第一行 Remotion 代码之前。
+让所有方向性争论发生在写第一行 HyperFrames 代码之前。
 
 **具体操作**：
 
@@ -66,7 +66,7 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
    （推导法见下方“品牌→动效参数”表），但不要把 Ink Press 作为固定选项。
 2. Agent 依据产品视觉、用途和受众自主选择最合适的方向，并把选择与取舍写入
    设计 spec；不暂停等待用户选择。
-3. 对选定方向**不渲染视频、不写 Remotion 代码**，写一个纯 HTML/CSS
+3. 对选定方向**不渲染视频、不写 HyperFrames 代码**，写一个纯 HTML/CSS
    styleframe 页，包含 2–3 张 1920×1080 静态关键画面。
 4. 用 Playwright/Puppeteer 截图验证字体、色板、材质、构图、光感与信息密度；
    缓动和运镜速度仍以 tokens、Gallery 样片或短运动测试判断。若已有严格品牌规范
@@ -198,7 +198,7 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
 
 ## 阶段 5：逐镜头实现
 
-**前置条件**：需已有可跑的 Remotion 项目（30fps、1920×1080，`src/index.ts`
+**前置条件**：需已有可跑的 HyperFrames 项目（30fps、1920×1080，`src/index.ts`
 注册 Composition；新项目可 `npx create-video@latest` 初始化后把
 `assets/lib/` 组件 copy 进去；走模板路线则直接从 `template/` 起步）。
 
@@ -220,10 +220,10 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
 2. **PageCam 是一切"真实页面"镜头的地基**：整页纹理 + 关键帧 2.5D 相机 +
    页面空间 overlay，children 按页面 CSS px 定位、与 layout.json 共坐标系。
 3. **静帧验收（最高频动作）**：每镜头在计划里写死 2 个验收帧号，
-   完成即跑 `npx remotion still src/index.ts <Comp> out/qa/<name>.png
+   完成即跑 `npx hyperframes inspect --at src/index.ts <Comp> out/qa/<name>.png
    --frame=<N>`，自己肉眼检查构图/穿帮/文字锐度后才算完成。
    静帧产物按迭代版本归档 `out/qa/`，用户贴帧反馈时可直接对号。
-4. **每轮修改后整片渲染**：`npx remotion render src/index.ts <Comp>
+4. **每轮修改后整片渲染**：`npx hyperframes render src/index.ts <Comp>
    out/promo.mp4`，再用 `ffmpeg -i out/promo.mp4 -vf "select=eq(n,…)"`
    从成片抽关键帧回看。实际形态是"改哪个镜头就 still 哪几帧，
    然后整片重渲"，成本可接受且杜绝接缝意外。
@@ -317,7 +317,7 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
    音量——常规 0.2–0.6 的前提是素材峰值贴近 0dB。库里 7 个录得轻的素材
    （峰值 <-12dB，最轻 -24.6dB）给到 1.0 仍比 BGM 低十几 dB，会被鼓底
    盖住：**首选换同类别里录得好的素材，或预归一化后入库**；必要时可给
-   >1 的增益（Remotion 支持真实放大，但预览钳到 1.0，须以渲染产物验峰
+   >1 的增益（HyperFrames 支持真实放大，但预览钳到 1.0，须以渲染产物验峰
    防削波）。名单与三条出路见 sound-design 4.1。
 
 **产出**：带声整片；SFX 钉帧表（相对帧表达式+音源+音量+注释）；
@@ -348,7 +348,7 @@ tokens、启动方式和数据风险。根据项目证据和用户已有描述�
    动作峰值、落定后三帧）。配了 BGM 的片子在此处就渲出两版——带 BGM 版
    和无 BGM 版（保留 SFX），无 BGM 版靠阶段 6 预留的 `bgm` inputProp
    从同一时间线渲出：写一个 `props-nobgm.json`（内容 `{"bgm":false}`）
-   然后 `npx remotion render … --props=props-nobgm.json`（跨平台可靠；
+   然后 `npx hyperframes render … --props=props-nobgm.json`（跨平台可靠；
    macOS/Linux 也可内联 `--props='{"bgm":false}'`，Windows shell 会剥掉
    内联 JSON 的双引号，必须走文件）。不另建工程、不用 ffmpeg 后期抽轨。
    命名区分（如 `promo.mp4` / `promo-nobgm.mp4`）。

@@ -5,7 +5,7 @@
 // （左缘 412→554 / 右缘 867→725），"NEW RAYCAST" 以屏幕中线居中定格；
 // 定格后约 0.6s，斜体 "COMING 2026" 在下方近乎硬切浮现。
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 
 // 词轮换表：停留帧数不均（机器节奏），全程钉在右缘，不做间距收缩
 const STEPS: { word: string; dur: number }[] = [

@@ -1,4 +1,4 @@
-// glass-pill-dictation-typing — Glass Pill Dictation 玻璃胶囊听写（motion-lab 定稿转原生 Remotion）
+// glass-pill-dictation-typing — Glass Pill Dictation 玻璃胶囊听写（motion-lab 定稿转原生 HyperFrames）
 // 纯黑底上一条定宽玻璃胶囊：整条以约 1.25 倍略大弹出后缓落到位，胶囊内部自左暗到右亮
 // 铺一层强调色光（ACCENT 变量，默认紫）；光标先行出现，随后打字出现占位句
 // 「Speak or type here」，光随打字进度渐渐熄灭，收尾成中性深色玻璃条；右端是描边圆角

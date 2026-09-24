@@ -1,8 +1,8 @@
 // Motion 动效公共件 —— 源自 motion-lab 孵化轮沉淀的 48 张卡共用：
 // 缓动表 E / 分段进度 seg / 插值 lerp / 确定性伪随机 rand + DesignStage 设计坐标容器。
-// 全部是纯函数，由 useCurrentFrame 驱动，满足 Remotion 确定性渲染要求。
+// 全部是纯函数，由 useCurrentFrame 驱动，满足 HyperFrames 确定性渲染要求。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'hyperframes';
 
 export const E = {
   linear: (t: number) => t,
@@ -33,7 +33,7 @@ export const lerp = (t: number, a: number, b: number) => a + (b - a) * t;
 export const seg = (t: number, t0: number, t1: number, ease: (x: number) => number = E.linear) =>
   ease(Math.min(1, Math.max(0, (t - t0) / (t1 - t0))));
 
-// 确定性伪随机（等价 Remotion random(seed)，同种子跨帧/跨渲染可复现）
+// 确定性伪随机（等价 HyperFrames random(seed)，同种子跨帧/跨渲染可复现）
 export const rand = (seed: number) => {
   const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
   return x - Math.floor(x);

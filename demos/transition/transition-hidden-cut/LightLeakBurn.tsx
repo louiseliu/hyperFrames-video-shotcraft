@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { FakeDashboard, TitleBlock, G } from '../../_fixtures/Fixtures';
 
 // light-leak-burn〔转场〕：一团琥珀橙柔光从右上角斜扫入画，亮度顶峰时

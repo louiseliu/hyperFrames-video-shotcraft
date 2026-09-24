@@ -1,7 +1,7 @@
 // platform-hinge-rise — 平台建立后，两块主体从相邻底部铰点反向翻起，最后结论台升入。
-// 从独立 motion-blocking 研究中整理为纯 DOM/SVG 的通用 Remotion demo。
+// 从独立 motion-blocking 研究中整理为纯 DOM/SVG 的通用 HyperFrames demo。
 import React from 'react';
-import { Easing, interpolate, useCurrentFrame } from 'remotion';
+import { Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { DesignStage } from '../../_fixtures/Motion';
 
 export const PLATFORM_HINGE_RISE_DURATION = 104;

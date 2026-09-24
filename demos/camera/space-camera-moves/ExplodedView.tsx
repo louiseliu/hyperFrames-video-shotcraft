@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { Card, G } from '../../_fixtures/Fixtures';
 
 // exploded-view：整页 dashboard 带 3D 倾斜，咔地沿 Z 轴炸开——顶栏/侧栏/六卡

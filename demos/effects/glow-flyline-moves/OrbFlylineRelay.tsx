@@ -6,7 +6,7 @@
 // 线二 B→C 接力，C 亮起收束。光斑 95–120f out-sine 减速收敛，
 // 全部动画 f120 前结束，末 35f 真静止。
 import React, { useId } from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 // 库内标准伪随机（帧确定）
 const h = (n: number) => {

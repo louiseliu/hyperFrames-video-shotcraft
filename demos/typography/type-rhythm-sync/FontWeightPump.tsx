@@ -5,7 +5,7 @@
 // 额外 scaleX 1→1.08 同衰减（transform 缩放不改排版）。底部 5 个节拍点作节拍参照。
 // 结构：0–29f 静止 hold；30–119f 五拍脉冲；120–139f 真静止收尾（20f，110+10=120 无残留）。
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const BEATS = [30, 50, 70, 90, 110];

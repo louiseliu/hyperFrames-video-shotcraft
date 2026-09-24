@@ -17,7 +17,7 @@
 
 **顺序：画面结构基本锁定 → 先铺 BGM 定能量骨架 → 逐拍钉 SFX。**
 
-1. **BGM 先行，定能量骨架。** 一条 BGM 全片铺底，音量包络用 `interpolate` 做首尾淡入淡出（模板片 `[0, 30, TOTAL-50, TOTAL] → [0, 0.34, 0.34, 0]`，即 1s 淡入、1.7s 淡出）。BGM 音量压在 0.34 左右给 SFX 留 headroom。曲子的能量曲线要和分镜表的能量曲线对得上（低开 → 中段推进 → outro 峰值），候选曲必须垫进成片试听——单听曲子无法判断气质（S1）。BGM 的 `<Audio>` 用布尔 inputProp（如 `bgm`，默认 `true`）包住挂载，SFX 不受该开关影响——配了 BGM 的片子终渲交付固定出两版成片，无 BGM 版从同一时间线渲出：`npx remotion render … --props=props-nobgm.json`（文件内容 `{"bgm":false}`；Windows shell 会剥掉内联 JSON 的双引号，走文件最稳，macOS/Linux 也可内联 `--props='{"bgm":false}'`）。
+1. **BGM 先行，定能量骨架。** 一条 BGM 全片铺底，音量包络用 `interpolate` 做首尾淡入淡出（模板片 `[0, 30, TOTAL-50, TOTAL] → [0, 0.34, 0.34, 0]`，即 1s 淡入、1.7s 淡出）。BGM 音量压在 0.34 左右给 SFX 留 headroom。曲子的能量曲线要和分镜表的能量曲线对得上（低开 → 中段推进 → outro 峰值），候选曲必须垫进成片试听——单听曲子无法判断气质（S1）。BGM 的 `<Audio>` 用布尔 inputProp（如 `bgm`，默认 `true`）包住挂载，SFX 不受该开关影响——配了 BGM 的片子终渲交付固定出两版成片，无 BGM 版从同一时间线渲出：`npx hyperframes render … --props=props-nobgm.json`（文件内容 `{"bgm":false}`；Windows shell 会剥掉内联 JSON 的双引号，走文件最稳，macOS/Linux 也可内联 `--props='{"bgm":false}'`）。
 2. **词汇表按"片种"选，不按"事件"选（S1）。** 产品宣传片的 SFX 词汇 = whoosh(运镜) / impact(落地) / riser(铺垫) / sparkle(光效，目录 `light/`) / transition(转场)，禁用游戏音包**音色**（合成器 pluck/bloop、卡通弹跳）。模板片第一版按 UI 事件语义选音（click/drop/confirmation），用户一耳朵判死刑"太像游戏了"。
    **禁的是音色不是动作**：画面真有点击/开关/碎裂就该配它的拟音（模板片自己用 `click-camera.mp3` 并给了全片最高响度 0.6）；但 `sfx/ui/` 需逐个试听——里面既有真实开关拟音也有合成反馈音，后者正属本条排除的质感（取舍表见 3.3）；`sfx/glass/` 是真实碎裂材质音。判别问句见 aesthetic-rules S1。
 3. **SFX 逐拍钉帧、声明式表集中管理（S2）。** SFX 是 `{ from, src, volume }[]` 数组，逐条注释对应的画面动作（"hero card: whoosh up on the pop"），渲染时每条包一个 `<Sequence from={s.from}>`。杜绝凭感觉铺音效。
@@ -123,7 +123,7 @@ whoosh 与 transition 同在 `transition/`（运镜与转场的音色本就重�
 
 **两个已删文件的处理（2026-07-27 筛选）**：
 
-- `impact-cine.mp3` 已从 `assets/audio/` 删除，但**模板片照常渲染**——Remotion 读的是 `template/public/audio/` 的独立副本（`staticFile('audio/...')`），那份仍在，`Main.tsx:86` 无需改动。新项目要复刻 outro 三拍句式时，用 `sfx/impact/impact-deep-whoosh.mp3` 代替：它与原 `impact-cine.mp3` **字节完全相同**（md5 `ce27fd2f`，见 3.2），是同一个 Mixkit 素材 Cinematic whoosh deep impact。
+- `impact-cine.mp3` 已从 `assets/audio/` 删除，但**模板片照常渲染**——HyperFrames 读的是 `template/public/audio/` 的独立副本（`staticFile('audio/...')`），那份仍在，`Main.tsx:86` 无需改动。新项目要复刻 outro 三拍句式时，用 `sfx/impact/impact-deep-whoosh.mp3` 代替：它与原 `impact-cine.mp3` **字节完全相同**（md5 `ce27fd2f`，见 3.2），是同一个 Mixkit 素材 Cinematic whoosh deep impact。
 - `typewriter.mp3` 已删（本就是死资产，打字揭示实际用 `keyboard.mp3` 截帧）。要单击拟音改用 `sfx/text/typewriter-hit-single.mp3` 或 `typewriter-hit-hard.mp3`。
 
 ### 3.2 同素材重名：4 对文件字节完全相同
@@ -185,7 +185,7 @@ find assets/audio -name '*.mp3' -exec md5 -r {} \; | sort | awk '{print $1}' | u
 
 - **声明式中央注册表**：`SFX: { from, src, volume }[]`，每条注释对应的画面动作；渲染层遍历数组，每条包 `<Sequence from={s.from}>`。帧号表与分镜表（`AIFL_SHOTS`）放同一文件对照（S2）。
 - **长样本靠 Sequence 截断，不剪音频文件**：`keyboard.mp3`（19.6s 原素材）按语境给 `durationInFrames` 24f 或 44f；其余统一 90f 让 ≤3s 素材自然播完。音频时长与画面动作严格等长（S4）。**库里 21 个文件长于 5s，必须显式给 `durationInFrames`**，照 90f 默认值会拖到动作结束后还在响（见下表）。
-- **音量分层**：BGM 0.34 打底，SFX 常规区间 0.2–0.6——点击确认 0.6 最响、pop 连发尾音 0.25 最轻，用响度表达"这一拍多重要"（曾出现的 0.14 出自已删除的 v2 pluck 连发串，不属于定稿区间）。**但 0.2–0.6 的前提是素材峰值接近 0dB**：`volume` 是乘法系数不是目标音量，库里 7 个本身录得轻的文件（峰值 <-12dB）即便给到 1.0 仍可能被 BGM 盖住——首选换素材或预归一化，必要时可给 >1 的增益（Remotion 支持，但预览会钳到 1.0，须以渲染产物验峰）。名单与三条出路见下。钉完以渲染产物试听，不要只信数字。
+- **音量分层**：BGM 0.34 打底，SFX 常规区间 0.2–0.6——点击确认 0.6 最响、pop 连发尾音 0.25 最轻，用响度表达"这一拍多重要"（曾出现的 0.14 出自已删除的 v2 pluck 连发串，不属于定稿区间）。**但 0.2–0.6 的前提是素材峰值接近 0dB**：`volume` 是乘法系数不是目标音量，库里 7 个本身录得轻的文件（峰值 <-12dB）即便给到 1.0 仍可能被 BGM 盖住——首选换素材或预归一化，必要时可给 >1 的增益（HyperFrames 支持，但预览会钳到 1.0，须以渲染产物验峰）。名单与三条出路见下。钉完以渲染产物试听，不要只信数字。
 
 #### 需要显式截断的长样本（>5s，21 个）
 
@@ -233,7 +233,7 @@ find assets/audio -name '*.mp3' -exec md5 -r {} \; | sort | awk '{print $1}' | u
    ```bash
    ffmpeg -i in.mp3 -af "loudnorm=I=-16:TP=-1.5" out.mp3   # 或 -af "volume=8.5"
    ```
-3. **`volume` 给大于 1 的增益**。Remotion **允许** `volume>1` 并真实放大——本仓库实测：`data-load-os` 给 `volume={4}` 输出 -12.7dB、给 `{16}` 输出 -0.7dB（即 4x≈+12dB、16x≈+24dB，符合 20·log₁₀ 的换算）。校验过 Remotion 源码：`validateMediaProps` 只拦 `volume<0`，不拦 >1；Web Audio 路径把值直接写进 `gainNode.gain`，不做钳制。
+3. **`volume` 给大于 1 的增益**。HyperFrames **允许** `volume>1` 并真实放大——本仓库实测：`data-load-os` 给 `volume={4}` 输出 -12.7dB、给 `{16}` 输出 -0.7dB（即 4x≈+12dB、16x≈+24dB，符合 20·log₁₀ 的换算）。校验过 HyperFrames 源码：`validateMediaProps` 只拦 `volume<0`，不拦 >1；Web Audio 路径把值直接写进 `gainNode.gain`，不做钳制。
    两个前提必须知道：
    - **预览会钳到 1.0**，`Math.min(volume, 1)` 只出现在传统 `<audio>.volume` 回退路径（Safari／禁用 Web Audio 时）。也就是说**预览听到的可能比成片轻**，必须以渲染产物为准判断。
    - **抬增益会一起抬底噪，且可能削波**。渲染后必查峰值，`max_volume` 逼近 0.0dB 就要回退增益或改走第 1/2 条：
@@ -303,10 +303,10 @@ encoder priming（头部垫入的预热样本），48kHz 下典型值 2048 sampl
 = 1.28f@30fps。本仓库 AiflPromo 实测 click 滞后 2032 samples、
 impact 2066 samples（≈1.27–1.29f），与 priming 指纹吻合；且渲染品
 （aifl-ref.mp4）音轨的 edit list（elst media time=0）未声明裁剪这段
-垫头，解码后就体现为真实偏移。Remotion 官方跟踪同族问题：
-remotion-dev/remotion#7099。
+垫头，解码后就体现为真实偏移。HyperFrames 官方跟踪同族问题：
+heygen-com/hyperframes#7099。
 
-- **按管线记录，不按"片"**：偏移由 Remotion 版本 + 音频 codec +
+- **按管线记录，不按"片"**：偏移由 HyperFrames 版本 + 音频 codec +
   sample rate + 容器四要素决定，实测值随四要素一起记档；四要素不变
   可复用，换任何一样必须重测。priming 量级依编码器而异（ffmpeg 内置
   aac ≈1024、fdk-aac 2048、Apple ≈2112 samples），不能预设常数。
@@ -335,7 +335,7 @@ ffmpeg -i out/promo.mp4 -vn -acodec pcm_s16le /tmp/render-audio.wav
 三项拆分发生在 `from` 的计算表达式里（审计链完整，绝不逐条手改帧号）：
 
 ```tsx
-// 本管线实测：Remotion 4.x + AAC 48kHz mp4，2026-08-23，click/impact 双探针交叉相关
+// 本管线实测：HyperFrames 4.x + AAC 48kHz mp4，2026-08-23，click/impact 双探针交叉相关
 const OUTPUT_AUDIO_OFFSET_F = 1.28;
 const PEAK_F: Record<string, number> = { 'impact-deep-whoosh.mp3': 2 /* 逐文件实测 */ };
 const sfxFrom = (targetPeakF: number, src: string) =>

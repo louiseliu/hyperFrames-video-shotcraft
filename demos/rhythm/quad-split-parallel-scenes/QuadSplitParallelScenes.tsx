@@ -1,4 +1,4 @@
-// quad-split-parallel-scenes — Quad Split 四宫并行蒙太奇（motion-lab 定稿转原生 Remotion）
+// quad-split-parallel-scenes — Quad Split 四宫并行蒙太奇（motion-lab 定稿转原生 HyperFrames）
 // 手法卡：画面硬切成 2×2 四宫格，四个象限并行跑各自独立的微场景（格内内容可任意替换，
 // 此处仅为示例）：TL 迷你浏览器打字 + 标签堆积 + 慢推，TR mono 打字 + whip 急推，
 // BL 三词逐个弹入，BR pill 滑入 → 光标贝塞尔飞行点击 → 卡片弹出。
@@ -124,7 +124,7 @@ const QuadTR: React.FC<{ t: number; frame: number }> = ({ t, frame }) => {
           borderRadius: 8,
           boxShadow: '0 6px 20px rgba(0,0,0,.12)',
           padding: '8px 12px 14px',
-          // 原渲染无全局 border-box：76% 是内容宽，padding 外扩（Remotion 注入
+          // 原渲染无全局 border-box：76% 是内容宽，padding 外扩（HyperFrames 注入
           // 了 * { box-sizing:border-box }，显式还原 content-box 才对得上原片）
           boxSizing: 'content-box',
         }}

@@ -1,5 +1,5 @@
 // origin: template/src/aifl/DigitRoll.tsx（模板片同源组件）
-import { interpolate, useCurrentFrame, Easing } from 'remotion';
+import { interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 const DIGITS = '0123456789';
 

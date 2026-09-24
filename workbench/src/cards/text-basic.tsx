@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, useCurrentFrame } from "hyperframes";
 import type { CardDef } from "./types";
 import { FONT_STACK, lerp, power2Out, power3Out, power4Out, tw } from "./shared";
 

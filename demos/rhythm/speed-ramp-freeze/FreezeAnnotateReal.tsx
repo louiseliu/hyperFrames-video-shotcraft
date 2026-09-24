@@ -2,7 +2,7 @@
 // 马克笔琥珀圈注（feTurbulence 手绘抖动）圈住目标卡 + 箭头点题，解冻继续。
 // remap：0–45 流动 → 45–100 定格（斜率0）→ 100–135 解冻（1.4x 补偿）。
 import { useId } from 'react';
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from 'hyperframes';
 import layout from '../../_textures/live-layout.json';
 
 export const FREEZEANNOTATE_DUR = 135;

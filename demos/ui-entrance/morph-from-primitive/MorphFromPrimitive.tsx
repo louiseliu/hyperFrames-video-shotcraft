@@ -2,7 +2,7 @@
 // 正圆呼吸一拍(anticipation) → path d 逐数值插值变形成 520×300 圆角矩形卡片轮廓
 // → 卡片内部灰阶内容条淡入。全部帧驱动、确定性。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const CX = 960;

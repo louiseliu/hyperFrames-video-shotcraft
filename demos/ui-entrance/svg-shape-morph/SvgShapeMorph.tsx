@@ -1,4 +1,4 @@
-// svg-shape-morph — Shape Morph 轮廓变形（motion-lab 定稿转原生 Remotion）
+// svg-shape-morph — Shape Morph 轮廓变形（motion-lab 定稿转原生 HyperFrames）
 // 一个 SVG 轮廓平滑变形为另一个再变回：两条闭合轮廓先重采样到相同点数
 // （极坐标 140 点），逐点插值 + inOutCubic，变形中段加轻微 scale 呼吸与
 // 色相漂移，得到有机的流动感。

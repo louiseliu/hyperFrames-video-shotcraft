@@ -1,4 +1,4 @@
-import { Composition } from 'remotion';
+import { Composition } from 'hyperframes';
 import { AIFL_TOTAL } from './aifl/Main';
 import { ThemedFilm } from './themes/ThemedFilm';
 

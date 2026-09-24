@@ -1,4 +1,4 @@
-// grain-dissolve — Grain Dissolve → Condense 文字砂化凝聚（motion-lab 定稿转原生 Remotion）
+// grain-dissolve — Grain Dissolve → Condense 文字砂化凝聚（motion-lab 定稿转原生 HyperFrames）
 // 干净的整行字 "{ ACME. Now Live }" 先爆裂成沸腾颗粒噪点（轮廓隐约可辨、白色辉光），
 // 同时出现带 45° 斜纹填充和像素方块角柄的选区框；噪点沸腾约半程后选区框消失，
 // 噪点云急速凝聚成更大号的颗粒短字标（占位词 "ACME"），位移量衰减归零、辉光冲高回落，

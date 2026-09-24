@@ -1,5 +1,5 @@
 import { useVisualTheme, themePaint, themeAsset, sceneDefaults } from '../../themes/visual-theme';
-import { AbsoluteFill, Img, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 import { AIFL_SHOTS } from '../Main';
 import { PageCam, CamKey } from './PageCam';
 import layout from '../live-layout.json';

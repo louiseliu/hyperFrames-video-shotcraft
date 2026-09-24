@@ -14,7 +14,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from 'remotion';
+} from 'hyperframes';
 
 export const ORBIT_RING_TITLE_OPEN_DURATION = 130; // 4.33s @30fps
 

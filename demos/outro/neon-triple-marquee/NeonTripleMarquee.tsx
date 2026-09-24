@@ -3,7 +3,7 @@
 // 奇偶行反向匀速无限滚动（marquee 允许 linear），
 // 三行明暗轮流脉冲（一行亮时其余压暗），结尾整组淡出。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'hyperframes';
 
 const FONT = '"Arial Black", "Helvetica Neue", Arial, sans-serif';
 

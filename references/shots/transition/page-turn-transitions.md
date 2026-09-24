@@ -36,7 +36,7 @@ shot-transitions 六式和 transition-travel/hidden-cut 都把页面当"场景"
   首次实战须以真实素材回验
 - 一缝一式规矩同 shot-transitions；体块转场比镜头交棒更重，
   **全片 ≤2 次**，连续两缝都用体块读作 PPT 翻页
-- A 式官方 `@remotion/transitions` cube() 是付费件——本卡是 CSS 自实现，
+- A 式官方 `@hyperframes/transitions` cube() 是付费件——本卡是 CSS 自实现，
   backlog 已有"评估官方转场原语"待选项，若引入官方件可对照
 - B 式两半必须**对位拼合无缝**（右半内层 translateX(−960px)）——
   静止时看出接缝就穿帮；真实截图注意奇数宽度取整

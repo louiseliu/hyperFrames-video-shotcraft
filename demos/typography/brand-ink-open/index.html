@@ -1,0 +1,36 @@
+<!-- brand-ink-open -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="BrandInkOpen"] { width: 1920px; height: 1080px; background: #faf7f2; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div data-composition-id="BrandInkOpen" data-start="0" data-duration="3.4667" data-fps="30" data-width="1920" data-height="1080" id="comp"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const WORDMARK='AI Foundation Lab', KICKER='TEAM RESEARCH CONSOLE', TOTAL=104;
+    const clamp=(f,a,b,va,vb,e)=>{let t=(f-a)/(b-a);t=Math.max(0,Math.min(1,t));if(e==='bez'){/* approx bezier via ease */t=t*t*(3-2*t);}return va+(vb-va)*t;};
+    const comp=document.getElementById('comp'); const tl=gsap.timeline({paused:true}); const state={t:0};
+    tl.to(state,{t:1,duration:TOTAL/30,ease:'none',onUpdate:()=>{
+      const frame=Math.min(TOTAL-1,Math.round(state.t*(TOTAL-1)));
+      const vDraw=clamp(frame,0,9,100,0), hDraw=clamp(frame,8,18,100,0), crossFade=clamp(frame,24,34,1,0);
+      const kickStart=28, perChar=0.7, kickChars=Math.floor(Math.max(0,frame-kickStart)/perChar), kickDone=kickStart+KICKER.length*perChar;
+      let cursorOn=false; if(frame>=kickStart&&frame<kickDone)cursorOn=true; else if(frame>95){const b=frame-kickDone;cursorOn=Math.floor(b/2)%2===0;}
+      const brandOut=clamp(frame,97,104,0,1), brandOpacity=1-brandOut, groupY=-brandOut*40, groupScale=1-brandOut*0.12;
+      const glyphs=WORDMARK.split('').map((ch,i)=>{const delay=10+i*3,t=clamp(frame,delay,delay+12,0,1);
+        const glintCenter=delay+12, glint=clamp(frame,glintCenter-4,glintCenter,0,1)*clamp(frame,glintCenter,glintCenter+4,1,0);
+        return `<span style="position:relative;display:inline-block;opacity:${t};transform:scale(${1.6-0.6*t});transform-origin:center bottom;filter:blur(${(1-t)*6}px)">${ch===' '?'&nbsp;':ch}<span style="position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:${glint*100}%;height:2px;background:oklch(52% 0.115 65);opacity:${glint};border-radius:2px"></span></span>`;}).join('');
+      comp.innerHTML=`<div style="text-align:center;opacity:${brandOpacity};transform:translateY(${groupY}px) scale(${groupScale})">
+        <svg width="64" height="64" viewBox="0 0 64 64" style="display:block;margin:0 auto 34px;opacity:${crossFade}"><line x1="32" y1="2" x2="32" y2="62" stroke="oklch(52% 0.115 65)" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="${vDraw}"/><line x1="2" y1="32" x2="62" y2="32" stroke="oklch(52% 0.115 65)" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="${hDraw}"/></svg>
+        <div style="font-family:ui-serif,Georgia,'Times New Roman',serif;font-size:132px;font-weight:600;color:oklch(18% 0.006 82);letter-spacing:-0.01em;line-height:1;white-space:pre;display:inline-flex;align-items:flex-end">${glyphs}</div>
+        <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:26px;letter-spacing:0.14em;color:oklch(50% 0.006 82);margin-top:30px;text-transform:uppercase;height:30px;display:flex;justify-content:center;align-items:center"><span style="white-space:pre">${KICKER.slice(0,kickChars)}</span><span style="display:inline-block;width:14px;height:24px;margin-left:4px;background:oklch(52% 0.115 65);opacity:${cursorOn?0.85:0}"></span></div></div>`;
+    }},0);
+    window.__timelines['BrandInkOpen']=tl;
+  </script>
+</body>
+</html>

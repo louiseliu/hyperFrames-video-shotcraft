@@ -2,7 +2,7 @@
 // 深墨大卡居中，一道 45° 高光带在 40–68f 从左外扫到右外，仅此一次。
 // 约束：单点(只扫主角卡)、圆角裁剪(overflow hidden)、扫前扫后完全静止。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const CARD_W = 760;

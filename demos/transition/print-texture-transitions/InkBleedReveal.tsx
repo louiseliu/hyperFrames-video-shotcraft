@@ -7,7 +7,7 @@
 // 0→1450（Easing.out(quad)）再叠 ±8% 低频正弦扰动（帧 78–98 扰动衰减到 0，
 // 洇满全屏）；帧 100–130 摘掉 mask 直接铺新景，真静止 30f。
 import React, { useId } from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 export const InkBleedReveal: React.FC = () => {

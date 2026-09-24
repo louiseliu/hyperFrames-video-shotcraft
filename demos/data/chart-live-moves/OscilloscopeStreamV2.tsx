@@ -5,7 +5,7 @@
 // 刹停逻辑保留：f100–112 out-cubic 刹停，f112 后真静止 48f。
 // 帧确定性：波形与尖峰包络都是纯 worldX 函数，无 Math.random / Date.now。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

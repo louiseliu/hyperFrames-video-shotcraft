@@ -3,7 +3,7 @@
 // 高速段叠 blur（速度差分驱动，糊成色带），急刹精准停位后目标行抬升
 // （scale 1.03 + 阴影加深）+ 高亮描边，其余行退暗。f=84 后全静止（56f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const CL = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;

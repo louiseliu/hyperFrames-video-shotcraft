@@ -4,7 +4,7 @@
 //   node scripts/open.mjs <成片工程目录> [--port 5198] [--no-open] [--no-import]
 //   node scripts/open.mjs                # 不给目录：沿用上次链接的工程
 //
-// 成片工程目录 = 含 package.json / remotion.config.ts 的那一层，源码在 <目录>/src（或 <目录>/remotion/src）。
+// 成片工程目录 = 含 package.json / hyperframes.config.ts 的那一层，源码在 <目录>/src（或 <目录>/hyperframes/src）。
 // 工程要提供 src/workbench.ts 清单（结构见 references/workbench.md）才能拆解导入；没有清单也能打开，
 // 只是素材 tab 没有「导入成片」按钮。
 // 链接全是机器本地符号链接（workbench/proj、workbench/public/*），不进库。
@@ -43,9 +43,9 @@ if (!relink) {
   log(`沿用上次链接的工程：${projectDir}`);
 } else {
   if (!existsSync(projectDir)) die(`工程目录不存在：${projectDir}`, 2);
-  const candidates = [join(projectDir, "src"), join(projectDir, "remotion", "src")];
+  const candidates = [join(projectDir, "src"), join(projectDir, "hyperframes", "src")];
   const srcDir = candidates.find((d) => existsSync(d) && readdirSync(d).some((f) => /^(Root|index|entry|workbench)\.tsx?$/.test(f)));
-  if (!srcDir) die(`在 ${projectDir} 下找不到 Remotion 源码目录（src/ 或 remotion/src/ 需含 Root.tsx / index.ts）`, 2);
+  if (!srcDir) die(`在 ${projectDir} 下找不到 HyperFrames 源码目录（src/ 或 hyperframes/src/ 需含 Root.tsx / index.ts）`, 2);
   const projRoot = dirname(srcDir); // package.json / public 所在层
   const publicSrc = join(projRoot, "public");
 

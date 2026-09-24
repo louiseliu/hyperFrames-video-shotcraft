@@ -1,4 +1,4 @@
-// floating-glossy-label-pills — Glossy Pills Carousel 高光胶囊横滑走廊（motion-lab 定稿转原生 Remotion）
+// floating-glossy-label-pills — Glossy Pills Carousel 高光胶囊横滑走廊（motion-lab 定稿转原生 HyperFrames）
 // 白底四角强调色雾霭，四块浅灰 dashboard 占位 mockup（三栏卡片 / 折线图仪表盘 /
 // 列表表格 / 表单+开关列表）横向排队，各顶一枚高光强调色胶囊标签（Feature A–D）；
 // 轨道环形循环，任一拍居中面板左右都露出相邻面板边缘。开场有上一拍收尾余量

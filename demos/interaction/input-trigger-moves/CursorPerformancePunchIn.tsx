@@ -3,7 +3,7 @@
 // 点击：按钮下陷 + 涟漪扩散 + 整画布以点击点为原点推近 1→1.4 → 停 → 缓退回。
 // 推近"有去有回"区别 crash-zoom。收尾真静止 ≥35f。全灰阶。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard, G } from '../../_fixtures/Fixtures';
 
 // 时间轴（30fps，共 150f）

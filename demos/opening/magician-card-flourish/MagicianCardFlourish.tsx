@@ -10,8 +10,8 @@
 //    急加速弹射，弧线段整体减速抵达中心硬定格）。
 // v5 其余保留：中心极远飞出+13 圈自旋+94% 定格+sheen 扫光。总长 141 帧。
 import React, { useId } from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import { G } from '../../_fixtures/Fixtures';
 
 const CARD_W = 380;

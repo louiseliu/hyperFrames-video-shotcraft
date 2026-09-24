@@ -1,0 +1,538 @@
+<!doctype html>
+<html
+  data-composition-variables='[
+    {"id":"theme","type":"enum","label":"Theme","default":"ink-press","options":[
+      {"value":"ink-press","label":"Ink Press"},
+      {"value":"modern-light","label":"Modern Light"},
+      {"value":"midnight","label":"Midnight"},
+      {"value":"sage","label":"Sage"},
+      {"value":"coral","label":"Coral"},
+      {"value":"iris","label":"Iris"},
+      {"value":"deep-ocean","label":"Deep Ocean"},
+      {"value":"obsidian-violet","label":"Obsidian Violet"},
+      {"value":"vintage-kraft","label":"Vintage Kraft"}
+    ]}
+  ]'
+>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* ── base reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── brand fonts ── */
+    .serif { font-family: ui-serif, Georgia, "Times New Roman", serif; }
+    .mono  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    /* ── paper base ── */
+    [data-composition-id="AiflPromo"] {
+      background-color: #f2eee6;
+      overflow: hidden;
+    }
+
+    /* ── scene containers ── */
+    .scene {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* ── brand open ── */
+    .brand-group {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .brand-center {
+      text-align: center;
+    }
+
+    .crosshair { display: block; margin: 0 auto 34px; }
+
+    .wordmark {
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 132px;
+      font-weight: 600;
+      color: #13110f;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      white-space: pre;
+      display: inline-flex;
+      align-items: flex-end;
+    }
+
+    .wordmark-char {
+      position: relative;
+      display: inline-block;
+      transform-origin: center bottom;
+    }
+
+    .wordmark-glint {
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      transform: translateX(-50%);
+      height: 2px;
+      background: #955905;
+      border-radius: 2px;
+    }
+
+    .kicker-line {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 26px;
+      letter-spacing: 0.14em;
+      color: #65635f;
+      margin-top: 30px;
+      text-transform: uppercase;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .kicker-cursor {
+      display: inline-block;
+      width: 14px;
+      height: 24px;
+      margin-left: 4px;
+      background: #955905;
+    }
+
+    /* ── title cards ── */
+    .title-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f6f1;
+      background-image: radial-gradient(1100px 750px at 50% 42%, oklch(99.3% 0.014 88 / 0.85), transparent 65%);
+    }
+
+    .title-card-text {
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 116px;
+      font-weight: 600;
+      line-height: 1.14;
+      color: #13110f;
+      letter-spacing: -0.012em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 0.26em;
+      max-width: 1500px;
+    }
+
+    .title-card-word {
+      display: inline-block;
+    }
+
+    .title-card-accent {
+      font-style: italic;
+      color: #955905;
+    }
+
+    .title-card-underline {
+      height: 6px;
+      width: 220px;
+      margin: 38px auto 0;
+      border-radius: 3px;
+      background: #955905;
+      transform: scaleX(0);
+    }
+
+    /* ── captions ── */
+    .caption-strip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 22px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #575552;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .caption-dot {
+      width: 6px;
+      height: 6px;
+      background: #955905;
+      display: inline-block;
+    }
+
+    /* ── flash cuts ── */
+    .flash-cut {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(255,248,235,0.98), rgba(255,244,224,0.55) 55%, transparent 80%);
+    }
+  </style>
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════
+       AiflPromo  ~36.2s @ 30fps (1085 frames)
+       Paper-and-ink morning reading room — 10 shots
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div
+    data-composition-id="AiflPromo"
+    data-start="0"
+    data-duration="36.167"
+    data-fps="30"
+    data-width="1920"
+    data-height="1080"
+  >
+    <!-- ── SFX (audio track) ── -->
+    <audio id="sfx-01" data-start="0.4"    data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/transition-soft.mp3"></audio>
+    <audio id="sfx-02" data-start="2.6"    data-duration="3" data-track-index="10" data-volume="0.45" src="audio/whoosh-fast.mp3"></audio>
+    <audio id="sfx-03" data-start="4.233"  data-duration="3" data-track-index="10" data-volume="0.5"  src="audio/whoosh-big.mp3"></audio>
+    <audio id="sfx-04" data-start="4.7"    data-duration="3" data-track-index="10" data-volume="0.35" src="audio/sparkle.mp3"></audio>
+    <audio id="sfx-05" data-start="6.8"    data-duration="3" data-track-index="10" data-volume="0.5"  src="audio/transition-snap.mp3"></audio>
+    <audio id="sfx-06" data-start="7.333"  data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/swoosh-quick.mp3"></audio>
+    <audio id="sfx-07" data-start="9.233"  data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/transition-soft.mp3"></audio>
+    <audio id="sfx-08" data-start="10.267" data-duration="3" data-track-index="10" data-volume="0.5"  src="audio/whoosh-big.mp3"></audio>
+    <audio id="sfx-09" data-start="11.333" data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/whoosh-fast.mp3"></audio>
+    <audio id="sfx-10" data-start="11.867" data-duration="3" data-track-index="10" data-volume="0.32" src="audio/whoosh-fast.mp3"></audio>
+    <audio id="sfx-11" data-start="12.933" data-duration="3" data-track-index="10" data-volume="0.5"  src="audio/whoosh-big.mp3"></audio>
+    <audio id="sfx-12" data-start="13.367" data-duration="0.8" data-track-index="10" data-volume="0.4" src="audio/keyboard.mp3"></audio>
+    <audio id="sfx-13" data-start="14.5"   data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/whoosh-fast.mp3"></audio>
+    <audio id="sfx-14" data-start="15.033" data-duration="3" data-track-index="10" data-volume="0.6"  src="audio/click-camera.mp3"></audio>
+    <audio id="sfx-15" data-start="15.167" data-duration="3" data-track-index="10" data-volume="0.35" src="audio/swoosh-quick.mp3"></audio>
+    <audio id="sfx-16" data-start="15.833" data-duration="3" data-track-index="10" data-volume="0.45" src="audio/transition-soft.mp3"></audio>
+    <audio id="sfx-17" data-start="18.833" data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/swoosh-quick.mp3"></audio>
+    <audio id="sfx-18" data-start="20.767" data-duration="3" data-track-index="10" data-volume="0.45" src="audio/transition-soft.mp3"></audio>
+    <audio id="sfx-19" data-start="21.6"   data-duration="3" data-track-index="10" data-volume="0.45" src="audio/click-camera.mp3"></audio>
+    <audio id="sfx-20" data-start="24.167" data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/swoosh-quick.mp3"></audio>
+    <audio id="sfx-21" data-start="25.967" data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/transition-soft.mp3"></audio>
+    <audio id="sfx-22" data-start="26.033" data-duration="1.47" data-track-index="10" data-volume="0.34" src="audio/keyboard.mp3"></audio>
+    <audio id="sfx-23" data-start="28.0"   data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/pop.mp3"></audio>
+    <audio id="sfx-24" data-start="28.167" data-duration="3" data-track-index="10" data-volume="0.37" src="audio/pop.mp3"></audio>
+    <audio id="sfx-25" data-start="28.333" data-duration="3" data-track-index="10" data-volume="0.34" src="audio/pop.mp3"></audio>
+    <audio id="sfx-26" data-start="28.5"   data-duration="3" data-track-index="10" data-volume="0.31" src="audio/pop.mp3"></audio>
+    <audio id="sfx-27" data-start="28.667" data-duration="3" data-track-index="10" data-volume="0.28" src="audio/pop.mp3"></audio>
+    <audio id="sfx-28" data-start="28.833" data-duration="3" data-track-index="10" data-volume="0.25" src="audio/pop.mp3"></audio>
+    <audio id="sfx-29" data-start="29.5"   data-duration="3" data-track-index="10" data-volume="0.4"  src="audio/swoosh-quick.mp3"></audio>
+    <audio id="sfx-30" data-start="31.5"   data-duration="3" data-track-index="10" data-volume="0.5"  src="audio/riser-cine.mp3"></audio>
+    <audio id="sfx-31" data-start="32.667" data-duration="3" data-track-index="10" data-volume="0.55" src="audio/impact-cine.mp3"></audio>
+    <audio id="sfx-32" data-start="33.5"   data-duration="3" data-track-index="10" data-volume="0.3"  src="audio/sparkle.mp3"></audio>
+
+    <!-- ── Scene 1: Brand Open (0–7.333s) ── -->
+    <div id="scene-morning" class="scene" data-start="0" data-duration="7.333" data-track-index="0">
+      <!-- Brand group: crosshair + wordmark + kicker -->
+      <div id="brand-group" class="brand-group">
+        <div class="brand-center">
+          <svg class="crosshair" width="64" height="64" viewBox="0 0 64 64">
+            <line id="cross-v" x1="32" y1="2" x2="32" y2="62" stroke="#955905" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+            <line id="cross-h" x1="2" y1="32" x2="62" y2="32" stroke="#955905" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+          </svg>
+          <div class="wordmark" id="wordmark"><!-- filled by script --></div>
+          <div class="kicker-line">
+            <span id="kicker-text"></span>
+            <span id="kicker-cursor" class="kicker-cursor" style="opacity:0"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Macro page camera scene (fades in at ~2.73s) -->
+      <div id="macro-scene" class="scene" style="opacity:0">
+        <img id="page-texture" src="textures/live/projects-full.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous"/>
+        <div id="spotlight-overlay" class="scene" style="pointer-events:none;opacity:0;"></div>
+      </div>
+    </div>
+
+    <!-- ── Scene 2: Title Card 1 (7.333–9.167s) ── -->
+    <div id="scene-card1" class="title-card" data-start="7.333" data-duration="1.833" data-track-index="1">
+      <div style="text-align:center;max-width:1500px;">
+        <div class="title-card-text" id="card1-text"><!-- filled by script --></div>
+        <div class="title-card-underline" id="card1-underline"></div>
+      </div>
+    </div>
+
+    <!-- ── Scene 3: Table / FlyIn (9.167–15.5s) ── -->
+    <div id="scene-table" class="scene" data-start="9.167" data-duration="6.333" data-track-index="0">
+      <img src="textures/live/projects-full.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous"/>
+    </div>
+
+    <!-- ── Scene 4: Macro Detail (15.5–18.833s) ── -->
+    <div id="scene-macro" class="scene" data-start="15.5" data-duration="3.333" data-track-index="0">
+      <img src="textures/live/detail-full.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous"/>
+    </div>
+
+    <!-- ── Scene 5: Title Card 2 (18.833–20.667s) ── -->
+    <div id="scene-card2" class="title-card" data-start="18.833" data-duration="1.833" data-track-index="1">
+      <div style="text-align:center;max-width:1500px;">
+        <div class="title-card-text" id="card2-text"><!-- filled by script --></div>
+        <div class="title-card-underline" id="card2-underline"></div>
+        <div id="card2-sub" class="mono" style="font-size:26px;letter-spacing:0.12em;color:#65635f;margin-top:34px;opacity:0;text-transform:uppercase;display:flex;justify-content:center;align-items:baseline;gap:0.5em;">
+          <span id="card2-digit" style="color:#955905;font-variant-numeric:tabular-nums;">0</span>
+          <span>of 31 fetched today</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Scene 6: Papers/Chart (20.667–24.167s) ── -->
+    <div id="scene-chart" class="scene" data-start="20.667" data-duration="3.5" data-track-index="0">
+      <img src="textures/live/papers-full.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous"/>
+    </div>
+
+    <!-- ── Scene 7: Title Card WBR (24.167–25.833s) ── -->
+    <div id="scene-cardWbr" class="title-card" data-start="24.167" data-duration="1.667" data-track-index="1">
+      <div style="text-align:center;max-width:1500px;">
+        <div class="title-card-text" id="cardWbr-text"><!-- filled by script --></div>
+        <div class="title-card-underline" id="cardWbr-underline"></div>
+      </div>
+    </div>
+
+    <!-- ── Scene 8: WBR (25.833–29.5s) ── -->
+    <div id="scene-wbr" class="scene" data-start="25.833" data-duration="3.667" data-track-index="0">
+      <img src="textures/live/wbr-full.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous"/>
+    </div>
+
+    <!-- ── Scene 9: Title Card 3 (29.5–31.333s) ── -->
+    <div id="scene-card3" class="title-card" data-start="29.5" data-duration="1.833" data-track-index="1">
+      <div style="text-align:center;max-width:1500px;">
+        <div class="title-card-text" id="card3-text"><!-- filled by script --></div>
+        <div class="title-card-underline" id="card3-underline"></div>
+      </div>
+    </div>
+
+    <!-- ── Scene 10: Outro (31.333–36.167s) ── -->
+    <div id="scene-outro" class="scene" data-start="31.333" data-duration="4.833" data-track-index="0">
+      <div style="position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background-color:#f2eee6;">
+        <div style="text-align:center;">
+          <div id="outro-wordmark" class="serif" style="font-size:124px;font-weight:600;color:#13110f;letter-spacing:-0.01em;opacity:0;">
+            AI Foundation Lab
+          </div>
+          <div id="outro-tagline" class="mono" style="font-size:44px;letter-spacing:0.12em;color:#65635f;margin-top:30px;text-transform:uppercase;opacity:0;">
+            Research, together.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Captions (overlay track) ── -->
+    <div id="cap-1" class="caption-strip" data-start="3.0"   data-duration="1.333" data-track-index="5"><span class="caption-dot"></span><span>TEN LIVE PROJECTS · FOUR RESEARCHERS</span></div>
+    <div id="cap-2" class="caption-strip" data-start="10.6"  data-duration="1.467" data-track-index="5"><span class="caption-dot"></span><span>NEW WORK LANDS ALL WEEK</span></div>
+    <div id="cap-3" class="caption-strip" data-start="13.167" data-duration="1.833" data-track-index="5"><span class="caption-dot"></span><span>SEARCH · FILTER · OPEN</span></div>
+    <div id="cap-4" class="caption-strip" data-start="15.9"  data-duration="2.267" data-track-index="5"><span class="caption-dot"></span><span>EVERY QUESTION, TRACKED TO ITS EXPERIMENTS</span></div>
+    <div id="cap-5" class="caption-strip" data-start="21.1"  data-duration="2.4"   data-track-index="5"><span class="caption-dot"></span><span>THE DAILY PAPER RADAR</span></div>
+    <div id="cap-6" class="caption-strip" data-start="26.3"  data-duration="2.6"   data-track-index="5"><span class="caption-dot"></span><span>FOUR VOICES, ONE WEEKLY BRIEF</span></div>
+
+    <!-- ── Flash cuts (overlay track) ── -->
+    <div id="flash-1" class="flash-cut" data-start="8.833"  data-duration="0.333" data-track-index="8"></div>
+    <div id="flash-2" class="flash-cut" data-start="15.333" data-duration="0.333" data-track-index="8"></div>
+    <div id="flash-3" class="flash-cut" data-start="20.5"   data-duration="0.333" data-track-index="8"></div>
+    <div id="flash-4" class="flash-cut" data-start="25.667" data-duration="0.333" data-track-index="8"></div>
+  </div>
+
+  <!-- ── GSAP + timeline ── -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const FPS = 30;
+    const f = (frame) => frame / FPS; // frame-to-seconds helper
+
+    // ─── Title card data ───
+    const TITLE_CARDS = {
+      card1: { text: "All your team's research, *one* place to go." },
+      card2: { text: "Paper *Radar,* tailored for your morning reading.", sub: "of 31 fetched today", subDigits: "5" },
+      cardWbr: { text: "Every project, *linked* to your weekly report." },
+      card3: { text: "The whole team, on the *same* page." },
+    };
+
+    const parseWords = (text) =>
+      text.split(/\s+/).filter(Boolean).map((w) => {
+        const m = w.match(/^\*(.+)\*$/);
+        return m ? { text: m[1], accent: true } : { text: w };
+      });
+
+    // ─── Populate title card words ───
+    function buildTitleCard(containerId, underlineId, cardKey) {
+      const container = document.getElementById(containerId);
+      const words = parseWords(TITLE_CARDS[cardKey].text);
+      words.forEach((w, i) => {
+        const span = document.createElement("span");
+        span.className = "title-card-word" + (w.accent ? " title-card-accent" : "");
+        span.textContent = w.text;
+        span.id = `${containerId}-w${i}`;
+        span.style.opacity = "0";
+        span.style.transform = "scale(1.28)";
+        span.style.filter = "blur(7px)";
+        container.appendChild(span);
+      });
+    }
+
+    buildTitleCard("card1-text", "card1-underline", "card1");
+    buildTitleCard("card2-text", "card2-underline", "card2");
+    buildTitleCard("cardWbr-text", "cardWbr-underline", "cardWbr");
+    buildTitleCard("card3-text", "card3-underline", "card3");
+
+    // ─── Populate wordmark characters ───
+    const WORDMARK = "AI Foundation Lab";
+    const wordmarkEl = document.getElementById("wordmark");
+    WORDMARK.split("").forEach((ch, i) => {
+      const span = document.createElement("span");
+      span.className = "wordmark-char";
+      span.textContent = ch === " " ? "\u00A0" : ch;
+      span.id = `wm-${i}`;
+      span.style.opacity = "0";
+      span.style.transform = "scale(1.6)";
+      span.style.filter = "blur(6px)";
+      // glint bar
+      const glint = document.createElement("span");
+      glint.className = "wordmark-glint";
+      glint.id = `wm-glint-${i}`;
+      glint.style.width = "0%";
+      glint.style.opacity = "0";
+      span.appendChild(glint);
+      wordmarkEl.appendChild(span);
+    });
+
+    // ════════════════════════════════════════════════════════════════════
+    //  BRAND OPEN (0–2.53s brand, 2.53s brand rest, ~2.77s dissolve)
+    // ════════════════════════════════════════════════════════════════════
+
+    // Crosshair draw-on
+    CustomEase.create("drawEase", "M0,0 C0.3,0 0.2,1 1,1");
+    tl.to("#cross-v", { attr: { "stroke-dashoffset": 0 }, duration: f(9), ease: "drawEase" }, 0);
+    tl.to("#cross-h", { attr: { "stroke-dashoffset": 0 }, duration: f(10), ease: "none" }, f(8));
+
+    // Crosshair fade
+    tl.to(".crosshair", { opacity: 0, duration: f(10) }, f(24));
+
+    // Wordmark letterpress (glyph-by-glyph)
+    WORDMARK.split("").forEach((ch, i) => {
+      const delay = f(10 + i * 3);
+      tl.to(`#wm-${i}`, { opacity: 1, scale: 1, filter: "blur(0px)", duration: f(12), ease: "power2.out" }, delay);
+      // Glint under each glyph
+      const glintCenter = delay + f(12);
+      tl.fromTo(`#wm-glint-${i}`,
+        { width: "0%", opacity: 0 },
+        { width: "100%", opacity: 1, duration: f(4), ease: "none" },
+        glintCenter - f(4)
+      );
+      tl.to(`#wm-glint-${i}`, { width: "0%", opacity: 0, duration: f(4), ease: "none" }, glintCenter);
+    });
+
+    // Kicker typewriter
+    const KICKER = "TEAM RESEARCH CONSOLE";
+    const kickerText = document.getElementById("kicker-text");
+    const kickerCursor = document.getElementById("kicker-cursor");
+    KICKER.split("").forEach((ch, i) => {
+      const charTime = f(28 + i * 0.7);
+      tl.call(() => { kickerText.textContent = KICKER.slice(0, i + 1); }, [], charTime);
+    });
+    tl.to("#kicker-cursor", { opacity: 0.85, duration: 0.01 }, f(28));
+
+    // Brand group dissolve out (76→83 frames = 2.533→2.767s)
+    tl.to("#brand-group", {
+      opacity: 0, y: -40, scale: 0.88,
+      duration: f(7), ease: "power2.in"
+    }, f(76));
+
+    // Macro scene fade in (82→90 frames)
+    tl.to("#macro-scene", { opacity: 1, duration: f(8), ease: "power2.out" }, f(82));
+
+    // ════════════════════════════════════════════════════════════════════
+    //  TITLE CARDS — word entrance + underline grow
+    // ════════════════════════════════════════════════════════════════════
+
+    function animateTitleCard(cardStart, cardDuration, containerId, underlineId, digitId) {
+      const words = document.querySelectorAll(`#${containerId} .title-card-word`);
+      words.forEach((w, i) => {
+        const delay = cardStart + f(4 + i * 4);
+        tl.to(w, {
+          opacity: 1, scale: 1, filter: "blur(0px)",
+          duration: f(9), ease: CustomEase.create(`tc-${containerId}-${i}`, "M0,0 C0.2,0.75 0.3,1 1,1")
+        }, delay);
+      });
+      // Underline grow
+      tl.to(`#${underlineId}`, {
+        scaleX: 1, duration: f(18),
+        ease: CustomEase.create(`ul-${containerId}`, "M0,0 C0.3,0 0.2,1 1,1")
+      }, cardStart + f(16));
+      // Fade out at end
+      tl.to(`#${containerId}`, { opacity: 0, duration: f(8) }, cardStart + cardDuration - f(8));
+      if (underlineId) {
+        tl.to(`#${underlineId}`, { opacity: 0, duration: f(8) }, cardStart + cardDuration - f(8));
+      }
+      // Sub-digit counter
+      if (digitId) {
+        const counter = { v: 0 };
+        tl.to(counter, {
+          v: 5, duration: f(10), ease: "power3.out",
+          onUpdate: () => {
+            const el = document.getElementById(digitId);
+            if (el) el.textContent = Math.round(counter.v).toString();
+          }
+        }, cardStart + f(12));
+        tl.to(`#${digitId}`, { opacity: 1, duration: f(12) }, cardStart + f(10));
+        tl.to("#card2-sub", { opacity: 1, duration: f(12) }, cardStart + f(10));
+      }
+    }
+
+    animateTitleCard(f(220), f(55), "card1-text", "card1-underline");
+    animateTitleCard(f(565), f(55), "card2-text", "card2-underline", "card2-digit");
+    animateTitleCard(f(725), f(50), "cardWbr-text", "cardWbr-underline");
+    animateTitleCard(f(885), f(55), "card3-text", "card3-underline");
+
+    // ════════════════════════════════════════════════════════════════════
+    //  CAPTIONS — fade in/out
+    // ════════════════════════════════════════════════════════════════════
+
+    document.querySelectorAll(".caption-strip").forEach((cap) => {
+      const start = parseFloat(cap.dataset.start);
+      const dur = parseFloat(cap.dataset.duration);
+      tl.fromTo(cap,
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: f(8), ease: "power2.out" },
+        start
+      );
+      tl.to(cap, { opacity: 0, duration: f(8), ease: "power2.in" }, start + dur - f(8));
+    });
+
+    // ════════════════════════════════════════════════════════════════════
+    //  FLASH CUTS — warm bloom
+    // ════════════════════════════════════════════════════════════════════
+
+    document.querySelectorAll(".flash-cut").forEach((flash) => {
+      const start = parseFloat(flash.dataset.start);
+      const dur = parseFloat(flash.dataset.duration);
+      tl.fromTo(flash,
+        { opacity: 0 },
+        { opacity: 0.85, duration: dur * 0.4, ease: "none" },
+        start
+      );
+      tl.to(flash, { opacity: 0, duration: dur * 0.6, ease: "none" }, start + dur * 0.4);
+    });
+
+    // ════════════════════════════════════════════════════════════════════
+    //  OUTRO — wordmark stamp + tagline
+    // ════════════════════════════════════════════════════════════════════
+
+    const outroStart = f(940);
+    tl.to("#outro-wordmark", { opacity: 1, duration: f(12), ease: "power3.out" }, outroStart + f(20));
+    tl.from("#outro-wordmark", { scale: 1.15, filter: "blur(4px)", duration: f(12), ease: "power3.out" }, outroStart + f(20));
+    tl.to("#outro-tagline", { opacity: 1, duration: f(10), ease: "power2.out" }, outroStart + f(40));
+    tl.from("#outro-tagline", { y: 20, duration: f(10), ease: "power2.out" }, outroStart + f(40));
+
+    // ────────────────────────────────────────────────────────────────────
+    //  Register timeline
+    // ────────────────────────────────────────────────────────────────────
+    window.__timelines["AiflPromo"] = tl;
+  </script>
+</body>
+</html>

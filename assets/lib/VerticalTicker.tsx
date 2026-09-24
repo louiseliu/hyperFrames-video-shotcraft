@@ -2,7 +2,7 @@
 //         (2026-07-13 扫描，2026-07-15 吸收；改动：items 泛化为 ReactNode、
 //          遮罩高度/透视角/scale/列宽/间距提为 props)
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'hyperframes';
 
 export interface TickerColumn {
   /** Column content — any ReactNode (screenshot-slice divs, <Img>, text cards…) */

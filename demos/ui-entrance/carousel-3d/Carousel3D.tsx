@@ -1,4 +1,4 @@
-// carousel-3d — 3D Carousel 环形画廊（motion-lab 定稿转原生 Remotion）
+// carousel-3d — 3D Carousel 环形画廊（motion-lab 定稿转原生 HyperFrames）
 // 8 张卡片按 sin/cos 排成圆环并匀速整环自转，每卡只绕 Y 公转、自身 billboard
 // 朝外，正反两层同向贴图 + backface-visibility:hidden，任何时刻卡片都正立不倒置；
 // 相机全程固定（浅俯角近景），配方 angle=i*360/n+frame*speed。

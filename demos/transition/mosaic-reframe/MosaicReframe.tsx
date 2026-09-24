@@ -1,4 +1,4 @@
-// mosaic-reframe — Mosaic Reframe 三段布局重排（motion-lab 定稿转原生 Remotion）
+// mosaic-reframe — Mosaic Reframe 三段布局重排（motion-lab 定稿转原生 HyperFrames）
 // 12 张图片瓦片在三种排版间连续变形：4x3 规则网格 → 带一块 2x2 大图的 feature
 // mosaic → 对角线瀑布串（每片 -15°+i*3° 递增旋转）。位置与宽高各自独立插值，
 // 每片按 index 微 stagger，smoothstep 缓动，段间留 hold。

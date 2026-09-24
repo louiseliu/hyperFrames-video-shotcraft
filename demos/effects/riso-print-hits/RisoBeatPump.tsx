@@ -5,7 +5,7 @@
 //    （每版反向 → 总分离 8/14/22/32px），12f 衰减余弦震荡收敛套准；
 // ③ 底部对应节拍刻度点闪深并常驻。结构：0–29f hold；30–115f 四拍；116–139f 真静止。
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const HITS = [30, 54, 78, 102]; // 节拍命中帧

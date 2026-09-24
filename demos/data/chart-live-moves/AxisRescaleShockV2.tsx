@@ -6,7 +6,7 @@
 // 标签 "$340k"；卡片震动 3→8px。收尾 f120 后真静止 40f。
 // 帧确定性：数据硬编码，全部 frame 派生，无 Math.random / Date.now。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

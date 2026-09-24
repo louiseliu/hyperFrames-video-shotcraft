@@ -7,7 +7,7 @@
 // 14f 升至 -10% 过冲 → 再 6f 回落归 0 → 末字(索引12)于 56f 落定 →
 // 56–130 全静止（74f ≥ 40f，无逐帧噪声层）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const TEXT = 'MOTION SYSTEM';

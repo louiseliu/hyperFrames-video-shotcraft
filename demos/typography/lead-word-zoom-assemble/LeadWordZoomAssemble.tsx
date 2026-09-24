@@ -13,11 +13,11 @@ import {
   continueRender,
   delayRender,
   Easing,
-  getRemotionEnvironment,
+  getHyperFramesEnvironment,
   interpolate,
   useCurrentFrame,
   useVideoConfig,
-} from 'remotion';
+} from 'hyperframes';
 
 export const LEAD_WORD_ZOOM_ASSEMBLE_DURATION = 84; // 2.8s @30fps
 
@@ -142,7 +142,7 @@ const TextReveal: React.FC = () => {
           )}px`,
           opacity: ready ? 1 : 0,
           textRendering: 'geometricPrecision',
-          ...(getRemotionEnvironment().isRendering ? null : { willChange: 'transform' as const }),
+          ...(getHyperFramesEnvironment().isRendering ? null : { willChange: 'transform' as const }),
         }}
       >
         {words.map((word, i) => {

@@ -1,5 +1,5 @@
 // white-flash-logo-simplify-cut — White Flash Simplify 冲白降维切换
-// （motion-lab 定稿转原生 Remotion）
+// （motion-lab 定稿转原生 HyperFrames）
 // 彩色液态质感词标（占位字标）静置后画面 0.2s 冲白（冲白瞬间叠一帧轻微
 // blur 做过曝感），紧接扁平渐变版字标从白底淡入 + scale 0.96→1 定格。
 // 一次闪白完成"液态质感→扁平字标"的降维切换。

@@ -4,7 +4,7 @@
 // 全部克隆加速吸回本体合一（10f ease-in），合体瞬间本体弹 1.08x。
 // 收尾 f120 后真静止 40f。全部 frame 派生。
 import React from 'react';
-import { useCurrentFrame, interpolate, spring, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, spring, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 const FPS = 30;

@@ -10,7 +10,7 @@ import {
   interpolate,
   spring,
   Easing,
-} from 'remotion';
+} from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

@@ -108,15 +108,15 @@ lines = [
     '# video-shotcraft',
     '',
     '> video-shotcraft is an AI agent skill for Claude Code and Codex that crafts '
-    'cinematic product promo videos with Remotion. It ships '
+    'cinematic product promo videos with HyperFrames. It ships '
     f'{lib["stats"]["cardCount"]} shot recipe cards covering '
     f'{lib["stats"]["styleCount"]} styles with {lib["stats"]["previewCount"]} motion '
-    'previews, reusable Remotion components, SFX assets, a six-stage production '
+    'previews, reusable HyperFrames components, SFX assets, a six-stage production '
     'methodology, and a production-ready 36.2-second promo template (Ink Press).',
     '',
     'Each shot recipe card documents a motion technique: purpose, energy level, '
     'suggested duration, tuned parameters, implementation notes, and known pitfalls, '
-    'paired with a tuned Remotion (TSX) reference implementation.',
+    'paired with a tuned HyperFrames (TSX) reference implementation.',
     '',
     '## Docs',
     '',

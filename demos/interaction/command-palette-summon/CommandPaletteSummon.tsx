@@ -3,7 +3,7 @@
 // → 5 条候选行错峰浮现 → 模拟输入 2 字母（灰块当字符）候选 5→3→2 收窄
 // → 高亮首条。f=110 后全静止（40f）。光标 f<104 闪烁、之后常亮。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CL = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;

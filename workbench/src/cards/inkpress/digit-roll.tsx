@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, interpolate, useCurrentFrame } from "remotion";
+import { Easing, interpolate, useCurrentFrame } from "hyperframes";
 
 // 里程表数字滚动（源出 template/src/aifl/DigitRoll.tsx，字卡副标用）
 const DIGITS = "0123456789";

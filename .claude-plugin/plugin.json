@@ -1,7 +1,7 @@
 {
   "name": "video-shotcraft",
   "version": "1.0.0",
-  "description": "Craft cinematic product videos with Remotion using shot recipes, motion previews, reusable components, SFX, and a production-ready template.",
+  "description": "Craft cinematic product videos with HyperFrames using shot recipes, motion previews, reusable components, SFX, and a production-ready template.",
   "author": {
     "name": "Wei Yihao"
   },
@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "keywords": [
     "video",
-    "remotion",
+    "hyperframes",
     "motion-design",
     "product-video",
     "agent-skill"

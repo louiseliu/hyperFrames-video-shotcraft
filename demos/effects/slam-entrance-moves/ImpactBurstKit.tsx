@@ -7,7 +7,7 @@
 //   + 4f 震屏 6px 衰减 + 主卡 6f 压扁回弹 → 23 环前沿过邻卡(中心距 460px)：
 //   邻卡外推 30px + rotate ±3° 阻尼振荡弹回(40f 内钳到 0) → 63–140 全静止(77f)。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, TitleBlock } from '../../_fixtures/Fixtures';
 
 // 伪随机（帧确定）

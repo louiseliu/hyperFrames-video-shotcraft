@@ -1,6 +1,6 @@
 import React from 'react';
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import { FakeDashboard, Card, G } from '../../_fixtures/Fixtures';
 
 // invisible-cut：前景遮挡隐形切——一张放大到超出画幅的卡片带重运动模糊

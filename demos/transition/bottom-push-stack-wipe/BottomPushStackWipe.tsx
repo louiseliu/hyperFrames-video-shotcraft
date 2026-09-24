@@ -3,7 +3,7 @@
 // 连推三章（三种饱和底色，每章中央钉一张灰阶窗口卡随底色走）。
 // 推入用重 ease-out（快进慢停）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { Card, G } from '../../_fixtures/Fixtures';
 
 const H = 1080;

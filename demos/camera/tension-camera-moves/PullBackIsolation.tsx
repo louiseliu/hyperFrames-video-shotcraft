@@ -5,7 +5,7 @@
 // 背景 60–110f 从 #ececea 沉入 #141414；主卡白光晕 60–100f 淡入。
 // 帧 110–150 完全静止：暗场中央孤悬一张发光小卡——全片只为这一个数字。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 // 8 张兄弟卡：相对主卡中心 (960,540) 的偏移 + 尺寸 + seed

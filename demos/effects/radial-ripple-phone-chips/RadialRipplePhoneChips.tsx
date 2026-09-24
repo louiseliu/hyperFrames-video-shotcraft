@@ -1,4 +1,4 @@
-// radial-ripple-phone-chips — Radial Ripple Chips 同心波纹手机（motion-lab 定稿转原生 Remotion）
+// radial-ripple-phone-chips — Radial Ripple Chips 同心波纹手机（motion-lab 定稿转原生 HyperFrames）
 // 浅灰底同心圆多层错相呼吸如水波，中央手机 mockup 屏内 feed 缓慢自动滚动，
 // 两侧白色 chip 先后 spring pop 入场并悬浮。配色是灰阶骨架 + 单一强调色
 //（ACCENT 变量），落地时按项目品牌色替换。
@@ -78,7 +78,7 @@ export const RadialRipplePhoneChips: React.FC = () => {
             borderRadius: 22,
             background: '#1b1c22',
             padding: 7,
-            // 原渲染无全局 border-box：132px 是内容宽，padding 外扩（Remotion 注入
+            // 原渲染无全局 border-box：132px 是内容宽，padding 外扩（HyperFrames 注入
             // 了 * { box-sizing:border-box }，这里显式还原 content-box 才对得上原片）
             boxSizing: 'content-box',
             boxShadow: '0 24px 50px rgba(58,64,74,.35)',

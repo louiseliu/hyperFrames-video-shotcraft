@@ -5,7 +5,7 @@
 // SHIP 20–38、FASTER 42–75（长词慢读）、BREAK 85–103、NOTHING 107–130，词间停顿。
 // 正在填的词底下有 8px 深色下划线跟随填充右缘作读指。0–19f hold；130–149f 真静止。
 import React from 'react';
-import { useCurrentFrame, interpolate } from 'remotion';
+import { useCurrentFrame, interpolate } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 type Word = { text: string; start: number; end: number };

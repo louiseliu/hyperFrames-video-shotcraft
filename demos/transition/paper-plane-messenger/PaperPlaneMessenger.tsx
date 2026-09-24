@@ -3,7 +3,7 @@
 // （俯仰角跟随切线），镜头伴飞穿过多层视差漂浮的灰阶道具，
 // 飞抵窗口 B 前落定，窗口 B 放大接管全屏。发送语义实体化成转场信使。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { Card, G } from '../../_fixtures/Fixtures';
 
 const mulberry32 = (a: number) => () => {

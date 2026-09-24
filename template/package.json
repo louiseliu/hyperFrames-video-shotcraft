@@ -1,20 +1,15 @@
 {
   "name": "promo-template",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts AiflPromo out/promo.mp4",
-    "still": "remotion still src/index.ts AiflPromo"
+    "dev": "npx hyperframes preview",
+    "render": "npx hyperframes render --output out/promo.mp4",
+    "lint": "npx hyperframes lint",
+    "validate": "npx hyperframes validate",
+    "inspect": "npx hyperframes inspect"
   },
   "dependencies": {
-    "@remotion/cli": "4.0.484",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
-    "remotion": "4.0.484"
-  },
-  "devDependencies": {
-    "@types/react": "19.2.17",
-    "typescript": "6.0.3"
+    "gsap": "^3.14.2"
   }
 }

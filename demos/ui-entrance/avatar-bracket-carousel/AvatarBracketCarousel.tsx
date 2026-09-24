@@ -1,4 +1,4 @@
-// avatar-bracket-carousel — Bracket Carousel 对焦框头像轮换（motion-lab 定稿转原生 Remotion）
+// avatar-bracket-carousel — Bracket Carousel 对焦框头像轮换（motion-lab 定稿转原生 HyperFrames）
 // "Your ___ teammates" 填空排版：四角对焦框锁定当前头像，头像队列垂直 spring 轮换，
 // 入框放大清晰、出框缩小淡化，角色标签同步更换，两侧文字不动。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

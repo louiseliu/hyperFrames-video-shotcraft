@@ -4,7 +4,7 @@
 // tab/组件悬空带错位影 → ④全部贴合）。v2 已有：强透视直角框左缘中点
 // 两头奔画、面板原地由暗转亮、背景霓虹管框群中亮尾熄。
 import React, { useId } from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const easeFall = Easing.bezier(0.5, 0.05, 0.6, 1); // 加速下落、末端软着陆
 

@@ -1,0 +1,32 @@
+<!-- platform-hinge-rise — 平台建立后，两块主体从相邻底部铰点反向翻起，最后结论台升入。 -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="PlatformHingeRise"] { background: #0a0b10; overflow: hidden; }
+    .scene { position: absolute; inset: 0; }
+  </style>
+</head>
+<body>
+  <div data-composition-id="PlatformHingeRise" data-start="0" data-duration="5.000" data-fps="30" data-width="1920" data-height="1080">
+    <div class="scene" id="content">
+      <!-- Elements populated by script based on original TSX logic -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const DUR = 5.000;
+    const FPS = 30;
+    const f = (frame) => frame / FPS;
+
+    // TODO: Port animation logic from PlatformHingeRise.tsx
+
+    window.__timelines["PlatformHingeRise"] = tl;
+  </script>
+</body>
+</html>

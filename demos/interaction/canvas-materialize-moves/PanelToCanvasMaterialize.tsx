@@ -2,7 +2,7 @@
 // 侧面板表格行复选框自动逐个打勾 → 按钮按下 → 三行内容飞出面板、
 // 物化成画布上三张独立卡片落位（行→卡跨容器形态迁移，尺寸/形状插值）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const PANEL_X = 1210;

@@ -6,10 +6,10 @@
 // 渲染 ProjImported（清单刚导入、未改动的工作台工程）与 ProjOriginal（成片工程自己的 Main）
 // 同一帧的 PNG 到 .parity/，用 PIL 逐像素比对（每通道差 > tolerance 的像素占比）。
 // 前置：已 `node scripts/open.mjs <工程>` 链接成片，清单提供了 `original`，本机有 python3 + Pillow。
-// 打包一次、渲多帧（remotion still 每次都重新打包，8 帧要跑八次 bundle）。
+// 打包一次、渲多帧（hyperframes inspect --at 每次都重新打包，8 帧要跑八次 bundle）。
 // 退出码：0 全部一致；1 有帧存在差异；2 无法得出结论（前置缺失 / 比对未执行）——绝不假绿。
-import { bundle } from "@remotion/bundler";
-import { renderStill, selectComposition } from "@remotion/renderer";
+import { bundle } from "@hyperframes/bundler";
+import { renderStill, selectComposition } from "@hyperframes/renderer";
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -34,7 +34,7 @@ if (!existsSync(join(wb, "proj", "workbench.ts"))) {
   }
 }
 
-// Remotion 静态服务器拒绝符号链接：同导出流程，先解引用同步到 .render-public
+// HyperFrames 静态服务器拒绝符号链接：同导出流程，先解引用同步到 .render-public
 const out = join(wb, ".parity");
 mkdirSync(out, { recursive: true });
 const renderPublic = join(wb, ".render-public");
@@ -43,9 +43,9 @@ if (rs.status !== 0) process.exit(2);
 
 console.log("bundling…");
 const serveUrl = await bundle({
-  entryPoint: join(wb, "src/remotion/index.ts"),
+  entryPoint: join(wb, "src/hyperframes/index.ts"),
   publicDir: renderPublic,
-  // 与 remotion.config.ts 同款别名（程序化 API 不读 remotion.config.ts）
+  // 与 hyperframes.config.ts 同款别名（程序化 API 不读 hyperframes.config.ts）
   webpackOverride: (c) => ({
     ...c,
     resolve: {

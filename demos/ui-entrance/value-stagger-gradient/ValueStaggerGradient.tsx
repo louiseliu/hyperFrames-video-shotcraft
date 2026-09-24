@@ -1,4 +1,4 @@
-// value-stagger-gradient — Value Stagger 数值梯度（motion-lab 定稿转原生 Remotion）
+// value-stagger-gradient — Value Stagger 数值梯度（motion-lab 定稿转原生 HyperFrames）
 // stagger 不只错开时间，还把属性值在 N 个元素上铺成梯度：16 根柱入场时
 // delay=stagger(时间)，同时高度/色相/模糊都是 stagger([from,to]) 的数值梯度；
 // 第二拍换 from:'center'，脉冲幅度以中心为原点重新铺开。

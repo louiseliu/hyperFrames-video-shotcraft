@@ -32,7 +32,7 @@ const CONFIG = {
   BASE: 'http://localhost:3000',
 
   // 截图与 layout.json 的输出目录（相对本脚本所在目录；通常指向
-  // Remotion 项目的 public/textures/live，供 staticFile() 引用）
+  // HyperFrames 项目的 public/textures/live，供 staticFile() 引用）
   OUT_DIR: '../../public/textures/live',
   LAYOUT_JSON: '../../src/live-layout.json',
 

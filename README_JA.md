@@ -23,7 +23,7 @@
 
 **video-shotcraft** は、Claude Code や Codex をモーションデザインスタジオに
 変える AI エージェントスキルです。製品を指定するだけで、ストーリーボード、アニメーション、
-サウンドデザインを行い、[Remotion](https://www.remotion.dev/) を使って映画のようなプロモーション、
+サウンドデザインを行い、[HyperFrames](https://hyperframes.heygen.com/) を使って映画のようなプロモーション、
 マーケティング、ローンチ、デモ動画を制作します。実際のページキャプチャ、2.5D カメラワーク、
 ビートに同期したカット、映画品質の SFX も含まれます。
 
@@ -40,7 +40,7 @@
 > **モーションレシピカード 78 枚**、7 層のアンチ・スライドショー ショット
 > システム（連続カメラカーブ、パララックス面、idle/yield ライフサイクル、
 > 呼吸する環境レイヤー）、ベタ切り字幕、3 段階の QA ゲート。レシピカード +
-> Remotion のワークフローは同じまま、ナレーション向けに再調整しました。
+> HyperFrames のワークフローは同じまま、ナレーション向けに再調整しました。
 >
 > 🎙️ [**プロジェクトページ »**](https://github.com/Vincentwei1021/video-talkcraft) ·
 > 🖼️ [**78 本のナレーション用モーションプレビューを見る »**](https://vincentwei1021.github.io/video-talkcraft/)
@@ -52,7 +52,7 @@
 > ショット / トランジション / 字幕 / SFX のトラックへ分解され、任意のショットを選んで
 > 文言・フォントサイズ・色をスキーマ駆動のインスペクタで編集、クリップの移動・トリム・
 > 速度変更、**216 本の demo モーション**をライブラリからドラッグして追加、そのまま
-> Remotion で書き出せます。プレビューとレンダリングはフレーム単位で一致（ピクセル比較で検証済み）。
+> HyperFrames で書き出せます。プレビューとレンダリングはフレーム単位で一致（ピクセル比較で検証済み）。
 >
 > ![モーションワークベンチ](workbench/docs/overview.png)
 >
@@ -62,7 +62,7 @@
 - 🌟 **2026-08 · ショットレシピカード 48 枚を新規追加**——ライブラリは 104 枚
   から **152 カード / 209 プレビュー**に拡充。209 候補から参照映像との
   フレーム単位比較レビューを 8 ラウンド重ねて厳選し、既存カテゴリに統合：
-  完全なレシピカード + ネイティブ Remotion コンポーネント
+  完全なレシピカード + ネイティブ HyperFrames コンポーネント
   （`demos/<カテゴリ>/<カード名>/<Component>.tsx`、正規化された進行度 t で
   駆動する決定論的レンダリング）+ モーションプレビュー。すべてテンプレート化済み
   （ニュートラルなプレースホルダー文言 + 差し替え可能な `ACCENT` カラー変数）。
@@ -149,13 +149,13 @@ Use video-shotcraft to make a promo for my product with the Ink Press template.
 ヘッドレスの Linux サーバー（検証環境：2 コア、Node 22）でレンダリングする際、
 次の 3 つの問題に遭遇します。いずれもフラグ 1 つで解決できます。
 
-1. **並列数の上限** — 低コアのマシンでは `remotion still/render` が
+1. **並列数の上限** — 低コアのマシンでは `hyperframes inspect --at/render` が
    "Maximum for --concurrency is 2" というエラーで失敗します。対処:
    `--concurrency=1` を指定します。
 2. **旧 Headless モードの廃止** — 最近の Chrome/Chromium は旧 headless モードを
-   廃止したため、Remotion にシステムの chromium を指定すると起動に失敗します。
+   廃止したため、HyperFrames にシステムの chromium を指定すると起動に失敗します。
    対処: フル版 Chrome ではなく chrome-headless-shell バイナリを使用します。
-3. **CDN への接続遮断** — remotion.media に到達できない環境では、
+3. **CDN への接続遮断** — hyperframes.heygen.com に到達できない環境では、
    headless-shell の自動ダウンロードが失敗します。対処:
    `--browser-executable=<ローカルの chrome-headless-shell のパス>` を指定します。
 
@@ -167,12 +167,12 @@ Use video-shotcraft to make a promo for my product with the Ink Press template.
 | --- | --- |
 | 157 種類のショットレシピカード | 目的、エネルギー、推奨時間、パラメータ、実装上の注意点、既知の落とし穴 |
 | 214 本のモーションプレビュー | 214 種類のスタイルを網羅し、オンライン Gallery で検索と絞り込みが可能 |
-| Remotion 実装 | 各カードの実際のイージングとタイミングパラメータを含む、調整済みの TSX デモ |
+| HyperFrames 実装 | 各カードの実際のイージングとタイミングパラメータを含む、調整済みの TSX デモ |
 | 完全な動画テンプレート | 検証済みの 36.2 秒、1920×1080、30fps、10 ショットの製品プロモーション |
 | コンポーネントとアセット | 2.5D ページカメラ、キャプション、フラッシュカット、数字ロール、SFX、キャプチャスクリプト |
 | 制作手法 | キャプチャ、ビジュアルディレクション、ストーリーボード、サウンドデザイン、ビート同期、最終 QA |
 | 剪映プロジェクト書き出し | 完成映像を剪映（CapCut 中国版）で継続編集——ショット変速・字幕・音声トラックを編集可（macOS 11.2 実機検証済み） |
-| モーションワークベンチ | 納品後に開くブラウザのタイムラインエディタ：映像をトラックに分解、公開されたショット属性の編集、再タイミング、216 個の demo モーションのドラッグ投入、Remotion 書き出し |
+| モーションワークベンチ | 納品後に開くブラウザのタイムラインエディタ：映像をトラックに分解、公開されたショット属性の編集、再タイミング、216 個の demo モーションのドラッグ投入、HyperFrames 書き出し |
 
 このツールキットは主に Web およびデスクトップ製品のプロモーションを対象としていますが、
 各ショットカードは機能デモ、ブランド映像、ローンチ動画、
@@ -192,13 +192,13 @@ video-shotcraft/
 │   ├── sound-design.md      # Sound-design guidance and examples
 │   ├── jianying-export.md   # JianYing (CapCut CN) project-export guide
 │   └── workbench.md         # Motion workbench: manifest contract + editability rules
-├── demos/                   # Remotion reference implementations for shot cards
+├── demos/                   # HyperFrames reference implementations for shot cards
 ├── gallery/                 # Static motion-preview Gallery
 ├── template/                # Runnable complete video template
 ├── jianying-export/         # JianYing draft installers (mac tested / win untested)
-├── workbench/               # Post-delivery motion workbench (Vite + Remotion Player)
+├── workbench/               # Post-delivery motion workbench (Vite + HyperFrames Player)
 └── assets/
-    ├── lib/                 # Reusable Remotion components
+    ├── lib/                 # Reusable HyperFrames components
     ├── scripts/             # Page-asset capture scripts
     └── audio/               # 音声アセット
         ├── bgm/             # BGM 候補 5 曲
@@ -238,9 +238,9 @@ Figma、Framer、Bear、Raycast、Pitch、Miro、Superhuman、Loom** のプロ�
 
 特に以下のプロジェクトとコミュニティに感謝します。
 
-- **[Remotion](https://www.remotion.dev/)** — すべてのデモとテンプレートを支える
-  React ベースの動画フレームワークです。Remotion には独自の
-  [ライセンス](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)
+- **[HyperFrames](https://hyperframes.heygen.com/)** — すべてのデモとテンプレートを支える
+  React ベースの動画フレームワークです。HyperFrames には独自の
+  [ライセンス](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
   がある点に注意してください（個人と小規模チームは無料、企業は有料ライセンスが必要な場合があります）。
 - **[Mixkit](https://mixkit.co/)** — 無料の商用ライセンスで収録されている
   SFX と音楽アセットの提供元です。

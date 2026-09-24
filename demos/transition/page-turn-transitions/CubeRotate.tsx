@@ -7,7 +7,7 @@
 // 落定摘掉（filter 条件挂载，保证收尾逐帧完全相同）。
 // 关键帧：0–30 静止展示 A → 30–68 θ 0→-90°（inOut cubic）翻转 → 68–140 B 真静止 72f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 const S = 0.82;

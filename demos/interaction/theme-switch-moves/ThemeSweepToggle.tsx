@@ -3,7 +3,7 @@
 // polygon 15° 斜边从左上扫到右下（先快后缓），边界带 2px 亮线；
 // 扫完深版整体 scale 0.995→1 "坐实"。f=70 后全静止（70f）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const CL = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 

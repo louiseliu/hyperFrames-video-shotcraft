@@ -4,7 +4,7 @@
 // 落定同帧盘下数值文字弹出。三表错峰形成波浪。f60 后真静止 80f。
 // 帧确定性：纯 interpolate 分段，全部 clamp，settle 后每帧输出常数。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 const AMBER = '#b45309';

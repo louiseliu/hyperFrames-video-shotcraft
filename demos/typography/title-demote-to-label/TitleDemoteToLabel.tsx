@@ -3,7 +3,7 @@
 // 平移到左上角变小节标签，内容区（灰阶骨架块）在其下方生长。
 // 附加变体（framer text-selection-title）：标题登场带文本选中蓝高亮块、随后撤掉。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const FONT = 'Helvetica, Arial, sans-serif';

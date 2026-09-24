@@ -1,4 +1,4 @@
-// list-reveal — List Reveal 菜单逐项找位（motion-lab 定稿转原生 Remotion）
+// list-reveal — List Reveal 菜单逐项找位（motion-lab 定稿转原生 HyperFrames）
 // 垂直菜单列表项依次 scale 找位入场（outBack 轻微过冲），同时整个列表容器
 // 全程线性缓慢上移——"整体漂移"与"逐项入场"两层运动分离叠加。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。
@@ -34,7 +34,7 @@ export const ListReveal: React.FC = () => {
             flexDirection: 'column',
             gap: 9,
             // -0.5px：原样片浏览器 flex 居中落在整数位（列表高 255 → 顶部 7.0），
-            // Remotion 渲染落在 7.5，补回半个设计像素对齐原片
+            // HyperFrames 渲染落在 7.5，补回半个设计像素对齐原片
             transform: `translateY(${lerp(t, 16, -16) - 0.5}px)`,
           }}
         >

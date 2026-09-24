@@ -1,4 +1,4 @@
-// countdown-arc-scatter — Countdown Arc 表盘数字扫过（motion-lab 定稿转原生 Remotion）
+// countdown-arc-scatter — Countdown Arc 表盘数字扫过（motion-lab 定稿转原生 HyperFrames）
 // 白底表盘：等大深色数字沿同一大弧切向排布，整盘扫过 ~96° 减速急停（数字随位置角在
 // 弧两端淡入/淡出），短刻度线同步回正；"5" 停上弧顶后落位成标题首字符，
 // "min / to / install" 逐词模糊淡入，结尾整词转强调色（末双字母收尾的染色手法保留）。

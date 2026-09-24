@@ -1,4 +1,4 @@
-// avatar-grid-radial-build-colorize — Avatar Grid 分环生长随机染色（motion-lab 定稿转原生 Remotion）
+// avatar-grid-radial-build-colorize — Avatar Grid 分环生长随机染色（motion-lab 定稿转原生 HyperFrames）
 // 8×7 小卡片网格由中心向四周分环生长（每 4 帧扩一环，1.2s 铺满），卡片内容混合三种占位：
 // 首字母 / 图标符 / 色块缩略图，只做 opacity + scale 0.8→1 不位移；铺满后约 15% 的卡片
 // 在 1s 内随机时刻把底色染成浅红、状态点转红，形成"异常项逐渐浮现"的呼吸感。
@@ -110,7 +110,7 @@ export const AvatarGridRadialBuildColorize: React.FC = () => {
                   fontWeight: 700,
                   fontSize: cl.kind === 1 ? 13 : 11,
                   lineHeight: 1,
-                  fontFamily: '-apple-system,Helvetica,sans-serif', // Remotion 无头浏览器缺 -apple-system，补 Helvetica 对齐原片 SF 字形
+                  fontFamily: '-apple-system,Helvetica,sans-serif', // HyperFrames 无头浏览器缺 -apple-system，补 Helvetica 对齐原片 SF 字形
                   color: cl.kind === 1 ? '#6a6f7c' : '#3A3A3E',
                   opacity: o,
                   boxShadow: '0 1px 2px rgba(0,0,0,.04)',
@@ -191,7 +191,7 @@ export const AvatarGridRadialBuildColorize: React.FC = () => {
                 fontWeight: 600,
                 fontSize: 11,
                 lineHeight: 1,
-                fontFamily: '-apple-system,Helvetica,sans-serif', // Remotion 无头浏览器缺 -apple-system，补 Helvetica 对齐原片 SF 字形
+                fontFamily: '-apple-system,Helvetica,sans-serif', // HyperFrames 无头浏览器缺 -apple-system，补 Helvetica 对齐原片 SF 字形
                 color: MID,
               }}
             >

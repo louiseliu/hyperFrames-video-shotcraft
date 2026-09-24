@@ -3,7 +3,7 @@
 // 其正下方独立椭圆阴影同步放大变淡——纸片离桌感；落回时阴影收紧变实，
 // 落地 2f 卡壳 scale 0.99 微压。三张依次各来一遍。收尾真静止 ≥35f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card } from '../../_fixtures/Fixtures';
 
 const outCubic = Easing.out(Easing.cubic);

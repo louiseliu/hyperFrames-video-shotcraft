@@ -1,8 +1,8 @@
 // speed-ramp 变速（轮 C）——真实卡片流帧号 remap：快(斜率2.2) →
 // 0.2x 慢速展示窗 → 快。慢速窗中目标卡（card4-hires）清晰滑过屏中。
 // blur 联动速率：快段包 blur、慢段不包，反差即"凝视感"。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from 'remotion';
-import { CameraMotionBlur } from '@remotion/motion-blur';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from 'hyperframes';
+import { CameraMotionBlur } from 'hyperframes/motion-blur';
 import layout from '../../_textures/live-layout.json';
 
 export const SPEEDRAMP_DUR = 135;

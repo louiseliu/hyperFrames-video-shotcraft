@@ -1,4 +1,4 @@
-// logo-shrink-wordmark-lockup — Shrink & Lockup 图标收束落位（motion-lab 定稿转原生 Remotion）
+// logo-shrink-wordmark-lockup — Shrink & Lockup 图标收束落位（motion-lab 定稿转原生 HyperFrames）
 // 霓虹切口大环 easeInOut 快速缩成中央实心小白 O（抽象几何 mark，末尾轻微过冲刹车），
 // 随后图标左移让位，五个字母从左到右逐个 opacity+8px 滑入完成 lockup，
 // 强调色标语延迟整行淡入收尾。设计坐标 480×270（DesignStage 等比放大）。

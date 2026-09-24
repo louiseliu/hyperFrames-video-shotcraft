@@ -1,0 +1,38 @@
+<!-- cel-flash-stomp -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [data-composition-id="CelFlashStomp"] { width: 1920px; height: 1080px; overflow: hidden; position: relative; }
+  </style>
+</head>
+<body>
+  <div data-composition-id="CelFlashStomp" data-start="0" data-duration="4.8" data-fps="30" data-width="1920" data-height="1080" id="comp"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const G={bg:'#ececea',ink:'#2f2f2f',mid:'#8f8f8d',sideBar:'#5a5a58'};
+    const WORDS=[{text:'SHIP',start:0,end:30,rot:2.5,flashLen:6,flashDark:'#cfcfca'},{text:'FASTER',start:30,end:60,rot:-2.5,flashLen:6,flashDark:'#cfcfca'},{text:'TODAY',start:60,end:9999,rot:0,flashLen:8,flashDark:'#c4c4c0'}];
+    const LAND=6, TOTAL=144; const comp=document.getElementById('comp');
+    const poly5=t=>1-Math.pow(1-t,5), outQuad=t=>t*(2-t);
+    const interp=(f,a,b,va,vb,{ease}={})=>{let t=(f-a)/(b-a);if(t<=0)return va;if(t>=1)return vb;if(ease==='poly5')t=poly5(t);else if(ease==='outQuad')t=outQuad(t);return va+(vb-va)*t;};
+    const tl=gsap.timeline({paused:true}); const state={t:0};
+    tl.to(state,{t:1,duration:TOTAL/30,ease:'none',onUpdate:()=>{
+      const frame=Math.min(TOTAL-1,Math.round(state.t*(TOTAL-1)));
+      const word=WORDS.find(w=>frame>=w.start&&frame<w.end), t=frame-word.start;
+      const scale=t<4?interp(t,0,4,1.18,0.98,{ease:'poly5'}):interp(t,4,LAND,0.98,1,{ease:'outQuad'});
+      const ft=t-LAND, flashing=ft>=0&&ft<word.flashLen, bg=flashing&&Math.floor(ft/2)%2===0?word.flashDark:G.bg;
+      const labelOp=interp(frame,66,80,0,1,{ease:'outQuad'});
+      comp.style.background=bg;
+      comp.innerHTML=`<div style="position:absolute;left:120px;top:96px;font-family:Helvetica,Arial,sans-serif;font-weight:800;font-size:54px;color:${G.ink}">CEL FLASH STOMP</div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="font-family:Helvetica,Arial,sans-serif;font-weight:800;font-size:210px;color:${G.ink};letter-spacing:-4px;transform:scale(${scale}) rotate(${word.rot}deg)">${word.text}</div></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;height:96px;background:${G.ink};opacity:${labelOp};display:flex;align-items:center;gap:20px;padding:0 120px;box-sizing:border-box">
+          <div style="width:40px;height:40px;border-radius:10px;background:${G.sideBar}"></div><div style="height:16px;width:320px;background:${G.mid};border-radius:8px"></div>
+          <div style="margin-left:auto;height:16px;width:180px;background:${G.sideBar};border-radius:8px"></div></div>`;
+    }},0);
+    window.__timelines['CelFlashStomp']=tl;
+  </script>
+</body>
+</html>

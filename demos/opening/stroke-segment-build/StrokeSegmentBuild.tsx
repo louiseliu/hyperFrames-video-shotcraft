@@ -5,7 +5,7 @@
 // 每段入场：opacity 0→1 + 沿笔画方向 12px 滑入（out 缓动），6f。
 // f0–14 静置空场；末段落位于 f104，脉冲至 f112，真静止 ≥38f（150f 总长）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, TitleBlock } from '../../_fixtures/Fixtures';
 
 // "SHIP" 手工笔画段。坐标系：每字 200 宽、320 高，字间距 60。

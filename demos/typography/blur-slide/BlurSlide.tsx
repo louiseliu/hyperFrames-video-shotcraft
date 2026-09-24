@@ -1,4 +1,4 @@
-// blur-slide — Blur Slide 逐词入场（motion-lab 定稿转原生 Remotion）
+// blur-slide — Blur Slide 逐词入场（motion-lab 定稿转原生 HyperFrames）
 // 标题逐词入场：y 40→0 + blur 10→0 + opacity 0→1，词间 stagger 极短（1 帧量级），
 // easeOutCubic——y/blur/opacity 三通道同缓动同步收敛的"专业文字 reveal"；副标题随后同法跟进。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

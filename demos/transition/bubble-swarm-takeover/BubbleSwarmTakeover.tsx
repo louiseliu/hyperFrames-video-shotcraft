@@ -2,7 +2,7 @@
 // 无剪切转场：珠光气泡群从画外飘入、越来越大遮满整屏，页面同时被"洗白"，
 // 遮蔽峰值处藏场景切换，气泡散开后已是新场景。混入 i18n 文字胶囊变体元素。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { FakeDashboard } from '../../_fixtures/Fixtures';
 
 const mulberry32 = (a: number) => () => {

@@ -2,7 +2,7 @@
 // 黑场上，左上角径向聚光从小到大扩张，把白色 Inbox 界面逐步"点亮"，
 // 照到的区域显影、照不到的沉黑，最终全屏亮起。光即转场。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const FONT = '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif';
 

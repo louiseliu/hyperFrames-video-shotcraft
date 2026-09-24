@@ -1,5 +1,5 @@
 // origin: template/src/aifl/Caption.tsx（模板片同源组件）
-import { interpolate, useCurrentFrame } from 'remotion';
+import { interpolate, useCurrentFrame } from 'hyperframes';
 
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, monospace';
 const AMBER = 'oklch(52% 0.115 65)';

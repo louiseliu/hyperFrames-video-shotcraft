@@ -1,4 +1,4 @@
-// cube-navigation — Cube Navigation 立方体逐面导航（motion-lab 定稿转原生 Remotion）
+// cube-navigation — Cube Navigation 立方体逐面导航（motion-lab 定稿转原生 HyperFrames）
 // 内容贴在 3D 立方体六面，相机逐面浏览：正面特写 → 拉远到等轴视角看清棱角 →
 // 转到下一面推近，面间穿插斜角过渡；每面按法线朝向实时算明暗。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

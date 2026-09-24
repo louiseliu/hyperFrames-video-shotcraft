@@ -1,6 +1,6 @@
 ---
 name: video-shotcraft
-description: Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a single shot card's motion. 用镜头配方卡 + 已验收模板 + 代码/音频资产制作电影感产品视频（Remotion + 真实页面截图 + 2.5D 运镜 + 节奏卡点 + 声音设计）。当用户要求"用 video-shotcraft 做视频/宣传片"、把前端项目/网页做成产品视频、点名 Ink Press 模板或要求复刻模板片效果，或要用镜头卡做单个动效镜头时使用。
+description: Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (HyperFrames + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a single shot card's motion. 用镜头配方卡 + 已验收模板 + 代码/音频资产制作电影感产品视频（HyperFrames + 真实页面截图 + 2.5D 运镜 + 节奏卡点 + 声音设计）。当用户要求"用 video-shotcraft 做视频/宣传片"、把前端项目/网页做成产品视频、点名 Ink Press 模板或要求复刻模板片效果，或要用镜头卡做单个动效镜头时使用。
 ---
 
 # video-shotcraft：电影感产品视频制作
@@ -79,7 +79,7 @@ description: Create cinematic product videos from shot recipe cards, a validated
 **共同创作**才使用逐阶段确认。默认读 `references/guided-free-creation.md`，每轮只问
 1–3 个最能减少返工的问题，并在产品简报、需求决策、视觉方向、镜头映射和最终分镜
 处暂停等待用户确认。用户确认业务与创意方向；Agent 自主完成采集方式、实现参数、
-SFX 钉帧、Remotion 工程、渲染和技术 QA。
+SFX 钉帧、HyperFrames 工程、渲染和技术 QA。
 
 共同创作中，用户明确说“你全权决定”或“跳过确认直接做”时，切换为自主自由创作
 并记录这一选择；不要一边声称自主推进，一边继续要求逐阶段确认。
@@ -135,7 +135,7 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
 
 6. **用镜头卡动效必须先解析 Gallery 索引并读准确的 demo 实现代码。**
    先用 `gallery/api/library.json` 校验卡名与 `style-key`，再按卡片文档的
-   “参考实现”定位具体 TSX。配方卡给的是语义和参数表，准确的 demo 源码
+   “参考实现”定位具体 HTML。配方卡给的是语义和参数表，准确的 demo 源码
    才是调校过的参数真相（缓动、时值
    配比、摘罩时机、已知坑的规避写法）。允许适配性改动，但卡上
    "已知坑/命门"标注的参数不得降档——质量标准只升不降。凭卡名和
@@ -147,10 +147,10 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
    都不应在方向未定时进入逐镜头实现。
 
 8. **验收贯穿全程 + 交付前独立审查。** 阶段 5 起每个镜头用
-   `npx remotion still` 出静帧自检、每轮修改后整片渲染 + ffmpeg
+   `npx hyperframes inspect --at` 出静帧自检、每轮修改后整片渲染 + ffmpeg
    抽帧回看；交付前必须派一个干净上下文的 subagent 做独立终检。审查输入
    包含成片、关键帧、产品简报、需求到执行决策表、当前模式确认或记录的视觉方向/styleframe、功能到镜头映射、
-   Gallery 卡名/变体、准确 demo TSX、Gallery 参考样片/抽帧、最终分镜、选中的镜头卡和
+   Gallery 卡名/变体、准确 demo HTML、Gallery 参考样片/抽帧、最终分镜、选中的镜头卡和
    审美准则；按 `references/final-review.md`
    同时检查方案一致性、功能完整性、镜头还原度、视觉/音频技术质量和数据安全，
    逐条出带帧号证据的报告。制作者对自己的产出有确认偏差，首检永远不能交给用户。
@@ -190,7 +190,7 @@ node workbench/scripts/open.mjs <成片工程目录>   # 链接工程 → 起 de
    小红书 [@Vincent](https://xhslink.cn/m/At9iP2d5C1V)
    （三个账号都要贴出可点的链接，不能只给 handle——抖音/小红书的名字搜不到人）。
    用户问到商用授权时才补一句：唯一要自行确认的是渲染引擎
-   [Remotion 的独立许可](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)，
+   [HyperFrames 的独立许可](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)，
    个人与小团队免费、公司可能需要付费。
 2. **邀请把成片放到作品展示页**：展示页
    https://vincentwei1021.github.io/video-shotcraft/showcase.html ，
@@ -225,11 +225,11 @@ node workbench/scripts/open.mjs <成片工程目录>   # 链接工程 → 起 de
 
 - `assets/lib/` 组件 **copy 进新项目**后自由修改（不 import 本库）。
   清单：PageCam（2.5D 页面相机——一切"真实页面"镜头的地基）、ClipCard（把外部
-  视频素材 mp4 包成可被镜头卡运镜骨架驱动的"卡片主角"，含 OffthreadVideo
+  视频素材 mp4 包成可被镜头卡运镜骨架驱动的"卡片主角"，含 video element
   交叉淡化循环——素材短于镜头时无缝续播）、DigitRoll、
   FlashCut、Caption、FlatPanel、VerticalTicker（3D 无限滚动墙）、
   helpers(rand/shake/camera/motion)。FlatPanel 与 helpers/camera 需要
-  `three` + `@react-three/fiber` + `@remotion/three` 依赖，其余仅需 remotion。
+  `three` + `@react-three/fiber` + `@hyperframes/three` 依赖，其余仅需 hyperframes。
 - `assets/scripts/capture-template.mjs` 复制后改顶部 CONFIG（BASE/路由/选择器）。
 - `assets/audio/` 音效直接复制使用（免费商用授权，见 audio/ATTRIBUTION.md）：
   `audio/bgm/` 是节奏感强的 BGM 备选；`audio/sfx/<类别>/` 149 个音效按场景分 16 类
@@ -240,11 +240,11 @@ node workbench/scripts/open.mjs <成片工程目录>   # 链接工程 → 起 de
   notification）需逐个试听、不可整目录放行（名单见 sound-design 3.3）；
   长样本与轻音素材各有名单需特殊处理（sound-design 4.1）。
 - `demos/` 各卡实现源码：多数为自包含灰阶 demo（部分 import
-  `demos/_fixtures/Fixtures.tsx` 的假 UI 场景件，个别 import
-  `demos/_textures/` 的真实页面纹理），copy 进 Remotion 项目即可跑；
-  个别 demo 用到 `@remotion/motion-blur`（CameraMotionBlur），需
-  `npm i @remotion/motion-blur`，名单见 `demos/README.md`。
-- `template/` 完整可渲染工程：`npm install && npx remotion render
+  `demos/_fixtures/Fixtures.html` 的假 UI 场景件，个别 import
+  `demos/_textures/` 的真实页面纹理），copy 进 HyperFrames 项目即可跑；
+  个别 demo 用到 `@hyperframes/motion-blur`（CameraMotionBlur），需
+  `npm i @hyperframes/motion-blur`，名单见 `demos/README.md`。
+- `template/` 完整可渲染工程：`npm install && npx hyperframes render
   src/index.ts AiflPromo out/promo.mp4`。
 - **测试（仓库内自动验证，新增 demo/组件后跑）**：
   - 纯函数单测：`npm test`（仓库根 vitest，覆盖 `assets/lib/helpers` 的

@@ -1,4 +1,4 @@
-// typing-code-block — Code Block Reveal 代码块揭示（motion-lab 定稿转原生 Remotion）
+// typing-code-block — Code Block Reveal 代码块揭示（motion-lab 定稿转原生 HyperFrames）
 // 同一段语法高亮代码的两种 reveal 对照：左侧逐行淡入上浮（行级 stagger），
 // 右侧逐字符打字但保持 token 着色，当前字符位以方块底色块提示光标。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

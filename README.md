@@ -24,7 +24,7 @@
 **video-shotcraft** is an AI agent skill that turns Claude Code or Codex into a
 motion-design studio: point it at your product and it storyboards, animates, and
 sound-designs a cinematic promo, marketing, launch, or demo video with
-[Remotion](https://www.remotion.dev/) — real page captures, 2.5D camera moves,
+[HyperFrames](https://hyperframes.heygen.com/) — real page captures, 2.5D camera moves,
 beat-synced cuts, and film-grade SFX included.
 
 🖼️ [**Browse all 214 motion previews in the live Gallery »**](https://vincentwei1021.github.io/video-shotcraft/)
@@ -41,7 +41,7 @@ beat-synced cuts, and film-grade SFX included.
 > aligned locally (median 20–40 ms per character), **78 motion recipe cards**, a
 > 7-layer anti-slideshow shot system (continuous camera curves, parallax planes,
 > idle/yield lifecycle, breathing environment), plain-cut subtitles, and
-> triple-gate QA. Same recipe-card + Remotion workflow as here, retuned for
+> triple-gate QA. Same recipe-card + HyperFrames workflow as here, retuned for
 > talking content.
 >
 > 🎙️ [**Project page »**](https://github.com/Vincentwei1021/video-talkcraft) ·
@@ -54,7 +54,7 @@ beat-synced cuts, and film-grade SFX included.
 > shot / transition / caption / SFX tracks exactly as authored; select any shot
 > and edit its copy, font sizes and colours in a schema-driven inspector, move,
 > trim or speed-ramp clips, drag any of the **216 demo motions** in from the
-> library, then export with Remotion. Preview and render are frame-identical
+> library, then export with HyperFrames. Preview and render are frame-identical
 > (pixel-parity verified).
 >
 > ![Motion Workbench](workbench/docs/overview.png)
@@ -65,7 +65,7 @@ beat-synced cuts, and film-grade SFX included.
 - 🌟 **2026-08 · 48 new shot recipe cards** — the library grows from 104 to
   **152 cards / 209 previews**. Distilled from 209 candidate motions through
   eight rounds of frame-by-frame review against reference footage, then folded
-  into the regular Gallery categories with full recipe cards, native Remotion
+  into the regular Gallery categories with full recipe cards, native HyperFrames
   components (`demos/<category>/<name>/<Component>.tsx`, deterministic and
   driven by the normalized progress `t` — see demos/README.md for the wiring
   snippet), and motion previews. All de-branded: neutral placeholder copy and a
@@ -153,12 +153,12 @@ the same quality — the fastest, most reliable path to a finished film.
 Rendering on a headless Linux box (tested: 2 cores, Node 22) hits three walls
 worth knowing:
 
-1. **Concurrency cap** — `remotion still/render` fails with "Maximum for
+1. **Concurrency cap** — `hyperframes inspect --at/render` fails with "Maximum for
    --concurrency is 2" on low-core machines. Fix: pass `--concurrency=1`.
 2. **Old Headless removal** — recent Chrome/Chromium dropped old headless mode;
-   pointing Remotion at system chromium fails to launch. Fix: use a
+   pointing HyperFrames at system chromium fails to launch. Fix: use a
    chrome-headless-shell binary instead of full Chrome.
-3. **Blocked CDN** — if remotion.media is unreachable, the automatic
+3. **Blocked CDN** — if hyperframes.heygen.com is unreachable, the automatic
    headless-shell download is rejected. Fix:
    `--browser-executable=<path-to-local chrome-headless-shell>`.
 
@@ -170,12 +170,12 @@ With these three flags, frame renders from the bundled template work.
 | --- | --- |
 | 157 shot recipe cards | Purpose, energy, suggested duration, parameters, implementation notes, and known pitfalls |
 | 214 motion previews | Covering 214 styles; searchable and filterable in the online Gallery |
-| Remotion implementations | Tuned TSX demos containing the actual easing and timing parameters for each card |
+| HyperFrames implementations | Tuned HTML demos containing the actual easing and timing parameters for each card |
 | Complete video template | A validated 36.2-second, 1920×1080, 30fps product promo with 10 shots |
 | Components and assets | 2.5D page camera, captions, flash cuts, digit rolls, SFX, and capture scripts |
 | Production methodology | Capture, visual direction, storyboarding, sound design, beat sync, and final QA |
 | JianYing project export | Load the film into JianYing (CapCut CN) for further editing — per-shot speed, captions, and audio all editable (verified on macOS 11.2) |
-| Motion workbench | Browser timeline editor opened after delivery: split the film into tracks, edit exposed shot properties, retime, drag in any of the 216 demo motions, export via Remotion |
+| Motion workbench | Browser timeline editor opened after delivery: split the film into tracks, edit exposed shot properties, retime, drag in any of the 216 demo motions, export via HyperFrames |
 
 The toolkit primarily targets web and desktop product promos, while individual
 shot cards can also be used in feature demos, brand films, launch videos, and
@@ -195,13 +195,13 @@ video-shotcraft/
 │   ├── sound-design.md      # Sound-design guidance and examples
 │   ├── jianying-export.md   # JianYing (CapCut CN) project-export guide
 │   └── workbench.md         # Motion workbench: manifest contract + editability rules
-├── demos/                   # Remotion reference implementations (same categories)
+├── demos/                   # HyperFrames reference implementations (same categories)
 ├── gallery/                 # Static motion-preview Gallery
 ├── template/                # Runnable complete video template
 ├── jianying-export/         # JianYing draft installers (mac tested / win untested)
-├── workbench/               # Post-delivery motion workbench (Vite + Remotion Player)
+├── workbench/               # Post-delivery motion workbench (Vite + HyperFrames Player)
 └── assets/
-    ├── lib/                 # Reusable Remotion components
+    ├── lib/                 # Reusable HyperFrames components
     ├── scripts/             # Page-asset capture scripts
     └── audio/               # Audio assets
         ├── bgm/             # 5 BGM options
@@ -240,9 +240,9 @@ Per-batch sourcing notes for the 48 cards added in 2026-08 live in
 
 Special thanks to:
 
-- **[Remotion](https://www.remotion.dev/)** — the React-based video framework
-  that powers every demo and template here. Note that Remotion has its own
-  [license](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)
+- **[HyperFrames](https://hyperframes.heygen.com/)** — the HTML-based video framework
+  that powers every demo and template here. Note that HyperFrames has its own
+  [license](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
   (free for individuals and small teams; companies may need a paid license).
 - **[Mixkit](https://mixkit.co/)** — source of the SFX and music assets bundled
   under their free commercial license.

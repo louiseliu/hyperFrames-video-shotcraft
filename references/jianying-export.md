@@ -1,6 +1,6 @@
 # 剪映工程导出：成片 → 可编辑的剪映草稿
 
-把 Remotion 时间线导出为剪映（CapCut 国内版）工程文件，用户可在剪映里
+把 HyperFrames 时间线导出为剪映（CapCut 国内版）工程文件，用户可在剪映里
 继续改字幕内容/字号/颜色、对每个镜头变速/重排/调色、调整或替换 SFX 与
 BGM。镜头内部动效（逐帧程序渲染）超出剪映的素材+关键帧模型，只能烘焙。
 
@@ -28,12 +28,12 @@ Windows 版按上游支持路径实现但未真机验证（`windows_draft.py`）
 
 ## 2. plate 底片渲染
 
-给 Remotion 项目加一个 `plate` inputProp，渲一版**无字幕、无 SFX、无 BGM**
+给 HyperFrames 项目加一个 `plate` inputProp，渲一版**无字幕、无 SFX、无 BGM**
 的干净底片。字幕组件用 `getInputProps()` 网关（不必层层传 prop）：
 
 ```tsx
 // 字幕组件顶部
-import { getInputProps } from 'remotion';
+// HyperFrames: variables are accessed via window.__hyperframes.getVariables();
 const { plate } = getInputProps() as { plate?: boolean };
 if (plate) return null;
 ```
@@ -45,7 +45,7 @@ if (plate) return null;
 ```
 
 ```bash
-npx remotion render src/index.ts <CompId> out/plate.mp4 \
+npx hyperframes render src/index.ts <CompId> out/plate.mp4 \
   --props='{"bgm":false,"plate":true}'
 ```
 
@@ -53,7 +53,7 @@ npx remotion render src/index.ts <CompId> out/plate.mp4 \
 
 ## 3. 时间线数据提取
 
-从 Remotion 工程的常量表（`theme.ts` 的 SHOTS / Main.tsx 的 CAPTIONS、
+从 HyperFrames 工程的常量表（`theme.ts` 的 SHOTS / Main.tsx 的 CAPTIONS、
 SFX 表）提取三张表，**拍号网格在 Python 里精确复算**，不要抄注释里的
 约数帧号：
 
@@ -69,8 +69,8 @@ def f2us(f): return round(f * 1_000_000 / FPS)   # 帧 → 微秒
 - **字幕表** `(中文, 英文, from帧, to帧)`：抄各镜头字幕组件的实参；
   **相邻镜头同文案合并为一段**（原片的跨镜头延续）。
 - **SFX 表** `(文件, 目标拍, 峰值秒, 音量)`：抄 Root 的钉帧表。剪映按
-  摆放位置播放，**不要带上 Remotion 侧的输出音轨偏移补偿**（那补的是
-  Remotion 渲染输出链路的编码偏移，见 sound-design §4.6，与剪映播放
+  摆放位置播放，**不要带上 HyperFrames 侧的输出音轨偏移补偿**（那补的是
+  HyperFrames 渲染输出链路的编码偏移，见 sound-design §4.6，与剪映播放
   无关）：`start_f = beatF(拍) - round(峰值秒 * FPS)`。
   长样本的显式截断时长（如 impact 留混响尾）照抄。
 
@@ -100,7 +100,7 @@ for _name, f0, f1 in SHOTS:
     script.add_segment(draft.VideoSegment(plate, rng, source_timerange=rng),
                        "底片")
 
-# SFX：Remotion 重叠音频自动混音，剪映同轨段不可重叠 → 贪心分道
+# SFX：HyperFrames 重叠音频自动混音，剪映同轨段不可重叠 → 贪心分道
 sfx_segs = []
 for file, beat, peak_sec, volume in SFX:
     mat = draft.AudioMaterial(os.path.join(SFX_DIR, file))

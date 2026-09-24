@@ -2,7 +2,7 @@
 // 纯暗场上 Designer(蓝)/Developer(绿) 两枚具名光标做"对话式"双人舞：
 // 相互靠近 → 绕位交换 → 名牌一亮一暗交接 → 一枚放大成巨箭头当转场。
 import React from 'react';
-import { useCurrentFrame, interpolate } from 'remotion';
+import { useCurrentFrame, interpolate } from 'hyperframes';
 
 const BLUE = '#4C8DF6';
 const GREEN = '#2FBF71';

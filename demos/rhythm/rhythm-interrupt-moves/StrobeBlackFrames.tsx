@@ -8,7 +8,7 @@
 // 79–80 全黑 → 帧 81 硬切 scale 1.35（81–82 加深脉冲）→ 83–134 全静止（52f ≥50f）。
 // 光敏警示：实战建议配乐渐强使用。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard, TitleBlock } from '../../_fixtures/Fixtures';
 
 // punch-in 落点：3×2 网格第 2 行中间卡中心（同 JumpCutPunchIn 几何）

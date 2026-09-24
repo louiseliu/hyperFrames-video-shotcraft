@@ -1,4 +1,4 @@
-// hatch-depth — Hatch → Depth Chart 斜纹柱实体化（motion-lab 定稿转原生 Remotion）
+// hatch-depth — Hatch → Depth Chart 斜纹柱实体化（motion-lab 定稿转原生 HyperFrames）
 // 标签下的斜纹条逐条 wipe 伸长（保持 45° 斜纹占位质感），随后斜纹层淡出、强调色
 // 实心层淡入，蜕变为数据横柱条形图——几何无跳变、只换纹理与颜色，讲"占位变真数据"的隐喻。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

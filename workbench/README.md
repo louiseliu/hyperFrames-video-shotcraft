@@ -3,7 +3,7 @@
 > 面向使用者的图文指南（各区域与功能、截图）见 [GUIDE.md](GUIDE.md)；本文是技术说明。
 
 剪映式的成片后期台：多轨时间线 + 素材库（成片单元 / 216 个镜头卡 demo / 音效库 / 背景）+
-schema 属性面板 + Remotion 实时预览 + 一键导出。skill 交付成片后由
+schema 属性面板 + HyperFrames 实时预览 + 一键导出。skill 交付成片后由
 `scripts/open.mjs` 自动打开，用户不用回到代码里改 tsx 就能挪镜头、改文案、换音效、变速、导出。
 移植自 [video-talkcraft/workbench](https://github.com/Vincentwei1021/video-talkcraft)，
 数据模型与 UI 同源，卡片来源与成片接入方式按本仓库改造。
@@ -30,14 +30,14 @@ cd workbench && npm install && npm run dev      # http://localhost:5198
 - **成片拆解导入**：按工程 `src/workbench.ts` 清单一键拆成 镜头 / 转场 / 字幕 / 叠加层 / 音乐 /
   音效 的多轨工程，落点与原 `<Sequence>` 逐帧一致（`npm run parity` 可证）
 - **保存**：自动存 localStorage（800ms 防抖），导出/导入工程 JSON，撤销/重做
-- **导出成片**：顶栏「导出成片」→ dev server 内起 Remotion CLI 渲当前工程为 MP4 → `exports/`
-- **Remotion Studio**：`npm run studio`（每张卡 Zod schema 自动生成；`ProjImported` / `ProjOriginal` 对照）
+- **导出成片**：顶栏「导出成片」→ dev server 内起 HyperFrames CLI 渲当前工程为 MP4 → `exports/`
+- **HyperFrames Studio**：`npm run studio`（每张卡 Zod schema 自动生成；`ProjImported` / `ProjOriginal` 对照）
 - **无损校验**：`npm run parity`——退出码 0 一致 / 1 有差异 / 2 无法比对（缺 python3+Pillow），不假绿
 
 ## 接入成片工程
 
 ```bash
-node scripts/open.mjs <成片工程目录>        # 目录 = 含 package.json 的那层，源码在 src/ 或 remotion/src/
+node scripts/open.mjs <成片工程目录>        # 目录 = 含 package.json 的那层，源码在 src/ 或 hyperframes/src/
 node scripts/open.mjs                     # 沿用上次链接的工程（只重启/复用 dev server）
 node scripts/open.mjs <dir> --no-open     # 不弹浏览器
 ```
@@ -76,7 +76,7 @@ src/
   preview/PreviewPanel.tsx Player + 走带 + 素材点击预览
   timeline/               标尺 / 轨道 / clip 拖拽裁剪 / 拖放接收
   panels/                 素材库四 tab / schema 属性面板
-  remotion/               Remotion CLI 入口（Studio + 渲染导出 + parity 共用）
+  hyperframes/            HyperFrames CLI 入口（Studio + 渲染导出 + parity 共用）
   cards/
     types.ts              CardDef / PropField（schema 字段类型）
     manifest.ts           成片工程清单类型 WorkbenchManifest
@@ -92,8 +92,8 @@ scripts/
 proj-stub/                未链接成片工程时的降级实现
 demosrc -> ../demos       demo 源码（相对符号链接，进库）
 public/                   全部由脚本按本机链接生成（不进库）
-remotion.config.ts        CLI 打包配置（@proj/@demos 别名 + jpeg/angle/并发 4，与 template 同口径）
-vite.config.ts            Vite + 导出渲染 API（POST /api/export → Remotion CLI）
+hyperframes.config.js        CLI 打包配置（@proj/@demos 别名 + jpeg/angle/并发 4，与 template 同口径）
+vite.config.ts            Vite + 导出渲染 API（POST /api/export → HyperFrames CLI）
 ```
 
 ## 已知边界
@@ -101,8 +101,8 @@ vite.config.ts            Vite + 导出渲染 API（POST /api/export → Remotio
 - 同轨允许 clip 重叠（层级用多轨表达）；变速为匀速重映射（无曲线变速）
 - 卡片库按 30fps 编排、成片单元按成片 fps；非 30fps 工程里拖卡上轨会换算时长 + 反向变速（媒体卡只换算时长），播放速度不变；按秒计时（spring）的 demo 节奏会偏，面板有提示
 - demo 卡 schema 为空：能裁剪 / 变速 / 定格 / 图层变换，不能改文案颜色——要可调参先把 CONFIG 提成 props
-- 导出走 dev server（`npm run dev` 时可用）。Remotion 静态服务器拒绝服务符号链接，所以导出前
+- 导出走 dev server（`npm run dev` 时可用）。HyperFrames 静态服务器拒绝服务符号链接，所以导出前
   自动把 `public/` 解引用同步到 `.render-public/`；命令行手动渲染同理：
-  `npx remotion render src/remotion/index.ts Main out.mp4 --props=<{"project":…,"renderExact":true}> --public-dir=.render-public`
-- 工程源码以符号链接方式打包进工作台，`react`/`remotion` 解析到工作台的 node_modules
-  （remotion 4.0.484 / React 19；已装 `@remotion/motion-blur` `@remotion/three` `three` `@react-three/fiber` `@remotion/google-fonts`）
+  `npx hyperframes render src/hyperframes/index.ts Main out.mp4 --props=<{"project":…,"renderExact":true}> --public-dir=.render-public`
+- 工程源码以符号链接方式打包进工作台，`hyperframes 解析到工作台的 node_modules
+  （hyperframes (latest) — no React dependency；已装 `@hyperframes/motion-blur` `@hyperframes/three` `three` `@react-three/fiber` `@hyperframes/google-fonts`）

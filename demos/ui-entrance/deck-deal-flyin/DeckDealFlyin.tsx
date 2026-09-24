@@ -8,8 +8,8 @@
 //   3) 36–113 发牌 + 追逐 scroll + 0.5s 满板 rest：26 卡按阅读序发向网格，
 //      出牌间隔硬加速收缩（gap 4f→0.2f），单卡飞行带 z 弧顶 + settle 过冲 +
 //      press 回弹，相机追逐向下滚动越来越快，满板静止 0.5s。
-// 运动模糊（相机快速段）本 demo 用残影 ghost 近似，不依赖 @remotion/motion-blur。
-import { Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+// 运动模糊（相机快速段）本 demo 用残影 ghost 近似，不依赖 hyperframes/motion-blur。
+import { Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D, CamKey2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

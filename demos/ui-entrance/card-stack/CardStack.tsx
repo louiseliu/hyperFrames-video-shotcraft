@@ -1,4 +1,4 @@
-// card-stack — Card Stack 3D 扇形展开（motion-lab 定稿转原生 Remotion）
+// card-stack — Card Stack 3D 扇形展开（motion-lab 定稿转原生 HyperFrames）
 // 8 张卡片从屏下 spring 弹入（stagger 3 帧），叠成一摞后呈扇形展开：每张
 // (i-3.5)*8° 旋转 + 横移 + z 递退，形成 3D 扇面。入场动画与扇形终态偏移分层叠加。
 // 设计坐标 480×270（DesignStage 等比放大），参数表数值以此坐标系标定。

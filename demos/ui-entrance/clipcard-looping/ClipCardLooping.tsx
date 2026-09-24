@@ -11,7 +11,7 @@
 // 短视频放到项目的 public/clips/clipcard-demo.mp4（建议 30fps、方形）。
 // 三个场景共用同一段素材,但用不同参数驱动,方便对照回放。
 import React from 'react';
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, Sequence } from 'hyperframes';
 import { ClipCard } from '../../../assets/lib/ClipCard';
 
 export const CLIPCARD_LOOPING_DURATION = 120; // 4s @30fps

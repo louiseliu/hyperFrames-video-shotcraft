@@ -1,5 +1,5 @@
 import { createContext, useContext, type FC, type ReactNode } from 'react';
-import { staticFile } from 'remotion';
+import { staticFile } from 'hyperframes';
 import palettes from './palettes.json';
 import { paletteAsset } from './palette-assets';
 

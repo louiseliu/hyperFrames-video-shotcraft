@@ -6,7 +6,7 @@
 // 双圈强调色 ripple 点击确认 + 3px 描边 + 辉光，相机 16f 推进 zoom 2.2 交棒。
 // 网格卡用真实纹理裁片（复用 projects-empty.png 里已有的卡），nano-lab 目标卡
 // 过滤后滑到首行槽位。缺的 float-* 小块用纯色占位，不影响动效读感。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D, CamKey2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

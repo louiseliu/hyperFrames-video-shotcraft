@@ -7,7 +7,7 @@
 // 动的只有页面自身沿其 3D 平面横向（局部 X 轴）的滑移 translateX。
 // v4 的悬空贴落（FloatWrap 同形软影）保留。
 import React, { useId } from 'react';
-import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from 'hyperframes';
 
 const FONT = 'Helvetica, Arial, sans-serif';
 const INK = '#2f2f36';

@@ -5,7 +5,7 @@
 // 切点前一刻动势最猛。42f 一帧硬切 variant B 整齐静止全景，无一物在动，
 // 停满 93f（>50f）。反差即手法本体。总 135f。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, Card, FakeDashboard } from '../../_fixtures/Fixtures';
 
 const CUT = 42; // 硬切帧：>=42 全静止

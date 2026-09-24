@@ -3,7 +3,7 @@
 // 超大描边箭头光标滑入点击，白 thumb 左→右 ~8f ease-out 滑动，
 // 到位瞬间新选项前弹出小图标、旧图标收起。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing, spring, useVideoConfig } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing, spring, useVideoConfig } from 'hyperframes';
 import { G } from '../../_fixtures/Fixtures';
 
 const FONT = 'Helvetica, Arial, sans-serif';

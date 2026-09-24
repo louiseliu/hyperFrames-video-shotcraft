@@ -5,7 +5,7 @@
 // f0–14 面板静置；f14–24 飞入；f24–46 收缩（含过冲回弹）；f46 咬合；
 // 标签 f46–56 弹出；f56 后真静止 ≥84f（140f 总长）。
 import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import { G, FakeDashboard } from '../../_fixtures/Fixtures';
 
 // 目标：variant A 网格第 2 张卡（第一行中间）。

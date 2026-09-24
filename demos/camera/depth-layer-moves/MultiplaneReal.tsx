@@ -2,7 +2,7 @@
 // 背景整页（0.35x，微 blur 退后）+ 中景真实卡组（0.7x）+
 // 前景浮块（1.4x，search 切片 + 高清卡，轻 blur 拉焦平面）。
 // 系数克制（背景不动排版，卡组独立成层）防"排版散架"。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import layout from '../../_textures/live-layout.json';
 
 export const MULTIPLANE_DUR = 135;

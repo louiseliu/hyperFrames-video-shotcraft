@@ -1,4 +1,4 @@
-// basic-3d-scene — Impress 3D Steps 空间步进（motion-lab 定稿转原生 Remotion）
+// basic-3d-scene — Impress 3D Steps 空间步进（motion-lab 定稿转原生 HyperFrames）
 // impress.js 式演示：卡片散布 3D 空间各处（不同 xyz+旋转+缩放），相机依次飞到
 // 每个 Step 的姿态对齐观看；核心配方 camera = stepTransform.inverse()，
 // 非当前 step 半透明+模糊做 enter/exit。

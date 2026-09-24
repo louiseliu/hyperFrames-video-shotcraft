@@ -4,7 +4,7 @@
 // 3) 波前尾迹梯度：刚被点亮的字符辉光最强，随扫过距离衰减到稳态
 //    （trailing-window 增亮层，填充结束后淡出到稳态呼吸）。
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from 'hyperframes';
 
 const mulberry32 = (a: number) => () => {
   let t = (a += 0x6d2b79f5);

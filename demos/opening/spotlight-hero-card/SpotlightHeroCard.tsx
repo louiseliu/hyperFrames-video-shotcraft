@@ -6,7 +6,7 @@
 // 悬停 sin bob（54f）→ reseat（18f 落地微压）；SVG rounded-rect 轮廓光束两圈
 // （lap1 快而亮 / lap2 慢而弱）；悬停期左侧 3D 注记 + 马克笔荧光条。
 // 主角卡 = layout.projects.cards[3]，中心 x 恰为 960（页面中心）。
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing } from 'hyperframes';
 import { PageCam2D, CamKey2D } from '../../_fixtures/PageCam2D';
 import layout from '../../_textures/live-layout.json';
 

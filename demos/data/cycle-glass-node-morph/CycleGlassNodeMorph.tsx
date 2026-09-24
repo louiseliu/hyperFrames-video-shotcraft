@@ -1,7 +1,7 @@
 // cycle-glass-node-morph — 单主体缩入机制图，循环标签随后被上升的玻璃节点接管。
 // 运动顺序：上下文主体 → 对角擦除 → 循环箭头与标签 → 连续推近 → 节点托起 → 诊断标记。
 import React from 'react';
-import { Easing, interpolate, useCurrentFrame } from 'remotion';
+import { Easing, interpolate, useCurrentFrame } from 'hyperframes';
 import { DesignStage, E, lerp } from '../../_fixtures/Motion';
 
 export const CYCLE_GLASS_NODE_MORPH_DURATION = 257;

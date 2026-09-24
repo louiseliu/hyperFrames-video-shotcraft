@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Player, type PlayerRef } from "@remotion/player";
+import { Player, type PlayerRef } from "hyperframes/player";
 import type { CardDef } from "../cards/types";
 import { cardFps, cardSize } from "../cards/types";
 import { themedProps } from '../theme';
@@ -131,7 +131,7 @@ const LazyCardLoop: React.FC<{ card: CardDef }> = ({ card }) => {
           initiallyMuted
           numberOfSharedAudioTags={0}
           style={{ width: "100%", height: "100%", pointerEvents: "none" }}
-          acknowledgeRemotionLicense
+          acknowledgeHyperFramesLicense
         />
       )}
     </div>

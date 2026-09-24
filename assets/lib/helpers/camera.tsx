@@ -1,6 +1,6 @@
 // origin: 模板片源仓库 helpers
 import { useThree, useFrame } from '@react-three/fiber';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing } from 'hyperframes';
 import * as THREE from 'three';
 import { handheld } from './shake';
 

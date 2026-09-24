@@ -1,4 +1,4 @@
-// scanline-assemble-flyin — Scanline Assemble 扫描装配组件飞入（motion-lab 定稿转原生 Remotion）
+// scanline-assemble-flyin — Scanline Assemble 扫描装配组件飞入（motion-lab 定稿转原生 HyperFrames）
 // 页面开场为空的暗底网格，一条亮扫描线自上而下掠过；扫过每个区块的落点后，该处组件从画外
 // 四面八方飞入（左上 logo 自左、右侧模块卡自右、H1 自左下、CTA 自下、页脚社交自下方两侧），
 // 带轻微过冲和残影模糊，贴合落位瞬间闪一道细亮边。扫完整页恰好装配完成。
