@@ -164,6 +164,11 @@ hyperFrames-video-shotcraft/
 
 ## 🙏 致谢
 
+本项目 fork 自 [**@Vincentwei1021（魏一昊）**](https://github.com/Vincentwei1021) 的
+[**video-shotcraft**](https://github.com/Vincentwei1021/video-shotcraft)，从 Remotion 迁移至
+HyperFrames。原项目出色的镜头配方卡体系、制作方法论和声音设计框架奠定了本项目的基础。
+项目遵循 Apache 2.0 协议——原始版权声明保留在 [LICENSE](LICENSE) 文件中。
+
 本库中许多镜头配方源自对优秀官方产品宣传片动效语言的研究学习——包括
 **ClickUp、Perplexity、Slack、Notion、Figma、Framer、Bear、Raycast、
 Pitch、Miro、Superhuman、Loom** 等产品的宣传片。镜头卡记录的是从零重新
@@ -174,8 +179,11 @@ Pitch、Miro、Superhuman、Loom** 等产品的宣传片。镜头卡记录的是
 
 特别感谢：
 
+- **[@Vincentwei1021](https://github.com/Vincentwei1021)** —— 原项目
+  [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) 的作者。
+  整套镜头配方卡体系、制作流水线和方法论均源自这个出色的作品。
 - **[HyperFrames](https://hyperframes.heygen.com/)** —— 驱动本库全部 demo 与模板的
-  React 视频框架。请注意 HyperFrames 有自己的
+  HTML 视频框架。请注意 HyperFrames 有自己的
   [许可协议](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
   （个人与小团队免费，公司可能需要付费许可）。
 - **[Mixkit](https://mixkit.co/)** —— 库内 SFX 与音乐素材的来源

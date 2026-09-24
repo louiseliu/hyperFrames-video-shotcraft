@@ -171,6 +171,13 @@ hyperFrames-video-shotcraft/
 
 ## 🙏 謝辞
 
+本プロジェクトは [**@Vincentwei1021（Wei Yihao）**](https://github.com/Vincentwei1021) による
+[**video-shotcraft**](https://github.com/Vincentwei1021/video-shotcraft) のフォークであり、
+Remotion から HyperFrames へ移行したものです。オリジナルプロジェクトの優れたショットレシピカード
+体系、制作手法、サウンドデザインフレームワークが本プロジェクトの基盤となっています。
+Apache 2.0 ライセンスの下で公開されており、元の著作権表示は [LICENSE](LICENSE) ファイルに
+保持されています。
+
 このライブラリの多くのショットレシピは、優れた公式製品動画のモーション表現を
 研究してまとめたものです。対象には **ClickUp、Perplexity、Slack、Notion、
 Figma、Framer、Bear、Raycast、Pitch、Miro、Superhuman、Loom** のプロモーションが
@@ -183,8 +190,12 @@ Figma、Framer、Bear、Raycast、Pitch、Miro、Superhuman、Loom** のプロ�
 
 特に以下のプロジェクトとコミュニティに感謝します。
 
+- **[@Vincentwei1021](https://github.com/Vincentwei1021)** — オリジナルの
+  [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) プロジェクトの
+  作者です。ショットレシピカード体系、制作パイプライン、手法のすべてがこの優れた作品に
+  由来しています。
 - **[HyperFrames](https://hyperframes.heygen.com/)** — すべてのデモとテンプレートを支える
-  React ベースの動画フレームワークです。HyperFrames には独自の
+  HTML ベースの動画フレームワークです。HyperFrames には独自の
   [ライセンス](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
   がある点に注意してください（個人と小規模チームは無料、企業は有料ライセンスが必要な場合があります）。
 - **[Mixkit](https://mixkit.co/)** — 無料の商用ライセンスで収録されている

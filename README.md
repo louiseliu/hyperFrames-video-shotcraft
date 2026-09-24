@@ -168,6 +168,12 @@ customer, or personal data needs to be anonymized.
 
 ## 🙏 Acknowledgements
 
+This project is a fork of [**video-shotcraft**](https://github.com/Vincentwei1021/video-shotcraft)
+by [**@Vincentwei1021 (Wei Yihao)**](https://github.com/Vincentwei1021), migrated from
+Remotion to HyperFrames. The original project and its excellent shot recipe card system,
+production methodology, and sound design framework laid the foundation for this work.
+Licensed under Apache 2.0 — the original copyright is retained in the [LICENSE](LICENSE) file.
+
 Many shot recipes in this library were distilled by studying the motion language
 of outstanding official product films — including promos from **ClickUp,
 Perplexity, Slack, Notion, Figma, Framer, Bear, Raycast, Pitch, Miro, Superhuman,
@@ -180,6 +186,10 @@ Per-batch sourcing notes for the 48 cards added in 2026-08 live in
 
 Special thanks to:
 
+- **[@Vincentwei1021](https://github.com/Vincentwei1021)** — author of the original
+  [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) project. The
+  entire shot recipe card system, production pipeline, and methodology originate from
+  this outstanding work.
 - **[HyperFrames](https://hyperframes.heygen.com/)** — the HTML-based video framework
   that powers every demo and template here. Note that HyperFrames has its own
   [license](https://github.com/heygen-com/hyperframes/blob/main/LICENSE.md)
