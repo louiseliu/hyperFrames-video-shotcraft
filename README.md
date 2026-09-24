@@ -22,65 +22,14 @@ sound-designs a cinematic promo, marketing, launch, or demo video with
 [HyperFrames](https://hyperframes.heygen.com/) — real page captures, 2.5D camera moves,
 beat-synced cuts, and film-grade SFX included.
 
-## ✨ What's new
+## ✨ Features
 
-- **One-click film themes:** switch the template between Ink Press, Modern Light, Midnight, Sage, Coral, Iris, Deep Ocean, Obsidian Violet, and Vintage Kraft in the workbench while keeping your edits. [Theme guide](template/THEMES.md).
-
-> [!IMPORTANT]
-> ### 🔥 2026-08 · New in the series: **video-talkcraft**, for narration videos
-> [**video-talkcraft**](https://github.com/Vincentwei1021/video-talkcraft) is the
-> narration-video installment of this series. Hand it a script plus a finished
-> voiceover and every motion beat locks to the voice: word-level timestamps
-> aligned locally (median 20–40 ms per character), **78 motion recipe cards**, a
-> 7-layer anti-slideshow shot system (continuous camera curves, parallax planes,
-> idle/yield lifecycle, breathing environment), plain-cut subtitles, and
-> triple-gate QA. Same recipe-card + HyperFrames workflow as here, retuned for
-> talking content.
->
-> 🎙️ [**Project page »**](https://github.com/Vincentwei1021/video-talkcraft) ·
-> 🖼️ [**Browse all 78 narration motion previews »**](https://vincentwei1021.github.io/video-talkcraft/)
-
-> [!IMPORTANT]
-> ### 🛠️ 2026-09 · New: the **Motion Workbench** — keep editing the delivered film in your browser
-> After delivery the skill opens a CapCut-style workbench
-> (`node workbench/scripts/open.mjs <project>`). The film is decomposed into
-> shot / transition / caption / SFX tracks exactly as authored; select any shot
-> and edit its copy, font sizes and colours in a schema-driven inspector, move,
-> trim or speed-ramp clips, drag any of the **216 demo motions** in from the
-> library, then export with HyperFrames. Preview and render are frame-identical
-> (pixel-parity verified).
->
-> ![Motion Workbench](workbench/docs/overview.png)
->
-> 🧭 [**Workbench guide — every panel and feature, with screenshots »**](workbench/GUIDE.md) (Chinese) ·
-> 🔌 [**Integration contract »**](references/workbench.md)
-
-- 🌟 **2026-08 · 48 new shot recipe cards** — the library grows from 104 to
-  **152 cards / 209 previews**. Distilled from 209 candidate motions through
-  eight rounds of frame-by-frame review against reference footage, then folded
-  into the regular Gallery categories with full recipe cards, native HyperFrames
-  components (`demos/<category>/<name>/<Component>.tsx`, deterministic and
-  driven by the normalized progress `t` — see demos/README.md for the wiring
-  snippet), and motion previews. All de-branded: neutral placeholder copy and a
-  single swappable `ACCENT` color variable.
-- 🎞️ **2026-08 · JianYing (CapCut CN) project export** — after final delivery
-  the film can be exported as an editable JianYing draft: the plate is cut per
-  shot (retime/reorder/grade), captions are rebuilt as native text tracks
-  (content/size/color editable), SFX/BGM land on separate audio tracks.
-  Verified on JianYing Pro 11.2 for macOS; see
-  [references/jianying-export.md](references/jianying-export.md).
-
-## 🎬 Showcase
-
-The 38-second Gallery intro below was itself produced with this skill —
-storyboard, shot implementation, and sound design were all done by an agent
-following the toolkit's methodology:
-
-https://github.com/user-attachments/assets/cba2df8a-4b2e-4247-bace-d0b1dea9c2bd
-
-▶️ [Watch in HD on YouTube](https://youtu.be/gcVvRM_P3SM)
-
-> Browse shot cards and motion previews in the `gallery/` directory.
+- **157 shot recipe cards** with full parameters, timing, and easing
+- **218 HTML compositions** powered by HyperFrames + GSAP
+- **Production-ready template** — Ink Press (36.2s, 1920×1080, 30fps, 10 shots)
+- **Motion workbench** — browser-based timeline editor for post-delivery editing
+- **One-click film themes** — Ink Press, Modern Light, Midnight, Sage, Coral, Iris, Deep Ocean, Obsidian Violet, Vintage Kraft. [Theme guide](template/THEMES.md)
+- **JianYing (CapCut CN) export** — editable draft with per-shot clips, captions, and audio tracks. [Guide](references/jianying-export.md)
 
 ## 🚀 Quick start
 
