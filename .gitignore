@@ -23,3 +23,5 @@ PRODUCT.md
 /motion-lab/
 .playwright-mcp/
 .cursor/
+.claude-plugin/
+.github/
